@@ -51,7 +51,7 @@ public class ArchAngel
   public String[] an = { "ON", "OFF" };
   public String[] ao = { "AUTOMATIC", "MANUAL" };
   public String[] ap = { "Easy", "Hard" };
-  //public AudioClip aq = null;
+  // public AudioClip audioClip = null; // aq
   public Thread ar = null;
   private boolean as = true;
   
@@ -120,7 +120,7 @@ public class ArchAngel
     return false;
   }
   
-  public void a(String paramString, int paramInt)
+  public void MPlay(String paramString, int paramInt) // a
   {
     if (this.af == 0) {
       return;

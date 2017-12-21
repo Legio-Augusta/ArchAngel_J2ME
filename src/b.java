@@ -40,26 +40,26 @@ public class b
   public int af;
   public int ag;
   public boolean ah;
-  public final ArchAngel ai;
+  public final ArchAngel archAngel; // ai
   
   public void a(Graphics paramGraphics)
   {
     int i1;
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      this.ai.ak.a("font");
-      this.ai.ak.a(5, 5);
-      this.ai.ak.d();
-      this.ai.ak.a("end");
+      this.archAngel.ak.a("font");
+      this.archAngel.ak.a(5, 5);
+      this.archAngel.ak.d();
+      this.archAngel.ak.a("end");
       for (i1 = 0; i1 < 2; i1++) {
-        this.ai.ak.a(i1, 31 + i1);
+        this.archAngel.ak.a(i1, 31 + i1);
       }
-      this.ai.ak.d();
-      this.ai.z += 1;
+      this.archAngel.ak.d();
+      this.archAngel.z += 1;
       break;
     case 1: 
-      if (this.ai.x == 0)
+      if (this.archAngel.x == 0)
       {
         paramGraphics.setColor(0);
         paramGraphics.fillRect(0, 0, 240, 320);
@@ -71,21 +71,21 @@ public class b
         paramGraphics.fillRect(0, 119, 240, 30);
         paramGraphics.fillRect(0, 171, 240, 10);
         paramGraphics.fillRect(0, 205, 240, 30);
-        this.ai.ak.a(paramGraphics, 3, 0, 0);
-        this.ai.ak.a(paramGraphics, 5, 27, 25);
-        this.ai.ak.a(paramGraphics, 4, 0, 60);
-        this.ai.ak.a(paramGraphics, 3, 0, 280);
-        this.ai.ak.a(paramGraphics, 31, 0, 80);
-        this.ai.ak.a(paramGraphics, 32, 0, 175);
-        this.ai.a(paramGraphics);
-        this.ai.a(paramGraphics, "SKIP", true);
-        this.ai.a(paramGraphics, "NEXT", false);
-        this.ai.al.a("end");
+        this.archAngel.ak.a(paramGraphics, 3, 0, 0);
+        this.archAngel.ak.a(paramGraphics, 5, 27, 25);
+        this.archAngel.ak.a(paramGraphics, 4, 0, 60);
+        this.archAngel.ak.a(paramGraphics, 3, 0, 280);
+        this.archAngel.ak.a(paramGraphics, 31, 0, 80);
+        this.archAngel.ak.a(paramGraphics, 32, 0, 175);
+        this.archAngel.a(paramGraphics);
+        this.archAngel.a(paramGraphics, "SKIP", true);
+        this.archAngel.a(paramGraphics, "NEXT", false);
+        this.archAngel.al.a("end");
       }
-      this.ai.z = 11;
+      this.archAngel.z = 11;
       break;
     case 15: 
-      if (this.ai.x < 21)
+      if (this.archAngel.x < 21)
       {
         paramGraphics.setColor(0);
         paramGraphics.fillRect(0, 60, 240, 240);
@@ -93,97 +93,97 @@ public class b
         paramGraphics.fillRect(0, 119, 240, 30);
         paramGraphics.fillRect(0, 171, 240, 10);
         paramGraphics.fillRect(0, 205, 240, 30);
-        paramGraphics.setClip(0, 80 + 5 * this.ai.x, 240, 200 - 10 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 31, 0, 80);
-        this.ai.ak.a(paramGraphics, 32, 0, 175);
+        paramGraphics.setClip(0, 80 + 5 * this.archAngel.x, 240, 200 - 10 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 31, 0, 80);
+        this.archAngel.ak.a(paramGraphics, 32, 0, 175);
         paramGraphics.setClip(0, 0, 240, 320);
-        this.ai.ak.a(paramGraphics, 4, 0, 60 + 5 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 3, 0, 280 - 5 * this.ai.x);
+        this.archAngel.ak.a(paramGraphics, 4, 0, 60 + 5 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 3, 0, 280 - 5 * this.archAngel.x);
       }
-      if (this.ai.x == 21)
+      if (this.archAngel.x == 21)
       {
-        this.ai.ak.a(31);
-        this.ai.ak.a(32);
-        this.ai.ak.a("select");
+        this.archAngel.ak.a(31);
+        this.archAngel.ak.a(32);
+        this.archAngel.ak.a("select");
         for (i1 = 0; i1 < 7; i1++) {
-          this.ai.ak.a(i1, 6 + i1);
+          this.archAngel.ak.a(i1, 6 + i1);
         }
-        this.ai.ak.d();
-        this.ai.b = 3;
+        this.archAngel.ak.d();
+        this.archAngel.b = 3;
       }
       break;
     }
-    if (this.ai.z < 15)
+    if (this.archAngel.z < 15)
     {
       paramGraphics.setColor(0);
       paramGraphics.fillRect(0, 227, 240, 53);
       paramGraphics.setColor(16777130);
       paramGraphics.drawRect(0, 227, 239, 53);
-      k(paramGraphics, this.ai.z, 228);
+      k(paramGraphics, this.archAngel.z, 228);
     }
   }
   
   public void b(Graphics paramGraphics)
   {
     int i1;
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      if (this.ai.x == 0)
+      if (this.archAngel.x == 0)
       {
-        this.ai.c = 0;
-        this.ai.ak.a("font");
-        this.ai.ak.a(1, 1);
-        this.ai.ak.d();
-        this.ai.a(paramGraphics);
-        this.ai.a(paramGraphics, "OK", false);
-        this.ai.s = false;
+        this.archAngel.c = 0;
+        this.archAngel.ak.a("font");
+        this.archAngel.ak.a(1, 1);
+        this.archAngel.ak.d();
+        this.archAngel.a(paramGraphics);
+        this.archAngel.a(paramGraphics, "OK", false);
+        this.archAngel.s = false;
       }
       else
       {
-        this.ai.z = 1;
+        this.archAngel.z = 1;
       }
       break;
     case 1: 
       paramGraphics.setColor(107, 222, 255);
       paramGraphics.fillRect(45, 93, 150, 33);
-      this.ai.ak.a(paramGraphics, 62, 103, "YOU ARE DEAD");
+      this.archAngel.ak.a(paramGraphics, 62, 103, "YOU ARE DEAD");
       paramGraphics.setColor(16777215);
       paramGraphics.fillRect(45, 126, 150, 107);
       paramGraphics.setColor(16777215);
       paramGraphics.fillRect(45, 126, 150, 107);
-      this.ai.ak.a(paramGraphics, 50, 129, "You have been");
-      this.ai.ak.a(paramGraphics, 50, 144, "hit deadly.");
+      this.archAngel.ak.a(paramGraphics, 50, 129, "You have been");
+      this.archAngel.ak.a(paramGraphics, 50, 144, "hit deadly.");
       paramGraphics.setColor(0);
-      paramGraphics.fillRect(49, 172 + this.ai.c * 15, 75, 15);
-      this.ai.ak.a(paramGraphics, 50, 174, "1. Retry");
-      this.ai.ak.a(paramGraphics, 50, 189, "2. Back");
+      paramGraphics.fillRect(49, 172 + this.archAngel.c * 15, 75, 15);
+      this.archAngel.ak.a(paramGraphics, 50, 174, "1. Retry");
+      this.archAngel.ak.a(paramGraphics, 50, 189, "2. Back");
       break;
     case 2: 
       for (i1 = 11; i1 < 19; i1++) {
-        this.ai.ak.a(24 + i1);
+        this.archAngel.ak.a(24 + i1);
       }
-      this.ai.ak.b();
-      this.ai.ak.a();
-      this.ai.b = 25;
+      this.archAngel.ak.b();
+      this.archAngel.ak.a();
+      this.archAngel.b = 25;
       break;
     case 3: 
-      if (this.ai.x < 16)
+      if (this.archAngel.x < 16)
       {
-        if (this.ai.x == 0)
+        if (this.archAngel.x == 0)
         {
           for (i1 = 11; i1 < 19; i1++) {
-            this.ai.ak.a(24 + i1);
+            this.archAngel.ak.a(24 + i1);
           }
-          this.ai.ak.b();
-          this.ai.ak.a();
+          this.archAngel.ak.b();
+          this.archAngel.ak.a();
         }
         paramGraphics.setColor(0);
-        paramGraphics.fillRect(0, 0, 240, this.ai.x * 10);
-        paramGraphics.fillRect(0, 300 - this.ai.x * 10, 240, this.ai.x * 10);
+        paramGraphics.fillRect(0, 0, 240, this.archAngel.x * 10);
+        paramGraphics.fillRect(0, 300 - this.archAngel.x * 10, 240, this.archAngel.x * 10);
       }
-      if (this.ai.x == 16) {
-        this.ai.b = 5;
+      if (this.archAngel.x == 16) {
+        this.archAngel.b = 5;
       }
       break;
     }
@@ -192,10 +192,10 @@ public class b
   public void c(Graphics paramGraphics)
   {
     int i1;
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      if (this.ai.x < 21)
+      if (this.archAngel.x < 21)
       {
         paramGraphics.setColor(0);
         paramGraphics.fillRect(0, 60, 240, 240);
@@ -203,17 +203,17 @@ public class b
         paramGraphics.fillRect(0, 119, 240, 30);
         paramGraphics.fillRect(0, 171, 240, 10);
         paramGraphics.fillRect(0, 205, 240, 30);
-        this.ai.ak.a(paramGraphics, 4, 0, 160 - 5 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 3, 0, 180 + 5 * this.ai.x);
+        this.archAngel.ak.a(paramGraphics, 4, 0, 160 - 5 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 3, 0, 180 + 5 * this.archAngel.x);
       }
-      if (this.ai.x == 20)
+      if (this.archAngel.x == 20)
       {
-        this.ai.a(paramGraphics);
-        this.ai.z += 1;
+        this.archAngel.a(paramGraphics);
+        this.archAngel.z += 1;
       }
       break;
     case 1: 
-      if (this.ai.x < 22)
+      if (this.archAngel.x < 22)
       {
         paramGraphics.setColor(0);
         paramGraphics.fillRect(0, 80, 240, 200);
@@ -221,25 +221,25 @@ public class b
         paramGraphics.fillRect(0, 119, 240, 30);
         paramGraphics.fillRect(0, 171, 240, 10);
         paramGraphics.fillRect(0, 205, 240, 30);
-        this.ai.ak.a(paramGraphics, 6, 65326 + this.ai.x * 10, 118);
-        this.ai.ak.a(paramGraphics, 7, 247 - this.ai.x * 10, 204);
-        this.ai.ak.a(paramGraphics, 9, 65388 + this.ai.x * 10, 125);
-        this.ai.ak.a(paramGraphics, 10, 266 - this.ai.x * 10, 211);
+        this.archAngel.ak.a(paramGraphics, 6, 65326 + this.archAngel.x * 10, 118);
+        this.archAngel.ak.a(paramGraphics, 7, 247 - this.archAngel.x * 10, 204);
+        this.archAngel.ak.a(paramGraphics, 9, 65388 + this.archAngel.x * 10, 125);
+        this.archAngel.ak.a(paramGraphics, 10, 266 - this.archAngel.x * 10, 211);
       }
-      if (this.ai.x == 21) {
-        this.ai.z += 1;
+      if (this.archAngel.x == 21) {
+        this.archAngel.z += 1;
       }
       break;
     case 2: 
-      this.ai.ak.a(paramGraphics, 6, 0, 118);
-      this.ai.ak.a(paramGraphics, 7, 37, 204);
-      this.ai.ak.a(paramGraphics, 8, 41, 122 + this.l * 86);
-      this.ai.ak.a(paramGraphics, 9, 62, 125);
-      this.ai.ak.a(paramGraphics, 10, 56, 211);
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "OK", false);
-      this.ai.ak.a(paramGraphics, 3, 0, 280);
-      this.ai.w = true;
+      this.archAngel.ak.a(paramGraphics, 6, 0, 118);
+      this.archAngel.ak.a(paramGraphics, 7, 37, 204);
+      this.archAngel.ak.a(paramGraphics, 8, 41, 122 + this.l * 86);
+      this.archAngel.ak.a(paramGraphics, 9, 62, 125);
+      this.archAngel.ak.a(paramGraphics, 10, 56, 211);
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "OK", false);
+      this.archAngel.ak.a(paramGraphics, 3, 0, 280);
+      this.archAngel.w = true;
       break;
     case 3: 
       paramGraphics.setColor(0);
@@ -248,36 +248,36 @@ public class b
       paramGraphics.fillRect(0, 119, 240, 30);
       paramGraphics.fillRect(0, 171, 240, 10);
       paramGraphics.fillRect(0, 205, 240, 30);
-      if (this.ai.x < 21)
+      if (this.archAngel.x < 21)
       {
-        this.ai.ak.a(paramGraphics, 6, 0 - this.ai.x * 10, 118);
-        this.ai.ak.a(paramGraphics, 7, 37 + this.ai.x * 10, 204);
-        this.ai.ak.a(paramGraphics, 9, 62 - this.ai.x * 10, 125);
-        this.ai.ak.a(paramGraphics, 10, 56 + this.ai.x * 10, 211);
+        this.archAngel.ak.a(paramGraphics, 6, 0 - this.archAngel.x * 10, 118);
+        this.archAngel.ak.a(paramGraphics, 7, 37 + this.archAngel.x * 10, 204);
+        this.archAngel.ak.a(paramGraphics, 9, 62 - this.archAngel.x * 10, 125);
+        this.archAngel.ak.a(paramGraphics, 10, 56 + this.archAngel.x * 10, 211);
       }
-      else if (this.ai.x < 43)
+      else if (this.archAngel.x < 43)
       {
-        this.ai.ak.a(paramGraphics, 6, 65326 + (this.ai.x - 21) * 10, 118);
-        this.ai.ak.a(paramGraphics, 7, 247 - (this.ai.x - 21) * 10, 204);
-        this.ai.ak.a(paramGraphics, 11, 65381 + (this.ai.x - 21) * 10, 125);
-        this.ai.ak.a(paramGraphics, 12, 265 - (this.ai.x - 21) * 10, 211);
+        this.archAngel.ak.a(paramGraphics, 6, 65326 + (this.archAngel.x - 21) * 10, 118);
+        this.archAngel.ak.a(paramGraphics, 7, 247 - (this.archAngel.x - 21) * 10, 204);
+        this.archAngel.ak.a(paramGraphics, 11, 65381 + (this.archAngel.x - 21) * 10, 125);
+        this.archAngel.ak.a(paramGraphics, 12, 265 - (this.archAngel.x - 21) * 10, 211);
       }
-      if (this.ai.x == 42) {
-        this.ai.z += 1;
+      if (this.archAngel.x == 42) {
+        this.archAngel.z += 1;
       }
       break;
     case 4: 
-      this.ai.ak.a(paramGraphics, 6, 0, 118);
-      this.ai.ak.a(paramGraphics, 7, 37, 204);
-      this.ai.ak.a(paramGraphics, 8, 41, 122 + this.ai.ah * 86);
-      this.ai.ak.a(paramGraphics, 11, 55, 125);
-      this.ai.ak.a(paramGraphics, 12, 55, 211);
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "OK", false);
-      this.ai.ak.a(paramGraphics, 3, 0, 280);
+      this.archAngel.ak.a(paramGraphics, 6, 0, 118);
+      this.archAngel.ak.a(paramGraphics, 7, 37, 204);
+      this.archAngel.ak.a(paramGraphics, 8, 41, 122 + this.archAngel.ah * 86);
+      this.archAngel.ak.a(paramGraphics, 11, 55, 125);
+      this.archAngel.ak.a(paramGraphics, 12, 55, 211);
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "OK", false);
+      this.archAngel.ak.a(paramGraphics, 3, 0, 280);
       break;
     case 5: 
-      if (this.ai.x < 21)
+      if (this.archAngel.x < 21)
       {
         paramGraphics.setColor(0);
         paramGraphics.fillRect(0, 60, 240, 240);
@@ -285,44 +285,44 @@ public class b
         paramGraphics.fillRect(0, 119, 240, 30);
         paramGraphics.fillRect(0, 171, 240, 10);
         paramGraphics.fillRect(0, 205, 240, 30);
-        paramGraphics.setClip(0, 80 + 5 * this.ai.x, 240, 200 - 10 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 6, 0, 118);
-        this.ai.ak.a(paramGraphics, 7, 37, 204);
-        this.ai.ak.a(paramGraphics, 8, 41, 122 + this.ai.ah * 86);
-        this.ai.ak.a(paramGraphics, 11, 55, 125);
-        this.ai.ak.a(paramGraphics, 12, 55, 211);
+        paramGraphics.setClip(0, 80 + 5 * this.archAngel.x, 240, 200 - 10 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 6, 0, 118);
+        this.archAngel.ak.a(paramGraphics, 7, 37, 204);
+        this.archAngel.ak.a(paramGraphics, 8, 41, 122 + this.archAngel.ah * 86);
+        this.archAngel.ak.a(paramGraphics, 11, 55, 125);
+        this.archAngel.ak.a(paramGraphics, 12, 55, 211);
         paramGraphics.setClip(0, 0, 240, 320);
-        this.ai.ak.a(paramGraphics, 4, 0, 60 + 5 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 3, 0, 280 - 5 * this.ai.x);
+        this.archAngel.ak.a(paramGraphics, 4, 0, 60 + 5 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 3, 0, 280 - 5 * this.archAngel.x);
       }
-      if (this.ai.x == 20)
+      if (this.archAngel.x == 20)
       {
         for (i1 = 0; i1 < 7; i1++) {
-          this.ai.ak.a(6 + i1);
+          this.archAngel.ak.a(6 + i1);
         }
-        this.ai.b = 26;
+        this.archAngel.b = 26;
       }
       break;
     case 6: 
-      if (this.ai.x < 20)
+      if (this.archAngel.x < 20)
       {
-        this.ai.w = false;
+        this.archAngel.w = false;
         paramGraphics.setColor(0);
         paramGraphics.fillRect(41, 208, 160, 26);
-        this.ai.ak.a(paramGraphics, 47, 218, "A SAVED GAME IS NOT FOUND.", 0);
+        this.archAngel.ak.a(paramGraphics, 47, 218, "A SAVED GAME IS NOT FOUND.", 0);
       }
-      if (this.ai.x == 20) {
-        this.ai.z = 2;
+      if (this.archAngel.x == 20) {
+        this.archAngel.z = 2;
       }
       break;
     case 7: 
       for (i1 = 0; i1 < 7; i1++) {
-        this.ai.ak.a(6 + i1);
+        this.archAngel.ak.a(6 + i1);
       }
-      this.ai.k = true;
-      this.ai.d();
-      this.ai.aj.b();
-      this.ai.b = 9;
+      this.archAngel.k = true;
+      this.archAngel.d();
+      this.archAngel.aj.b();
+      this.archAngel.b = 9;
       this.l = 0;
       break;
     }
@@ -330,10 +330,10 @@ public class b
   
   public void d(Graphics paramGraphics)
   {
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      if (this.ai.x < 21)
+      if (this.archAngel.x < 21)
       {
         paramGraphics.setColor(0);
         paramGraphics.fillRect(0, 60, 240, 240);
@@ -341,23 +341,23 @@ public class b
         paramGraphics.fillRect(0, 119, 240, 30);
         paramGraphics.fillRect(0, 171, 240, 10);
         paramGraphics.fillRect(0, 205, 240, 30);
-        this.ai.ak.a(paramGraphics, 4, 0, 160 - 5 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 3, 0, 180 + 5 * this.ai.x);
-        paramGraphics.setClip(0, 180 - 5 * this.ai.x, 240, 10 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 29, 0, 80);
+        this.archAngel.ak.a(paramGraphics, 4, 0, 160 - 5 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 3, 0, 180 + 5 * this.archAngel.x);
+        paramGraphics.setClip(0, 180 - 5 * this.archAngel.x, 240, 10 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 29, 0, 80);
       }
-      if (this.ai.x == 20) {
-        this.ai.z += 1;
+      if (this.archAngel.x == 20) {
+        this.archAngel.z += 1;
       }
       break;
     case 1: 
-      if (this.ai.x == 0) {
-        this.ai.al.a("open");
+      if (this.archAngel.x == 0) {
+        this.archAngel.al.a("open");
       }
-      this.ai.z = 11;
+      this.archAngel.z = 11;
       break;
     case 18: 
-      if (this.ai.x < 21)
+      if (this.archAngel.x < 21)
       {
         paramGraphics.setColor(0);
         paramGraphics.fillRect(0, 60, 240, 240);
@@ -365,53 +365,53 @@ public class b
         paramGraphics.fillRect(0, 119, 240, 30);
         paramGraphics.fillRect(0, 171, 240, 10);
         paramGraphics.fillRect(0, 205, 240, 30);
-        paramGraphics.setClip(0, 80 + 5 * this.ai.x, 240, 200 - 10 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 29, 0, 80);
+        paramGraphics.setClip(0, 80 + 5 * this.archAngel.x, 240, 200 - 10 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 29, 0, 80);
         paramGraphics.setClip(0, 0, 240, 320);
-        this.ai.ak.a(paramGraphics, 4, 0, 60 + 5 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 3, 0, 280 - 5 * this.ai.x);
+        this.archAngel.ak.a(paramGraphics, 4, 0, 60 + 5 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 3, 0, 280 - 5 * this.archAngel.x);
       }
-      if (this.ai.x == 20)
+      if (this.archAngel.x == 20)
       {
-        this.ai.ak.a(29);
-        this.ai.b = 2;
+        this.archAngel.ak.a(29);
+        this.archAngel.b = 2;
       }
       break;
     }
-    if (this.ai.z < 18)
+    if (this.archAngel.z < 18)
     {
       paramGraphics.setColor(0);
       paramGraphics.fillRect(0, 227, 240, 53);
       paramGraphics.setColor(16777130);
       paramGraphics.drawRect(0, 227, 239, 53);
-      k(paramGraphics, this.ai.z, 228);
-      this.ai.ak.a(paramGraphics, 3, 0, 280);
+      k(paramGraphics, this.archAngel.z, 228);
+      this.archAngel.ak.a(paramGraphics, 3, 0, 280);
     }
-    this.ai.a(paramGraphics);
-    this.ai.a(paramGraphics, "SKIP", true);
-    this.ai.a(paramGraphics, "NEXT", false);
+    this.archAngel.a(paramGraphics);
+    this.archAngel.a(paramGraphics, "SKIP", true);
+    this.archAngel.a(paramGraphics, "NEXT", false);
   }
   
   public void e(Graphics paramGraphics)
   {
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      this.ai.al.a("about");
-      this.ai.z += 1;
+      this.archAngel.al.a("about");
+      this.archAngel.z += 1;
       break;
     case 1: 
-      this.ai.ak.a(paramGraphics, 14, 17, 89);
+      this.archAngel.ak.a(paramGraphics, 14, 17, 89);
       paramGraphics.setClip(17, 89, 223, 25);
-      this.ai.ak.a(paramGraphics, 13, 60, 90 - this.l * 33);
+      this.archAngel.ak.a(paramGraphics, 13, 60, 90 - this.l * 33);
       paramGraphics.setClip(0, 0, 240, 320);
       paramGraphics.setColor(7171414);
       paramGraphics.fillRect(2, 119, 238, 181);
       paramGraphics.setColor(9605802);
       paramGraphics.drawRect(2, 119, 237, 180);
-      j(paramGraphics, this.ai.z, 130);
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "BACK", true);
+      j(paramGraphics, this.archAngel.z, 130);
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "BACK", true);
       break;
     }
   }
@@ -420,16 +420,16 @@ public class b
   {
     int i1 = paramInt2;
     int i2 = 14;
-    if (this.ai.b == 7) {
+    if (this.archAngel.b == 7) {
       i2 = 30;
     }
-    this.ai.al.a(paramInt1);
-    this.ai.al.b = 0;
-    this.ai.p = this.ai.al.o;
+    this.archAngel.al.a(paramInt1);
+    this.archAngel.al.b = 0;
+    this.archAngel.p = this.archAngel.al.o;
     String str;
-    while ((str = this.ai.al.a()) != null)
+    while ((str = this.archAngel.al.a()) != null)
     {
-      if ((this.ai.b == 26) || (this.ai.b == 27)) {
+      if ((this.archAngel.b == 26) || (this.archAngel.b == 27)) {
         paramGraphics.setColor(16777215);
       } else {
         paramGraphics.setColor(0);
@@ -446,60 +446,60 @@ public class b
         {
           i3 = -1;
         }
-        if (i3 > this.ai.al.b) {
-          this.ai.al.b = i3;
+        if (i3 > this.archAngel.al.b) {
+          this.archAngel.al.b = i3;
         }
-        if (i3 == this.ai.al.a) {
+        if (i3 == this.archAngel.al.a) {
           paramGraphics.setColor(14361600);
         }
       }
-      if (this.ai.b == 13)
+      if (this.archAngel.b == 13)
       {
         paramGraphics.drawString(str, i2, i1 + 8, 20);
       }
       else
       {
-        if (this.ai.b != 7) {
+        if (this.archAngel.b != 7) {
           paramGraphics.drawString(str, i2, i1, 20);
         }
-        if ((this.ai.b == 10) && (paramInt1 == 51) && ((this.ai.al.a <= 2) || (this.ai.al.a == 4))) {
+        if ((this.archAngel.b == 10) && (paramInt1 == 51) && ((this.archAngel.al.a <= 2) || (this.archAngel.al.a == 4))) {
           paramGraphics.setColor(0);
         }
       }
-      if (this.ai.b == 13)
+      if (this.archAngel.b == 13)
       {
-        if (this.ai.al.a == 2) {
+        if (this.archAngel.al.a == 2) {
           paramGraphics.setColor(0);
         } else {
           paramGraphics.setColor(40960);
         }
-        paramGraphics.drawString(this.ai.an[(1 - this.ai.af)], 83, 119, 20);
+        paramGraphics.drawString(this.archAngel.an[(1 - this.archAngel.af)], 83, 119, 20);
       }
       i1 += 17;
     }
-    if (this.ai.s)
+    if (this.archAngel.s)
     {
       paramGraphics.setColor(0);
       paramGraphics.drawString("1.YES   2.NO", 88, 105, 17);
     }
-    this.ai.g = false;
+    this.archAngel.g = false;
   }
   
   public void keyPressed(int paramInt)
   {
     int i1 = getGameAction(paramInt);
-    if (this.ai.h) {
+    if (this.archAngel.h) {
       return;
     }
-    switch (this.ai.b)
+    switch (this.archAngel.b)
     {
     case 0: 
-      if (this.ai.z == 1) {
-        this.ai.z += 1;
+      if (this.archAngel.z == 1) {
+        this.archAngel.z += 1;
       }
       break;
     case 3: 
-      if (this.ai.z == 2) {
+      if (this.archAngel.z == 2) {
         switch (paramInt)
         {
         case -4: 
@@ -508,7 +508,7 @@ public class b
           if (this.l > 1) {
             this.l = 0;
           }
-          this.ai.a("s_menu_move", 1);
+          this.archAngel.MPlay("s_menu_move", 1);
           break;
         case -3: 
         case -1: 
@@ -516,61 +516,61 @@ public class b
           if (this.l < 0) {
             this.l = 1;
           }
-          this.ai.a("s_menu_move", 1);
+          this.archAngel.MPlay("s_menu_move", 1);
           break;
         case -7: 
         case -5: 
           if (this.l == 0)
           {
-            this.ai.z += 1;
+            this.archAngel.z += 1;
             this.l = 0;
           }
-          else if (this.ai.w == true)
+          else if (this.archAngel.w == true)
           {
-            if (this.ai.e()) {
-              this.ai.z = 7;
+            if (this.archAngel.e()) {
+              this.archAngel.z = 7;
             } else {
-              this.ai.z = 6;
+              this.archAngel.z = 6;
             }
           }
           break;
         }
-      } else if (this.ai.z == 4) {
+      } else if (this.archAngel.z == 4) {
         switch (paramInt)
         {
         case -4: 
         case -3: 
         case -2: 
         case -1: 
-          this.ai.ah = (1 - this.ai.ah);
-          this.ai.a("s_menu_move", 1);
+          this.archAngel.ah = (1 - this.archAngel.ah);
+          this.archAngel.MPlay("s_menu_move", 1);
           break;
         case -7: 
         case -5: 
-          this.ai.ak.a("open");
-          this.ai.ak.a(0, 29);
-          this.ai.ak.d();
-          this.ai.z += 1;
+          this.archAngel.ak.a("open");
+          this.archAngel.ak.a(0, 29);
+          this.archAngel.ak.d();
+          this.archAngel.z += 1;
           break;
         }
       }
-      this.ai.q = true;
+      this.archAngel.q = true;
       break;
     case 26: 
-      if ((this.ai.z > 1) && (this.ai.z < 18)) {
+      if ((this.archAngel.z > 1) && (this.archAngel.z < 18)) {
         switch (paramInt)
         {
         case -7: 
         case -5: 
-          this.ai.z += 1;
+          this.archAngel.z += 1;
           break;
         case -6: 
-          this.ai.z = 18;
+          this.archAngel.z = 18;
         }
       }
       break;
     case 5: 
-      if (this.ai.z == 3) {
+      if (this.archAngel.z == 3) {
         switch (paramInt)
         {
         case -4: 
@@ -580,8 +580,8 @@ public class b
           if (this.l > 4) {
             this.l = 0;
           }
-          this.ai.a("s_menu_move", 1);
-          this.ai.e = true;
+          this.archAngel.MPlay("s_menu_move", 1);
+          this.archAngel.e = true;
           break;
         case -3: 
         case -1: 
@@ -590,18 +590,18 @@ public class b
           if (this.l < 0) {
             this.l = 4;
           }
-          this.ai.a("s_menu_move", 1);
-          this.ai.e = true;
+          this.archAngel.MPlay("s_menu_move", 1);
+          this.archAngel.e = true;
           break;
         case -6: 
-          this.ai.b = 9;
+          this.archAngel.b = 9;
           break;
         case -7: 
         case -5: 
           if (this.l == 5) {
-            this.ai.b = 4;
+            this.archAngel.b = 4;
           } else {
-            this.ai.b = ((byte)(8 + this.l));
+            this.archAngel.b = ((byte)(8 + this.l));
           }
         }
       }
@@ -609,94 +609,94 @@ public class b
     case 2: 
       break;
     case 8: 
-      if (((paramInt == -7) || (paramInt == -5)) && (this.ai.z > 0)) {
-        this.ai.z += 1;
+      if (((paramInt == -7) || (paramInt == -5)) && (this.archAngel.z > 0)) {
+        this.archAngel.z += 1;
       }
       break;
     case 9: 
-      if (this.ai.z >= 11) {
+      if (this.archAngel.z >= 11) {
         if ((paramInt == -7) || (paramInt == -5))
         {
-          if (this.ai.z > 0) {
-            this.ai.z += 1;
+          if (this.archAngel.z > 0) {
+            this.archAngel.z += 1;
           }
         }
         else if (paramInt == -6) {
-          this.ai.z = 999;
+          this.archAngel.z = 999;
         }
       }
       break;
     case 25: 
-      if ((this.ai.z == 4) && (this.ai.m == true))
+      if ((this.archAngel.z == 4) && (this.archAngel.m == true))
       {
-        if ((this.ai.am.bi == 1) && (paramInt != 53) && (paramInt != -5))
+        if ((this.archAngel.am.bi == 1) && (paramInt != 53) && (paramInt != -5))
         {
-          this.ai.am.b(false);
-          this.ai.c();
+          this.archAngel.am.b(false);
+          this.archAngel.c();
         }
-        if ((this.ai.am.bi == 3) && (this.ai.ag != 1) && (paramInt != 53) && (paramInt != -5))
+        if ((this.archAngel.am.bi == 3) && (this.archAngel.ag != 1) && (paramInt != 53) && (paramInt != -5))
         {
           keyReleased(53);
-          this.ai.am.d(false);
-          this.ai.c();
+          this.archAngel.am.d(false);
+          this.archAngel.c();
         }
         if ((paramInt == 53) || (paramInt == -5))
         {
           keyReleased(50);
-          this.ai.am.e();
-          this.ai.am.ba = 0;
-          this.ai.am.a9 = 0;
-          this.ai.am.bd = 0;
+          this.archAngel.am.e();
+          this.archAngel.am.ba = 0;
+          this.archAngel.am.a9 = 0;
+          this.archAngel.am.bd = 0;
         }
         switch (paramInt)
         {
         case 49: 
-          this.ai.am.e(true);
-          this.ai.am.ba = 3;
+          this.archAngel.am.e(true);
+          this.archAngel.am.ba = 3;
           break;
         case 51: 
-          this.ai.am.e(false);
-          this.ai.am.ba = 4;
+          this.archAngel.am.e(false);
+          this.archAngel.am.ba = 4;
           break;
         case 53: 
-          if ((this.ai.am.bi == 1) && (this.ai.m == true)) {
-            this.ai.am.b(true);
+          if ((this.archAngel.am.bi == 1) && (this.archAngel.m == true)) {
+            this.archAngel.am.b(true);
           }
-          if ((this.ai.am.bi == 3) && (this.ai.n == true))
+          if ((this.archAngel.am.bi == 3) && (this.archAngel.n == true))
           {
-            this.ai.am.bh = false;
-            this.ai.am.d(true);
+            this.archAngel.am.bh = false;
+            this.archAngel.am.d(true);
           }
           break;
         case 57: 
-          if (this.ai.am.bi == 1) {
-            this.ai.am.c();
+          if (this.archAngel.am.bi == 1) {
+            this.archAngel.am.c();
           }
           break;
         case 50: 
-          this.ai.am.c(true);
-          this.ai.am.a9 = 1;
+          this.archAngel.am.c(true);
+          this.archAngel.am.a9 = 1;
           break;
         case 56: 
-          this.ai.am.c(false);
-          this.ai.am.a9 = 2;
+          this.archAngel.am.c(false);
+          this.archAngel.am.a9 = 2;
           break;
         case 52: 
-          this.ai.am.a(true);
-          this.ai.am.ba = 1;
+          this.archAngel.am.a(true);
+          this.archAngel.am.ba = 1;
           break;
         case 54: 
-          this.ai.am.a(false);
-          this.ai.am.ba = 2;
+          this.archAngel.am.a(false);
+          this.archAngel.am.ba = 2;
           break;
         case 48: 
-          if (this.ai.am.bi == 3)
+          if (this.archAngel.am.bi == 3)
           {
-            this.ai.am.az = false;
-            if (this.ai.aj.t < this.ai.aj.r) {
-              this.ai.a("s_reload", 1);
+            this.archAngel.am.az = false;
+            if (this.archAngel.aj.t < this.archAngel.aj.r) {
+              this.archAngel.MPlay("s_reload", 1);
             }
-            this.ai.am.bh = true;
+            this.archAngel.am.bh = true;
           }
           break;
         case 55: 
@@ -704,39 +704,39 @@ public class b
           switch (paramInt)
           {
           case -2: 
-            this.ai.am.c(false);
-            this.ai.am.a9 = 2;
+            this.archAngel.am.c(false);
+            this.archAngel.am.a9 = 2;
             break;
           case -1: 
-            this.ai.am.c(true);
-            this.ai.am.a9 = 1;
+            this.archAngel.am.c(true);
+            this.archAngel.am.a9 = 1;
             break;
           case -4: 
-            this.ai.am.a(false);
-            this.ai.am.ba = 2;
+            this.archAngel.am.a(false);
+            this.archAngel.am.ba = 2;
             break;
           case -3: 
-            this.ai.am.a(true);
-            this.ai.am.ba = 1;
+            this.archAngel.am.a(true);
+            this.archAngel.am.ba = 1;
             break;
           case -7: 
-            if (this.ai.l) {
-              this.ai.b = 13;
+            if (this.archAngel.l) {
+              this.archAngel.b = 13;
             }
             break;
           case -6: 
-            if (this.ai.l) {
-              this.ai.b = 14;
+            if (this.archAngel.l) {
+              this.archAngel.b = 14;
             }
             break;
           case -5: 
-            if ((this.ai.am.bi == 1) && (this.ai.m == true)) {
-              this.ai.am.b(true);
+            if ((this.archAngel.am.bi == 1) && (this.archAngel.m == true)) {
+              this.archAngel.am.b(true);
             }
-            if ((this.ai.am.bi == 3) && (this.ai.n == true))
+            if ((this.archAngel.am.bi == 3) && (this.archAngel.n == true))
             {
-              this.ai.am.bh = false;
-              this.ai.am.d(true);
+              this.archAngel.am.bh = false;
+              this.archAngel.am.d(true);
             }
             break;
           }
@@ -746,8 +746,8 @@ public class b
     case 11: 
       if (paramInt == -6)
       {
-        if (this.ai.z < 10) {
-          this.ai.z = this.ai.p;
+        if (this.archAngel.z < 10) {
+          this.archAngel.z = this.archAngel.p;
         }
       }
       else
@@ -755,7 +755,7 @@ public class b
         int i2 = -1;
         if ((paramInt >= 49) && (paramInt <= 51))
         {
-          if (this.ai.z < 10) {
+          if (this.archAngel.z < 10) {
             i2 = paramInt - 49 + 1;
           }
         }
@@ -765,42 +765,42 @@ public class b
           {
           case -3: 
           case -2: 
-            if (this.ai.z < 10)
+            if (this.archAngel.z < 10)
             {
-              this.ai.al.a += 1;
-              this.ai.x = -1;
-              this.ai.g = true;
+              this.archAngel.al.a += 1;
+              this.archAngel.x = -1;
+              this.archAngel.g = true;
             }
             break;
           case -4: 
           case -1: 
-            if (this.ai.z < 10)
+            if (this.archAngel.z < 10)
             {
-              this.ai.al.a += -1;
-              this.ai.x = -1;
-              this.ai.g = true;
+              this.archAngel.al.a += -1;
+              this.archAngel.x = -1;
+              this.archAngel.g = true;
             }
             break;
           case -7: 
           case -5: 
-            if (this.ai.z == 5) {
-              i2 = this.ai.al.a;
+            if (this.archAngel.z == 5) {
+              i2 = this.archAngel.al.a;
             } else {
               i2 = 1;
             }
             break;
           }
-          if (this.ai.al.a <= 0) {
-            this.ai.al.a = this.ai.al.b;
+          if (this.archAngel.al.a <= 0) {
+            this.archAngel.al.a = this.archAngel.al.b;
           }
-          if (this.ai.al.a > this.ai.al.b) {
-            this.ai.al.a = 1;
+          if (this.archAngel.al.a > this.archAngel.al.b) {
+            this.archAngel.al.a = 1;
           }
         }
-        if ((i2 > 0) && (this.ai.al.m[(i2 - 1)] > 0))
+        if ((i2 > 0) && (this.archAngel.al.m[(i2 - 1)] > 0))
         {
-          this.ai.z = this.ai.al.m[(i2 - 1)];
-          this.ai.x = 0;
+          this.archAngel.z = this.archAngel.al.m[(i2 - 1)];
+          this.archAngel.x = 0;
         }
       }
       break;
@@ -808,55 +808,55 @@ public class b
       System.gc();
       if (this.v == true)
       {
-        this.ai.x = -1;
+        this.archAngel.x = -1;
         if ((paramInt == 50) || (paramInt == -5) || (paramInt == 49) || (paramInt == -7)) {
-          this.ai.a = 1;
+          this.archAngel.a = 1;
         }
-        if (((paramInt == 50) || (paramInt == 49) || (paramInt == -5) || (paramInt == -7) || (paramInt == -6)) && (this.ai.s)) {
-          this.ai.s = false;
+        if (((paramInt == 50) || (paramInt == 49) || (paramInt == -5) || (paramInt == -7) || (paramInt == -6)) && (this.archAngel.s)) {
+          this.archAngel.s = false;
         }
-        if ((this.ai.z == 100) || (this.ai.z == 200) || (this.ai.z == 300)) {
+        if ((this.archAngel.z == 100) || (this.archAngel.z == 200) || (this.archAngel.z == 300)) {
           switch (paramInt)
           {
           case -1: 
-            if (this.ai.a == 1)
+            if (this.archAngel.a == 1)
             {
-              this.ai.a = 7;
-              this.ai.r = true;
+              this.archAngel.a = 7;
+              this.archAngel.r = true;
             }
             else
             {
-              this.ai.a += 8;
-              this.ai.a = ((this.ai.a += -1) % 8);
+              this.archAngel.a += 8;
+              this.archAngel.a = ((this.archAngel.a += -1) % 8);
             }
             break;
           case -2: 
-            if (this.ai.a == 7) {
-              this.ai.a = 1;
+            if (this.archAngel.a == 7) {
+              this.archAngel.a = 1;
             } else {
-              this.ai.a = (++this.ai.a % 8);
+              this.archAngel.a = (++this.archAngel.a % 8);
             }
             break;
           }
         }
-        if (((this.ai.z == 111) || (this.ai.z == 211) || (this.ai.z == 311)) && ((paramInt == -7) || (paramInt == -5)))
+        if (((this.archAngel.z == 111) || (this.archAngel.z == 211) || (this.archAngel.z == 311)) && ((paramInt == -7) || (paramInt == -5)))
         {
-          this.ai.a = 1;
-          if (this.ai.p > 0) {
-            this.ai.z = this.ai.p;
+          this.archAngel.a = 1;
+          if (this.archAngel.p > 0) {
+            this.archAngel.z = this.archAngel.p;
           }
         }
-        this.ai.q = true;
+        this.archAngel.q = true;
       }
       if (this.v == true) {
         if (paramInt == -6)
         {
-          this.ai.a = 1;
-          if (this.ai.p > 0) {
-            this.ai.z = this.ai.p;
+          this.archAngel.a = 1;
+          if (this.archAngel.p > 0) {
+            this.archAngel.z = this.archAngel.p;
           }
         }
-        else if ((this.ai.z != 111) && (this.ai.z != 211) && (this.ai.z != 311))
+        else if ((this.archAngel.z != 111) && (this.archAngel.z != 211) && (this.archAngel.z != 311))
         {
           a(paramInt, i1);
         }
@@ -864,97 +864,97 @@ public class b
       break;
     case 7: 
       if ((paramInt == -1) || (paramInt == -2)) {
-        this.ai.c = (1 - this.ai.c);
+        this.archAngel.c = (1 - this.archAngel.c);
       }
       if ((paramInt == -7) || (paramInt == -5)) {
-        if (this.ai.c == 0) {
-          this.ai.z = 2;
+        if (this.archAngel.c == 0) {
+          this.archAngel.z = 2;
         } else {
-          this.ai.z = 3;
+          this.archAngel.z = 3;
         }
       }
       break;
     case 4: 
-      if ((this.ai.z == 1) && (paramInt == -6)) {
-        this.ai.b = 5;
+      if ((this.archAngel.z == 1) && (paramInt == -6)) {
+        this.archAngel.b = 5;
       }
       break;
     case 1: 
     case 10: 
-      if (this.ai.z == 1) {
-        this.ai.al.e = false;
+      if (this.archAngel.z == 1) {
+        this.archAngel.al.e = false;
       }
       if (paramInt == -6)
       {
-        if (this.ai.b == 1)
+        if (this.archAngel.b == 1)
         {
-          this.ai.z = 10;
+          this.archAngel.z = 10;
         }
-        else if ((this.ai.z == 100) || (this.ai.z == 200) || (this.ai.z == 300))
+        else if ((this.archAngel.z == 100) || (this.archAngel.z == 200) || (this.archAngel.z == 300))
         {
-          this.ai.z = 50;
+          this.archAngel.z = 50;
         }
-        else if (((this.ai.z >= 101) && (this.ai.z <= 104)) || ((this.ai.z >= 201) && (this.ai.z <= 205)) || ((this.ai.z >= 301) && (this.ai.z <= 304)))
+        else if (((this.archAngel.z >= 101) && (this.archAngel.z <= 104)) || ((this.archAngel.z >= 201) && (this.archAngel.z <= 205)) || ((this.archAngel.z >= 301) && (this.archAngel.z <= 304)))
         {
-          this.ai.z += -1;
+          this.archAngel.z += -1;
         }
-        else if (this.ai.p > 0)
+        else if (this.archAngel.p > 0)
         {
-          if (this.ai.z == 61) {
-            this.ai.al.e = true;
+          if (this.archAngel.z == 61) {
+            this.archAngel.al.e = true;
           }
-          this.ai.z = this.ai.p;
+          this.archAngel.z = this.archAngel.p;
         }
       }
-      else if (this.ai.v) {
+      else if (this.archAngel.v) {
         a(paramInt, i1);
       }
-      this.ai.w = true;
+      this.archAngel.w = true;
       break;
     case 13: 
-      if ((paramInt != -6) && (this.ai.v))
+      if ((paramInt != -6) && (this.archAngel.v))
       {
         a(paramInt, i1);
-        if ((this.ai.am.az == true) && (this.q == 1) && (this.ai.al.a == 1) && ((paramInt == -7) || (paramInt == -5) || (paramInt == 49))) {
-          this.ai.a("s_plasma", 0);
+        if ((this.archAngel.am.az == true) && (this.q == 1) && (this.archAngel.al.a == 1) && ((paramInt == -7) || (paramInt == -5) || (paramInt == 49))) {
+          this.archAngel.MPlay("s_plasma", 0);
         }
-        if ((this.ai.al.a == 1) && ((paramInt == -7) || (paramInt == -5) || (paramInt == 49)))
+        if ((this.archAngel.al.a == 1) && ((paramInt == -7) || (paramInt == -5) || (paramInt == 49)))
         {
-          this.ai.am.e();
-          this.ai.am.ba = 0;
-          this.ai.am.a9 = 0;
-          this.ai.am.bd = 0;
+          this.archAngel.am.e();
+          this.archAngel.am.ba = 0;
+          this.archAngel.am.a9 = 0;
+          this.archAngel.am.bd = 0;
         }
       }
       break;
     case 6: 
-      if ((paramInt == -7) && ((this.ai.z == 2) || (this.ai.z == 4))) {
-        this.ai.z += 1;
+      if ((paramInt == -7) && ((this.archAngel.z == 2) || (this.archAngel.z == 4))) {
+        this.archAngel.z += 1;
       }
       break;
     case 14: 
       if ((paramInt == -7) || (paramInt == -5) || (paramInt == 35))
       {
-        this.ai.z += 1;
-        if (this.ai.am.az == true) {
-          this.ai.a("s_plasma", 0);
+        this.archAngel.z += 1;
+        if (this.archAngel.am.az == true) {
+          this.archAngel.MPlay("s_plasma", 0);
         }
-        this.ai.am.e();
-        this.ai.am.ba = 0;
-        this.ai.am.a9 = 0;
-        this.ai.am.bd = 0;
+        this.archAngel.am.e();
+        this.archAngel.am.ba = 0;
+        this.archAngel.am.a9 = 0;
+        this.archAngel.am.bd = 0;
       }
       break;
     case 27: 
-      if ((this.ai.z > 1) && (this.ai.z < 15)) {
+      if ((this.archAngel.z > 1) && (this.archAngel.z < 15)) {
         switch (paramInt)
         {
         case -7: 
         case -5: 
-          this.ai.z += 1;
+          this.archAngel.z += 1;
           break;
         case -6: 
-          this.ai.z = 15;
+          this.archAngel.z = 15;
         }
       }
       break;
@@ -963,45 +963,45 @@ public class b
   
   public void f(Graphics paramGraphics)
   {
-    if ((this.ai.z > 0) && (this.ai.x > 0)) {
+    if ((this.archAngel.z > 0) && (this.archAngel.x > 0)) {
       return;
     }
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
       this.y = 1;
-      this.ai.ak.a(paramGraphics, 14, 17, 89);
+      this.archAngel.ak.a(paramGraphics, 14, 17, 89);
       paramGraphics.setClip(17, 89, 223, 25);
-      this.ai.ak.a(paramGraphics, 13, 60, 90 - this.l * 33);
+      this.archAngel.ak.a(paramGraphics, 13, 60, 90 - this.l * 33);
       paramGraphics.setClip(0, 0, 240, 320);
-      if (this.ai.x == 0) {
-        this.ai.al.a("system");
+      if (this.archAngel.x == 0) {
+        this.archAngel.al.a("system");
       }
       q(paramGraphics);
       return;
     case 1: 
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "BACK", true);
-      this.ai.a(paramGraphics, "OK", false);
-      this.ai.al.c = true;
-      this.ai.al.d = false;
-      this.ai.al.h = 1;
-      this.ai.al.g = this.y;
-      if (this.ai.u) {
-        this.ai.f();
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "BACK", true);
+      this.archAngel.a(paramGraphics, "OK", false);
+      this.archAngel.al.c = true;
+      this.archAngel.al.d = false;
+      this.archAngel.al.h = 1;
+      this.archAngel.al.g = this.y;
+      if (this.archAngel.u) {
+        this.archAngel.f();
       }
-      this.ai.u = false;
+      this.archAngel.u = false;
       break;
     case 11: 
-      this.ai.b();
-      this.ai.z = 12;
+      this.archAngel.b();
+      this.archAngel.z = 12;
       break;
     case 100: 
     case 200: 
     case 300: 
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "BACK", true);
-      this.ai.a(paramGraphics, "NEXT", false);
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "BACK", true);
+      this.archAngel.a(paramGraphics, "NEXT", false);
       break;
     case 101: 
     case 102: 
@@ -1011,112 +1011,112 @@ public class b
     case 203: 
     case 204: 
     case 301: 
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "PREV", true);
-      this.ai.a(paramGraphics, "NEXT", false);
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "PREV", true);
+      this.archAngel.a(paramGraphics, "NEXT", false);
       break;
     case 104: 
     case 205: 
     case 302: 
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "PREV", true);
-      this.ai.a(paramGraphics, "OK", false);
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "PREV", true);
+      this.archAngel.a(paramGraphics, "OK", false);
       break;
     case 21: 
-      if (this.ai.e())
+      if (this.archAngel.e())
       {
-        this.ai.d();
-        this.ai.al.a("system");
-        this.ai.z = 22;
+        this.archAngel.d();
+        this.archAngel.al.a("system");
+        this.archAngel.z = 22;
       }
       else
       {
-        this.ai.z = 23;
+        this.archAngel.z = 23;
       }
       break;
     case 12: 
     case 22: 
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "OK", false);
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "OK", false);
       break;
     case 10: 
-      this.ai.al.c = false;
+      this.archAngel.al.c = false;
       this.y = 1;
       break;
     case 20: 
-      this.ai.al.c = false;
+      this.archAngel.al.c = false;
       this.y = 2;
       break;
     case 33: 
-      this.ai.af = (1 - this.ai.af);
-      if (this.ai.af == 0) {
-        this.ai.c();
+      this.archAngel.af = (1 - this.archAngel.af);
+      if (this.archAngel.af == 0) {
+        this.archAngel.c();
       }
-      this.ai.u = true;
+      this.archAngel.u = true;
     case 30: 
-      this.ai.al.c = false;
+      this.archAngel.al.c = false;
       this.y = 3;
-      this.ai.z = (31 + this.ai.af);
+      this.archAngel.z = (31 + this.archAngel.af);
       break;
     case 43: 
-      this.ai.ag = (1 - this.ai.ag);
-      this.ai.u = true;
+      this.archAngel.ag = (1 - this.archAngel.ag);
+      this.archAngel.u = true;
     case 40: 
-      this.ai.al.c = false;
+      this.archAngel.al.c = false;
       this.y = 4;
-      this.ai.z = (41 + this.ai.ag);
+      this.archAngel.z = (41 + this.archAngel.ag);
       break;
     case 50: 
-      this.ai.al.c = false;
+      this.archAngel.al.c = false;
       this.y = 5;
-      this.ai.al.a("helpmain");
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "BACK", true);
-      this.ai.a(paramGraphics, "OK", false);
-      this.ai.al.d = true;
-      this.ai.z = 61;
+      this.archAngel.al.a("helpmain");
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "BACK", true);
+      this.archAngel.a(paramGraphics, "OK", false);
+      this.archAngel.al.d = true;
+      this.archAngel.z = 61;
       break;
     case 99: 
-      this.ai.al.d = false;
-      this.ai.al.h = 1;
-      this.ai.al.a("help0");
-      this.ai.z += 1;
+      this.archAngel.al.d = false;
+      this.archAngel.al.h = 1;
+      this.archAngel.al.a("help0");
+      this.archAngel.z += 1;
       break;
     case 199: 
-      this.ai.al.d = false;
-      this.ai.al.h = 2;
-      this.ai.al.a("help1");
-      this.ai.z += 1;
+      this.archAngel.al.d = false;
+      this.archAngel.al.h = 2;
+      this.archAngel.al.a("help1");
+      this.archAngel.z += 1;
       break;
     case 299: 
-      this.ai.al.d = false;
-      this.ai.al.h = 3;
-      this.ai.al.a("help2");
-      this.ai.z += 1;
+      this.archAngel.al.d = false;
+      this.archAngel.al.h = 3;
+      this.archAngel.al.a("help2");
+      this.archAngel.z += 1;
       break;
     case 399: 
-      this.ai.al.a("help3");
-      this.ai.z += 1;
+      this.archAngel.al.a("help3");
+      this.archAngel.z += 1;
       break;
     case 500: 
-      this.ai.al.a("system");
-      this.ai.z = 1;
-      if (this.ai.b != 10) {
+      this.archAngel.al.a("system");
+      this.archAngel.z = 1;
+      if (this.archAngel.b != 10) {
         return;
       }
       break;
     case 70: 
-      this.ai.b = 5;
+      this.archAngel.b = 5;
       return;
     case 999: 
-      this.ai.c();
-      this.ai.b();
-      this.ai.destroyApp(false);
-      this.ai.notifyDestroyed();
+      this.archAngel.c();
+      this.archAngel.b();
+      this.archAngel.destroyApp(false);
+      this.archAngel.notifyDestroyed();
       return;
     }
-    if (this.ai.w) {
-      c(paramGraphics, this.ai.z, 150);
+    if (this.archAngel.w) {
+      c(paramGraphics, this.archAngel.z, 150);
     }
   }
   
@@ -1124,9 +1124,9 @@ public class b
   {
     int i1 = paramInt2;
     b(paramGraphics, paramInt1);
-    this.ai.al.a(paramInt1);
-    this.ai.al.b = 0;
-    this.ai.p = this.ai.al.o;
+    this.archAngel.al.a(paramInt1);
+    this.archAngel.al.b = 0;
+    this.archAngel.p = this.archAngel.al.o;
     switch (this.x)
     {
     case 0: 
@@ -1140,9 +1140,9 @@ public class b
       break;
     }
     String str;
-    while ((str = this.ai.al.a()) != null)
+    while ((str = this.archAngel.al.a()) != null)
     {
-      this.ai.ak.a(paramGraphics, 10, i1, str, this.x);
+      this.archAngel.ak.a(paramGraphics, 10, i1, str, this.x);
       paramGraphics.setClip(0, 0, 240, 300);
       int i3 = str.indexOf("=");
       if (i3 == 1)
@@ -1156,26 +1156,26 @@ public class b
         {
           i2 = -1;
         }
-        if (i2 > this.ai.al.b) {
-          this.ai.al.b = i2;
+        if (i2 > this.archAngel.al.b) {
+          this.archAngel.al.b = i2;
         }
-        if (i2 == this.ai.al.a)
+        if (i2 == this.archAngel.al.a)
         {
           paramGraphics.setColor(0);
           paramGraphics.fillRect(7, i1 - 2, str.length() * 6 + 6, 9);
-          this.ai.ak.a(paramGraphics, 10, i1, str, 3);
+          this.archAngel.ak.a(paramGraphics, 10, i1, str, 3);
         }
       }
       i1 += 11;
     }
-    this.ai.g = false;
+    this.archAngel.g = false;
   }
   
   public void g(Graphics paramGraphics)
   {
     paramGraphics.setColor(0);
-    this.ai.ak.a(paramGraphics, 12, 145, "Save equipment");
-    this.ai.ak.a(paramGraphics, 12, 160, "as you are using.");
+    this.archAngel.ak.a(paramGraphics, 12, 145, "Save equipment");
+    this.archAngel.ak.a(paramGraphics, 12, 160, "as you are using.");
   }
   
   public void a(int paramInt1, int paramInt2)
@@ -1184,8 +1184,8 @@ public class b
     if ((paramInt1 >= 49) && (paramInt1 <= 57))
     {
       i1 = paramInt1 - 49 + 1;
-      if (this.ai.b == 13) {
-        this.ai.al.a = i1;
+      if (this.archAngel.b == 13) {
+        this.archAngel.al.a = i1;
       }
     }
     else if ((paramInt1 != -8) && (paramInt1 != 42) && (paramInt1 != 48) && (paramInt1 != 35))
@@ -1194,148 +1194,148 @@ public class b
       {
       case -4: 
       case -2: 
-        this.ai.al.a += 1;
-        this.ai.x = -1;
-        this.ai.g = true;
+        this.archAngel.al.a += 1;
+        this.archAngel.x = -1;
+        this.archAngel.g = true;
         break;
       case -3: 
       case -1: 
-        this.ai.al.a += -1;
-        this.ai.x = -1;
-        this.ai.g = true;
+        this.archAngel.al.a += -1;
+        this.archAngel.x = -1;
+        this.archAngel.g = true;
         break;
       default: 
-        i1 = this.ai.al.a;
+        i1 = this.archAngel.al.a;
       }
-      if (this.ai.al.a <= 0) {
-        this.ai.al.a = this.ai.al.b;
+      if (this.archAngel.al.a <= 0) {
+        this.archAngel.al.a = this.archAngel.al.b;
       }
-      if (this.ai.al.a > this.ai.al.b) {
-        this.ai.al.a = 1;
+      if (this.archAngel.al.a > this.archAngel.al.b) {
+        this.archAngel.al.a = 1;
       }
     }
-    if ((i1 > 0) && (this.ai.al.m[(i1 - 1)] > 0))
+    if ((i1 > 0) && (this.archAngel.al.m[(i1 - 1)] > 0))
     {
-      this.ai.z = this.ai.al.m[(i1 - 1)];
-      this.ai.x = 0;
+      this.archAngel.z = this.archAngel.al.m[(i1 - 1)];
+      this.archAngel.x = 0;
     }
   }
   
   public void h(Graphics paramGraphics)
   {
-    if ((this.ai.z > 0) && (this.ai.x > 0)) {
+    if ((this.archAngel.z > 0) && (this.archAngel.x > 0)) {
       return;
     }
     int i1;
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      if (this.ai.x < 4)
+      if (this.archAngel.x < 4)
       {
-        if (this.ai.x == 0)
+        if (this.archAngel.x == 0)
         {
-          this.ai.a("m_briefing", 0);
-          this.ai.ak.a("brief");
+          this.archAngel.MPlay("m_briefing", 0);
+          this.archAngel.ak.a("brief");
         }
-        this.ai.ak.a(this.ai.x, 17 + this.ai.x);
+        this.archAngel.ak.a(this.archAngel.x, 17 + this.archAngel.x);
       }
-      if (this.ai.x == 4)
+      if (this.archAngel.x == 4)
       {
-        this.ai.ak.d();
-        this.ai.ak.a("boss" + this.ai.aj.b);
-        this.ai.ak.a(8, 21);
-        this.ai.ak.d();
-        if (this.ai.k)
+        this.archAngel.ak.d();
+        this.archAngel.ak.a("boss" + this.archAngel.aj.b);
+        this.archAngel.ak.a(8, 21);
+        this.archAngel.ak.d();
+        if (this.archAngel.k)
         {
-          this.ai.ak.a("menu");
+          this.archAngel.ak.a("menu");
           for (i1 = 0; i1 < 4; i1++) {
-            this.ai.ak.a(i1, 13 + i1);
+            this.archAngel.ak.a(i1, 13 + i1);
           }
-          this.ai.ak.d();
+          this.archAngel.ak.d();
           paramGraphics.setColor(0);
           paramGraphics.fillRect(0, 80, 240, 220);
-          this.ai.ak.a(paramGraphics, 15, 33, 60);
+          this.archAngel.ak.a(paramGraphics, 15, 33, 60);
           paramGraphics.setClip(198, 60, 18, 20);
-          this.ai.ak.a(paramGraphics, 16, 198, 60 - this.ai.aj.b * 20);
+          this.archAngel.ak.a(paramGraphics, 16, 198, 60 - this.archAngel.aj.b * 20);
           paramGraphics.setClip(0, 0, 240, 320);
         }
-        this.ai.ak.a(paramGraphics, 14, 17, 89);
+        this.archAngel.ak.a(paramGraphics, 14, 17, 89);
         paramGraphics.setClip(17, 89, 223, 25);
-        this.ai.ak.a(paramGraphics, 13, 60, 90);
-        if (this.ai.aj.b < 4) {
-          this.ai.ak.a("enermy" + this.ai.aj.b);
+        this.archAngel.ak.a(paramGraphics, 13, 60, 90);
+        if (this.archAngel.aj.b < 4) {
+          this.archAngel.ak.a("enermy" + this.archAngel.aj.b);
         } else {
-          this.ai.ak.a("boss" + (this.ai.aj.b - 4));
+          this.archAngel.ak.a("boss" + (this.archAngel.aj.b - 4));
         }
-        this.ai.ak.a(8, 22);
-        this.ai.ak.d();
-        this.ai.a(paramGraphics);
-        if (this.ai.b == 9) {
-          this.ai.a(paramGraphics, "SKIP", true);
+        this.archAngel.ak.a(8, 22);
+        this.archAngel.ak.d();
+        this.archAngel.a(paramGraphics);
+        if (this.archAngel.b == 9) {
+          this.archAngel.a(paramGraphics, "SKIP", true);
         }
-        this.ai.a(paramGraphics, "NEXT", false);
-        this.ai.z += 1;
-        this.ai.p = -1;
-        this.ai.h = false;
+        this.archAngel.a(paramGraphics, "NEXT", false);
+        this.archAngel.z += 1;
+        this.archAngel.p = -1;
+        this.archAngel.h = false;
       }
       return;
     case 1: 
-      this.ai.z = 11;
-      this.ai.a(this.ai.aj.b + 1);
+      this.archAngel.z = 11;
+      this.archAngel.a(this.archAngel.aj.b + 1);
       paramGraphics.setColor(65280);
       break;
     case 999: 
-      if (this.ai.b == 9) {
-        this.ai.b = 25;
+      if (this.archAngel.b == 9) {
+        this.archAngel.b = 25;
       } else {
-        this.ai.b = 5;
+        this.archAngel.b = 5;
       }
-      this.ai.aj.c = this.ai.aj.b;
+      this.archAngel.aj.c = this.archAngel.aj.b;
       for (i1 = 0; i1 < 6; i1++) {
-        this.ai.ak.a(17 + i1);
+        this.archAngel.ak.a(17 + i1);
       }
       return;
     }
-    if (this.ai.z >= 11) {
-      f(paramGraphics, this.ai.z, 242);
+    if (this.archAngel.z >= 11) {
+      f(paramGraphics, this.archAngel.z, 242);
     }
-    if (!this.ai.al.a(this.ai.z + 1))
+    if (!this.archAngel.al.a(this.archAngel.z + 1))
     {
-      if (this.ai.b == 9)
+      if (this.archAngel.b == 9)
       {
-        this.ai.a(paramGraphics);
-        this.ai.a(paramGraphics, "START", false);
+        this.archAngel.a(paramGraphics);
+        this.archAngel.a(paramGraphics, "START", false);
       }
       else
       {
-        this.ai.a(paramGraphics);
-        this.ai.a(paramGraphics, "OPTIONS", false);
+        this.archAngel.a(paramGraphics);
+        this.archAngel.a(paramGraphics, "OPTIONS", false);
       }
-      this.ai.aa = (this.ai.z = '?');
+      this.archAngel.aa = (this.archAngel.z = '?');
     }
   }
   
   public void i(Graphics paramGraphics)
   {
-    if ((this.ai.z > 0) && (this.ai.x > 0)) {
+    if ((this.archAngel.z > 0) && (this.archAngel.x > 0)) {
       return;
     }
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      if (this.ai.x == 0) {
-        this.ai.al.a("system");
+      if (this.archAngel.x == 0) {
+        this.archAngel.al.a("system");
       }
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "PLAY", true);
-      this.ai.a(paramGraphics, "OK", false);
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "PLAY", true);
+      this.archAngel.a(paramGraphics, "OK", false);
       q(paramGraphics);
       return;
     case 1: 
-      this.ai.z = 2;
+      this.archAngel.z = 2;
       break;
     case 10: 
-      this.ai.b = 2;
+      this.archAngel.b = 2;
       return;
     }
     f(paramGraphics);
@@ -1347,174 +1347,174 @@ public class b
   {
     this.o = paramInt2;
     this.p = paramInt1;
-    this.ai.w = false;
+    this.archAngel.w = false;
     i(paramGraphics, paramInt1, paramInt2);
   }
   
   public void j(Graphics paramGraphics)
   {
-    this.ai.ac = this.ai.aj.b;
-    this.ai.am.z = 0;
-    if (this.ai.ac < 3) {
-      this.ai.ad = 0;
-    } else if ((this.ai.ac == 3) || (this.ai.ac == 4)) {
-      this.ai.ad = 1;
-    } else if (this.ai.ac > 4) {
-      this.ai.ad = 2;
+    this.archAngel.ac = this.archAngel.aj.b;
+    this.archAngel.am.z = 0;
+    if (this.archAngel.ac < 3) {
+      this.archAngel.ad = 0;
+    } else if ((this.archAngel.ac == 3) || (this.archAngel.ac == 4)) {
+      this.archAngel.ad = 1;
+    } else if (this.archAngel.ac > 4) {
+      this.archAngel.ad = 2;
     }
-    this.ai.am.bj = 16749568;
-    this.ai.am.bk = 16768512;
+    this.archAngel.am.bj = 16749568;
+    this.archAngel.am.bk = 16768512;
     int i1;
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      this.ai.m = false;
-      this.ai.n = false;
-      this.ai.l = false;
+      this.archAngel.m = false;
+      this.archAngel.n = false;
+      this.archAngel.l = false;
       this.l = 1;
-      this.ai.ak.b();
-      this.ai.ak.a();
-      this.ai.ak.a(2);
-      this.ai.ak.a(5);
-      this.ai.aj.a();
-      this.ai.a(this.ai.aj.b + 1);
-      this.ai.am.a();
-      this.ai.ak.a("etc");
-      this.ai.ak.a(0, 111);
-      this.ai.ak.d();
-      this.ai.ak.a("aa");
-      this.ai.ak.a(0, 24);
-      this.ai.ak.a(9, 33);
-      this.ai.ak.a(10, 34);
-      this.ai.ak.d();
-      this.ai.z += 1;
+      this.archAngel.ak.b();
+      this.archAngel.ak.a();
+      this.archAngel.ak.a(2);
+      this.archAngel.ak.a(5);
+      this.archAngel.aj.a();
+      this.archAngel.a(this.archAngel.aj.b + 1);
+      this.archAngel.am.a();
+      this.archAngel.ak.a("etc");
+      this.archAngel.ak.a(0, 111);
+      this.archAngel.ak.d();
+      this.archAngel.ak.a("aa");
+      this.archAngel.ak.a(0, 24);
+      this.archAngel.ak.a(9, 33);
+      this.archAngel.ak.a(10, 34);
+      this.archAngel.ak.d();
+      this.archAngel.z += 1;
       break;
     case 1: 
-      switch (this.ai.x)
+      switch (this.archAngel.x)
       {
       case 0: 
-        this.ai.ak.a("background" + this.ai.ad);
+        this.archAngel.ak.a("background" + this.archAngel.ad);
         for (i1 = 0; i1 < 2; i1++) {
-          this.ai.ak.a(i1, 7 + i1);
+          this.archAngel.ak.a(i1, 7 + i1);
         }
         break;
       case 1: 
         for (i1 = 0; i1 < 9; i1++) {
-          this.ai.ak.a(i1 + 2, 9 + i1);
+          this.archAngel.ak.a(i1 + 2, 9 + i1);
         }
-        if (this.ai.ad == 2) {
+        if (this.archAngel.ad == 2) {
           for (i1 = 0; i1 < 3; i1++) {
-            this.ai.ak.a(i1 + 11, 18 + i1);
+            this.archAngel.ak.a(i1 + 11, 18 + i1);
           }
         }
-        this.ai.ak.d();
+        this.archAngel.ak.d();
         break;
       case 2: 
         System.gc();
-        this.ai.z += 1;
+        this.archAngel.z += 1;
         break;
       }
-      a(paramGraphics, this.ai.x);
+      a(paramGraphics, this.archAngel.x);
       break;
     case 2: 
-      switch (this.ai.x)
+      switch (this.archAngel.x)
       {
       case 0: 
-        this.ai.ak.a("ui");
+        this.archAngel.ak.a("ui");
         for (i1 = 0; i1 < 3; i1++) {
-          this.ai.ak.a(i1, 21 + i1);
+          this.archAngel.ak.a(i1, 21 + i1);
         }
-        this.ai.ak.d();
-        this.ai.ak.a("effect");
+        this.archAngel.ak.d();
+        this.archAngel.ak.a("effect");
         for (i1 = 0; i1 < 13; i1++) {
-          this.ai.ak.a(i1, 71 + i1);
+          this.archAngel.ak.a(i1, 71 + i1);
         }
-        this.ai.ak.d();
+        this.archAngel.ak.d();
         break;
       case 1: 
         System.gc();
-        this.ai.z += 1;
+        this.archAngel.z += 1;
         break;
       }
-      a(paramGraphics, this.ai.x + 3);
+      a(paramGraphics, this.archAngel.x + 3);
       break;
     case 3: 
-      a(paramGraphics, this.ai.x + 5);
-      switch (this.ai.x)
+      a(paramGraphics, this.archAngel.x + 5);
+      switch (this.archAngel.x)
       {
       case 0: 
-        this.ai.ak.a("aa");
+        this.archAngel.ak.a("aa");
         for (i1 = 0; i1 < 11; i1++) {
-          this.ai.ak.a(i1, 24 + i1);
+          this.archAngel.ak.a(i1, 24 + i1);
         }
-        this.ai.ak.d();
+        this.archAngel.ak.d();
         break;
       case 1: 
-        if (this.ai.ac < 4) {
-          this.ai.ak.a("enermy" + this.ai.ac);
+        if (this.archAngel.ac < 4) {
+          this.archAngel.ak.a("enermy" + this.archAngel.ac);
         } else {
-          this.ai.ak.a("boss" + (this.ai.ac - 4));
+          this.archAngel.ak.a("boss" + (this.archAngel.ac - 4));
         }
         for (i1 = 0; i1 < 8; i1++) {
-          this.ai.ak.a(i1, 53 + i1);
+          this.archAngel.ak.a(i1, 53 + i1);
         }
-        this.ai.ak.d();
+        this.archAngel.ak.d();
         break;
       case 2: 
-        this.ai.ak.a("fence" + this.ai.ad);
+        this.archAngel.ak.a("fence" + this.archAngel.ad);
         for (i1 = 0; i1 < 8; i1++) {
-          this.ai.ak.a(i1, 44 + i1);
+          this.archAngel.ak.a(i1, 44 + i1);
         }
-        this.ai.ak.a("plasma");
+        this.archAngel.ak.a("plasma");
         for (i1 = 18; i1 < 24; i1++) {
-          this.ai.ak.a(i1, 84 + i1);
+          this.archAngel.ak.a(i1, 84 + i1);
         }
-        this.ai.ak.d();
+        this.archAngel.ak.d();
         break;
       case 3: 
-        this.ai.c();
+        this.archAngel.c();
         System.gc();
-        this.ai.z += 1;
+        this.archAngel.z += 1;
       }
       break;
     case 4: 
-      if (this.ai.x == 0)
+      if (this.archAngel.x == 0)
       {
-        this.ai.ak.a(111);
+        this.archAngel.ak.a(111);
         this.b = false;
         t(paramGraphics);
-        this.ai.j = false;
+        this.archAngel.j = false;
       }
       paramGraphics.setClip(0, 0, 240, 320);
-      this.ai.am.a(paramGraphics);
+      this.archAngel.am.a(paramGraphics);
       o(paramGraphics);
-      if ((this.ai.x < 10) && (this.ai.j == true))
+      if ((this.archAngel.x < 10) && (this.archAngel.j == true))
       {
-        this.ai.ak.a(paramGraphics, 135, 27, "", 0);
+        this.archAngel.ak.a(paramGraphics, 135, 27, "", 0);
         paramGraphics.setColor(16711680);
         paramGraphics.fillRect(80, 194, 80, 10);
-        this.ai.ak.a(paramGraphics, 86, 197, "NO MISSILE", 0);
+        this.archAngel.ak.a(paramGraphics, 86, 197, "NO MISSILE", 0);
       }
-      if (this.ai.ab != 25)
+      if (this.archAngel.ab != 25)
       {
-        this.ai.am.bl = true;
+        this.archAngel.am.bl = true;
         this.b = true;
-        this.ai.z = 5;
+        this.archAngel.z = 5;
       }
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "OPTIONS", false);
-      this.ai.a(paramGraphics, "PAUSE", true);
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "OPTIONS", false);
+      this.archAngel.a(paramGraphics, "PAUSE", true);
       break;
     case 5: 
       paramGraphics.setClip(0, 0, 240, 300);
-      this.ai.am.a(paramGraphics);
-      this.ai.am.f();
-      this.ai.z = 6;
+      this.archAngel.am.a(paramGraphics);
+      this.archAngel.am.f();
+      this.archAngel.z = 6;
       break;
     case 6: 
-      this.ai.ak.b();
-      this.ai.ak.a();
-      this.ai.b = this.ai.ab;
+      this.archAngel.ak.b();
+      this.archAngel.ak.a();
+      this.archAngel.b = this.archAngel.ab;
       break;
     }
   }
@@ -1526,8 +1526,8 @@ public class b
     String str2 = null;
     int i2 = paramInt1 / 100 - 1;
     int i1 = paramInt1 % 100;
-    this.ai.a(paramGraphics);
-    this.ai.a(paramGraphics, "OK", false);
+    this.archAngel.a(paramGraphics);
+    this.archAngel.a(paramGraphics, "OK", false);
     paramGraphics.setColor(7171414);
     paramGraphics.fillRect(6, 127, 226, 147);
     paramGraphics.setColor(9605802);
@@ -1536,7 +1536,7 @@ public class b
     paramGraphics.fillRect(15, 140, 72, 42);
     paramGraphics.setColor(16777130);
     paramGraphics.drawRect(15, 139, 72, 43);
-    this.ai.ak.a(paramGraphics, 18, 141, 60, 40, i1 - 1, paramInt2);
+    this.archAngel.ak.a(paramGraphics, 18, 141, 60, 40, i1 - 1, paramInt2);
     switch (paramInt2)
     {
     case 0: 
@@ -1551,28 +1551,28 @@ public class b
     }
     this.r.a(i1);
     String str1 = this.r.a();
-    this.ai.ak.a(paramGraphics, 100, 145, str2);
-    this.ai.ak.a(paramGraphics, 100, 165, str1);
+    this.archAngel.ak.a(paramGraphics, 100, 145, str2);
+    this.archAngel.ak.a(paramGraphics, 100, 165, str1);
     i3 += 30;
     switch (i2)
     {
     case 0: 
-      this.t = this.ai.aj.q;
+      this.t = this.archAngel.aj.q;
       break;
     case 1: 
       i2 = 0;
-      this.t = this.ai.aj.v;
+      this.t = this.archAngel.aj.v;
       break;
     case 2: 
       i2 = 1;
-      this.t = this.ai.aj.l;
+      this.t = this.archAngel.aj.l;
       i4 = 3;
       break;
     }
-    this.t += this.ai.aj.a;
+    this.t += this.archAngel.aj.a;
     for (int i5 = 0; i5 < i4; i5++)
     {
-      this.ai.ak.a(paramGraphics, 20, i3, this.w[i2][i5] + ":" + this.r.m[i5]);
+      this.archAngel.ak.a(paramGraphics, 20, i3, this.w[i2][i5] + ":" + this.r.m[i5]);
       i3 += 15;
     }
     this.u = this.r.m[i4];
@@ -1580,69 +1580,69 @@ public class b
   
   public void k(Graphics paramGraphics)
   {
-    if (this.ai.x > 0) {
+    if (this.archAngel.x > 0) {
       return;
     }
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      this.ai.c();
-      //this.ai.aq = null;
-      this.ai.a(paramGraphics);
-      this.ai.al.a("subm");
-      this.ai.z = 1;
-      this.ai.al.c = false;
+      this.archAngel.c();
+      //this.archAngel.audioClip = null;
+      this.archAngel.a(paramGraphics);
+      this.archAngel.al.a("subm");
+      this.archAngel.z = 1;
+      this.archAngel.al.c = false;
       break;
     case 1: 
-      this.ai.s = true;
-      if (this.ai.al.c) {
-        this.ai.al.g = 4;
+      this.archAngel.s = true;
+      if (this.archAngel.al.c) {
+        this.archAngel.al.g = 4;
       }
       break;
     case 2: 
-      this.ai.s = false;
-      this.ai.al.c = true;
-      this.ai.al.g = 1;
+      this.archAngel.s = false;
+      this.archAngel.al.c = true;
+      this.archAngel.al.g = 1;
       break;
     case 40: 
-      this.ai.f();
-      this.ai.ab = 5;
+      this.archAngel.f();
+      this.archAngel.ab = 5;
     case 10: 
-      this.ai.f();
-      this.ai.y = (this.ai.b = 25);
-      this.ai.z = 4;
+      this.archAngel.f();
+      this.archAngel.y = (this.archAngel.b = 25);
+      this.archAngel.z = 4;
       return;
     case 20: 
-      this.ai.af = (1 - this.ai.af);
-      if (this.ai.af == 0) {
-        this.ai.c();
+      this.archAngel.af = (1 - this.archAngel.af);
+      if (this.archAngel.af == 0) {
+        this.archAngel.c();
       }
-      this.ai.z = 1;
+      this.archAngel.z = 1;
       return;
     case 30: 
-      this.ai.ag = (1 - this.ai.ag);
-      if (this.ai.ag == 0) {
-        this.ai.am.d(false);
+      this.archAngel.ag = (1 - this.archAngel.ag);
+      if (this.archAngel.ag == 0) {
+        this.archAngel.am.d(false);
       }
-      this.ai.z = 1;
+      this.archAngel.z = 1;
       return;
     case 999: 
-      this.ai.c();
-      this.ai.f();
-      this.ai.b();
-      this.ai.destroyApp(false);
-      this.ai.notifyDestroyed();
+      this.archAngel.c();
+      this.archAngel.f();
+      this.archAngel.b();
+      this.archAngel.destroyApp(false);
+      this.archAngel.notifyDestroyed();
       return;
     }
-    if (this.ai.t)
+    if (this.archAngel.t)
     {
-      this.ai.am.a(paramGraphics);
+      this.archAngel.am.a(paramGraphics);
       o(paramGraphics);
-      this.ai.t = false;
+      this.archAngel.t = false;
     }
-    c(paramGraphics, this.ai.z, 217);
-    this.ai.a(paramGraphics);
-    this.ai.a(paramGraphics, "OK", false);
+    c(paramGraphics, this.archAngel.z, 217);
+    this.archAngel.a(paramGraphics);
+    this.archAngel.a(paramGraphics, "OK", false);
   }
   
   public void l(Graphics paramGraphics)
@@ -1651,53 +1651,53 @@ public class b
     int i2 = 0;
     int i3 = 0;
     paramGraphics.setColor(0);
-    if (this.ai.am.m != null)
+    if (this.archAngel.am.m != null)
     {
-      i3 = this.ai.am.h * this.ai.am.u;
-      this.ai.ak.a(paramGraphics, 50, i1, this.ai.am.m + ":" + this.ai.am.h + "x" + this.ai.am.u);
+      i3 = this.archAngel.am.h * this.archAngel.am.u;
+      this.archAngel.ak.a(paramGraphics, 50, i1, this.archAngel.am.m + ":" + this.archAngel.am.h + "x" + this.archAngel.am.u);
       i1 += 16;
       i2 += i3;
     }
-    if (this.ai.am.q != null)
+    if (this.archAngel.am.q != null)
     {
-      i3 = this.ai.am.i * this.ai.am.t;
-      this.ai.ak.a(paramGraphics, 50, i1, this.ai.am.q + ":" + this.ai.am.i + "x" + this.ai.am.t);
+      i3 = this.archAngel.am.i * this.archAngel.am.t;
+      this.archAngel.ak.a(paramGraphics, 50, i1, this.archAngel.am.q + ":" + this.archAngel.am.i + "x" + this.archAngel.am.t);
       i1 += 16;
       i2 += i3;
     }
-    i3 = -this.ai.aj.i * (this.ai.aj.g - this.ai.aj.j);
-    this.ai.ak.a(paramGraphics, 50, i1, "Maintenance Fee:");
+    i3 = -this.archAngel.aj.i * (this.archAngel.aj.g - this.archAngel.aj.j);
+    this.archAngel.ak.a(paramGraphics, 50, i1, "Maintenance Fee:");
     i1 += 16;
-    this.ai.ak.a(paramGraphics, 59, i1, "" + i3);
+    this.archAngel.ak.a(paramGraphics, 59, i1, "" + i3);
     i1 += 25;
     i2 += i3;
-    this.ai.ak.a(paramGraphics, 50, i1, "Total:" + i2);
-    this.ai.aj.a += i2;
+    this.archAngel.ak.a(paramGraphics, 50, i1, "Total:" + i2);
+    this.archAngel.aj.a += i2;
   }
   
   public void m(Graphics paramGraphics)
   {
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      this.ai.k = false;
-      this.ai.ak.a();
-      this.ai.ak.b();
-      this.ai.ak.a("menu");
+      this.archAngel.k = false;
+      this.archAngel.ak.a();
+      this.archAngel.ak.b();
+      this.archAngel.ak.a("menu");
       for (int i1 = 0; i1 < 4; i1++) {
-        this.ai.ak.a(i1, 13 + i1);
+        this.archAngel.ak.a(i1, 13 + i1);
       }
-      this.ai.ak.d();
-      this.ai.ak.a("font");
-      /*for (i1 = 1; i1 < 3; i1++) {
-        this.ai.ak.a(i1, i1);
-      }*/
-      this.ai.ak.a(5, 5);
-      this.ai.ak.d();
-      this.ai.w = true;
-      this.ai.al.c = false;
-      this.ai.al.d = false;
-      this.ai.z += 1;
+      this.archAngel.ak.d();
+      this.archAngel.ak.a("font");
+      for (int i1 = 1; i1 < 3; i1++) { // int
+        this.archAngel.ak.a(i1, i1);
+      }
+      this.archAngel.ak.a(5, 5);
+      this.archAngel.ak.d();
+      this.archAngel.w = true;
+      this.archAngel.al.c = false;
+      this.archAngel.al.d = false;
+      this.archAngel.z += 1;
       break;
     case 1: 
       paramGraphics.setColor(0);
@@ -1710,14 +1710,14 @@ public class b
       paramGraphics.fillRect(0, 119, 240, 30);
       paramGraphics.fillRect(0, 171, 240, 10);
       paramGraphics.fillRect(0, 205, 240, 30);
-      this.ai.ak.a(paramGraphics, 3, 0, 0);
-      this.ai.ak.a(paramGraphics, 5, 27, 25);
-      this.ai.ak.a(paramGraphics, 4, 0, 160);
-      this.ai.ak.a(paramGraphics, 3, 0, 180);
-      this.ai.z += 1;
+      this.archAngel.ak.a(paramGraphics, 3, 0, 0);
+      this.archAngel.ak.a(paramGraphics, 5, 27, 25);
+      this.archAngel.ak.a(paramGraphics, 4, 0, 160);
+      this.archAngel.ak.a(paramGraphics, 3, 0, 180);
+      this.archAngel.z += 1;
       break;
     case 2: 
-      if (this.ai.x < 21)
+      if (this.archAngel.x < 21)
       {
         paramGraphics.setColor(0);
         paramGraphics.fillRect(0, 80, 240, 200);
@@ -1725,24 +1725,24 @@ public class b
         paramGraphics.fillRect(0, 119, 240, 30);
         paramGraphics.fillRect(0, 171, 240, 10);
         paramGraphics.fillRect(0, 205, 240, 30);
-        this.ai.ak.a(paramGraphics, 4, 0, 160 - 5 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 3, 0, 180 + 5 * this.ai.x);
-        paramGraphics.setClip(0, 180 - 5 * this.ai.x, 240, 10 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 14, 17, 89 + this.l * 33);
-        this.ai.ak.a(paramGraphics, 13, 60, 90);
+        this.archAngel.ak.a(paramGraphics, 4, 0, 160 - 5 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 3, 0, 180 + 5 * this.archAngel.x);
+        paramGraphics.setClip(0, 180 - 5 * this.archAngel.x, 240, 10 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 14, 17, 89 + this.l * 33);
+        this.archAngel.ak.a(paramGraphics, 13, 60, 90);
       }
-      if (this.ai.x == 20)
+      if (this.archAngel.x == 20)
       {
-        this.ai.ak.d();
-        this.ai.ak.a("etc");
-        this.ai.ak.a(3, 114);
-        this.ai.z += 1;
+        this.archAngel.ak.d();
+        this.archAngel.ak.a("etc");
+        this.archAngel.ak.a(3, 114);
+        this.archAngel.z += 1;
       }
       break;
     case 3: 
-      this.ai.ak.a(paramGraphics, 15, 33, 60);
+      this.archAngel.ak.a(paramGraphics, 15, 33, 60);
       paramGraphics.setClip(198, 60, 18, 20);
-      this.ai.ak.a(paramGraphics, 16, 198, 60 - this.ai.aj.b * 20);
+      this.archAngel.ak.a(paramGraphics, 16, 198, 60 - this.archAngel.aj.b * 20);
       paramGraphics.setClip(0, 0, 240, 280);
       paramGraphics.setColor(0);
       paramGraphics.fillRect(0, 80, 240, 200);
@@ -1750,26 +1750,26 @@ public class b
       paramGraphics.fillRect(0, 119, 240, 30);
       paramGraphics.fillRect(0, 171, 240, 10);
       paramGraphics.fillRect(0, 205, 240, 30);
-      this.ai.ak.a(paramGraphics, 14, 17, 89 + this.l * 33);
-      this.ai.ak.a(paramGraphics, 13, 60, 90);
-      this.ai.ak.a(paramGraphics, 3, 0, 280);
+      this.archAngel.ak.a(paramGraphics, 14, 17, 89 + this.l * 33);
+      this.archAngel.ak.a(paramGraphics, 13, 60, 90);
+      this.archAngel.ak.a(paramGraphics, 3, 0, 280);
       break;
     }
-    this.ai.a(paramGraphics);
-    this.ai.a(paramGraphics, "PLAY", true);
-    this.ai.a(paramGraphics, "OK", false);
+    this.archAngel.a(paramGraphics);
+    this.archAngel.a(paramGraphics, "PLAY", true);
+    this.archAngel.a(paramGraphics, "OK", false);
   }
   
   public void d(Graphics paramGraphics, int paramInt1, int paramInt2)
   {
     int i1 = paramInt2;
     int i2 = 5;
-    this.ai.al.a(paramInt1);
+    this.archAngel.al.a(paramInt1);
     String str;
-    while ((str = this.ai.al.a()) != null)
+    while ((str = this.archAngel.al.a()) != null)
     {
       paramGraphics.setColor(16777215);
-      if (this.ai.b == 4) {
+      if (this.archAngel.b == 4) {
         paramGraphics.drawString(str, 120, i1, 17);
       }
       i1 += 17;
@@ -1785,22 +1785,22 @@ public class b
   
   public void n(Graphics paramGraphics)
   {
-    if (this.ai.x > 0) {
+    if (this.archAngel.x > 0) {
       return;
     }
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      this.ai.c();
+      this.archAngel.c();
       paramGraphics.setColor(0);
       paramGraphics.fillRect(0, 150, 240, 15);
-      this.ai.ak.a(paramGraphics, 98, 152, "PAUSE");
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "RESUME", false);
+      this.archAngel.ak.a(paramGraphics, 98, 152, "PAUSE");
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "RESUME", false);
       break;
     case 1: 
-      this.ai.y = (this.ai.b = 25);
-      this.ai.z = 4;
+      this.archAngel.y = (this.archAngel.b = 25);
+      this.archAngel.z = 4;
       return;
     }
   }
@@ -1828,38 +1828,38 @@ public class b
       break;
     }
     paramGraphics.setClip(0, 0, 240, 320);
-    this.ai.ak.a(paramGraphics, 13, 131, 60, 40, i1 - 1, paramInt2);
+    this.archAngel.ak.a(paramGraphics, 13, 131, 60, 40, i1 - 1, paramInt2);
     switch (paramInt2)
     {
     case 0: 
       this.x = 0;
       str2 = "MISSILE";
-      this.t = this.ai.aj.q;
+      this.t = this.archAngel.aj.q;
       break;
     case 1: 
       this.x = 1;
       i2 = 0;
       str2 = "PLASMA CANON";
-      this.t = this.ai.aj.v;
+      this.t = this.archAngel.aj.v;
       break;
     case 2: 
       this.x = 2;
       i2 = 1;
       str2 = "ARMOR";
-      this.t = this.ai.aj.l;
+      this.t = this.archAngel.aj.l;
       break;
     }
-    this.t += this.ai.aj.a;
-    this.ai.ak.a(paramGraphics, 100, 140, str2);
+    this.t += this.archAngel.aj.a;
+    this.archAngel.ak.a(paramGraphics, 100, 140, str2);
     for (int i5 = 0; i5 < i4; i5++)
     {
-      this.ai.ak.a(paramGraphics, 130, i3, this.w[i2][i5] + ":" + this.r.m[i5], this.x);
+      this.archAngel.ak.a(paramGraphics, 130, i3, this.w[i2][i5] + ":" + this.r.m[i5], this.x);
       i3 += 11;
     }
     if (paramBoolean)
     {
-      this.ai.ak.a(paramGraphics, 130, 235, "MY MONEY:", this.x);
-      this.ai.ak.a(paramGraphics, 130, 245, "" + this.ai.aj.a, this.x);
+      this.archAngel.ak.a(paramGraphics, 130, 235, "MY MONEY:", this.x);
+      this.archAngel.ak.a(paramGraphics, 130, 245, "" + this.archAngel.aj.a, this.x);
     }
   }
   
@@ -1874,15 +1874,15 @@ public class b
   {
     paramGraphics.setColor(0);
     paramGraphics.fillRect(0, 0, 240, 320);
-    this.ai.ak.a(paramGraphics, 24, 90, 169);
+    this.archAngel.ak.a(paramGraphics, 24, 90, 169);
     paramGraphics.setClip(100, 180, 12, 11);
-    this.ai.ak.a(paramGraphics, 33, 100, 180 - 11 * (paramInt % 2));
+    this.archAngel.ak.a(paramGraphics, 33, 100, 180 - 11 * (paramInt % 2));
     paramGraphics.setClip(128, 180, 12, 11);
-    this.ai.ak.a(paramGraphics, 34, 128, 180 - 11 * (paramInt % 2));
+    this.archAngel.ak.a(paramGraphics, 34, 128, 180 - 11 * (paramInt % 2));
     paramGraphics.setColor(16711680);
     paramGraphics.setClip(87, 200, 66, 14);
     paramGraphics.fillRect(87, 217 - paramInt * 3, 66, paramInt * 3);
-    this.ai.ak.a(paramGraphics, 111, 87, 200);
+    this.archAngel.ak.a(paramGraphics, 111, 87, 200);
   }
   
   public void paint(Graphics paramGraphics)
@@ -1891,23 +1891,23 @@ public class b
       return;
     }
     this.ah = true;
-    this.ai.x += 1;
-    if (this.ai.b != this.ai.y)
+    this.archAngel.x += 1;
+    if (this.archAngel.b != this.archAngel.y)
     {
-      this.ai.x = 0;
-      this.ai.z = 0;
-      this.ai.aa = 0;
-      this.ai.p = -1;
+      this.archAngel.x = 0;
+      this.archAngel.z = 0;
+      this.archAngel.aa = 0;
+      this.archAngel.p = -1;
       this.b = true;
-      this.ai.y = this.ai.b;
-      this.ai.i = false;
+      this.archAngel.y = this.archAngel.b;
+      this.archAngel.i = false;
     }
-    else if (this.ai.z != this.ai.aa)
+    else if (this.archAngel.z != this.archAngel.aa)
     {
-      this.ai.x = 0;
-      this.ai.aa = this.ai.z;
+      this.archAngel.x = 0;
+      this.archAngel.aa = this.archAngel.z;
     }
-    switch (this.ai.b)
+    switch (this.archAngel.b)
     {
     case 25: 
       j(paramGraphics);
@@ -1931,10 +1931,10 @@ public class b
       n(paramGraphics);
       break;
     case 9: 
-      if (this.ai.aj.c != this.ai.aj.b) {
+      if (this.archAngel.aj.c != this.archAngel.aj.b) {
         h(paramGraphics);
       } else {
-        this.ai.b = 25;
+        this.archAngel.b = 25;
       }
       break;
     case 8: 
@@ -1973,7 +1973,7 @@ public class b
   
   public b(ArchAngel paramArchAngel)
   {
-    (this.ai = paramArchAngel).getClass();
+    (this.archAngel = paramArchAngel).getClass();
     this.a = 0;
     this.b = true;
     this.c = -1;
@@ -2009,25 +2009,25 @@ public class b
   public void o(Graphics paramGraphics)
   {
     paramGraphics.setClip(0, 0, 240, 40);
-    switch (this.ai.am.aa)
+    switch (this.archAngel.am.aa)
     {
     case 0: 
-      if (this.ai.ac < 4) {
-        this.ai.ak.a(paramGraphics, 75, 10, "ENERMY:" + this.ai.am.m, 0);
+      if (this.archAngel.ac < 4) {
+        this.archAngel.ak.a(paramGraphics, 75, 10, "ENERMY:" + this.archAngel.am.m, 0);
       } else {
-        this.ai.ak.a(paramGraphics, 75, 10, this.ai.am.m, 0);
+        this.archAngel.ak.a(paramGraphics, 75, 10, this.archAngel.am.m, 0);
       }
-      this.ai.ak.a(paramGraphics, 75, 20, "N:" + (this.ai.am.y - this.ai.am.u), 0);
-      if (this.ai.am.y - this.ai.am.u <= 0)
+      this.archAngel.ak.a(paramGraphics, 75, 20, "N:" + (this.archAngel.am.y - this.archAngel.am.u), 0);
+      if (this.archAngel.am.y - this.archAngel.am.u <= 0)
       {
-        this.ai.am.a1 = true;
-        this.ai.am.aa = this.ai.am.ac;
+        this.archAngel.am.a1 = true;
+        this.archAngel.am.aa = this.archAngel.am.ac;
       }
       break;
     case 1: 
       paramGraphics.setColor(14408703);
-      paramGraphics.drawString(this.ai.am.ca + " m", 120, 3, 17);
-/*      i1 = this.ai.am.f;
+      paramGraphics.drawString(this.archAngel.am.ca + " m", 120, 3, 17);
+      int i1 = this.archAngel.am.f;
       int i2 = Math.abs(i1) / 60 + 1;
       if ((i1 <= 5) && (i1 >= -5))
       {
@@ -2038,63 +2038,63 @@ public class b
         int i3;
         if (i1 > 5) {
           for (i3 = 0; i3 < i2; i3++) {
-            this.ai.ak.a(paramGraphics, 23, 114 + i3 * 4, 20);
+            this.archAngel.ak.a(paramGraphics, 23, 114 + i3 * 4, 20);
           }
         } else if (i1 < -5) {
           for (i3 = 0; i3 < i2; i3++) {
-            this.ai.ak.a(paramGraphics, 22, 106 - i3 * 4, 20);
+            this.archAngel.ak.a(paramGraphics, 22, 106 - i3 * 4, 20);
           }
         }
-      }*/
+      }
       break;
     case 2: 
-      if (this.ai.ac < 7)
+      if (this.archAngel.ac < 7)
       {
-        this.ai.ak.a(paramGraphics, 87, 8, this.ai.am.q, 0);
+        this.archAngel.ak.a(paramGraphics, 87, 8, this.archAngel.am.q, 0);
       }
       else
       {
-        this.ai.ak.a(paramGraphics, 89, 5, "ARCHANGEL", 0);
-        this.ai.ak.a(paramGraphics, 89, 11, "   MK2   ", 0);
+        this.archAngel.ak.a(paramGraphics, 89, 5, "ARCHANGEL", 0);
+        this.archAngel.ak.a(paramGraphics, 89, 11, "   MK2   ", 0);
       }
-      this.ai.ak.a(paramGraphics, 82, 18, "HP:", 0);
+      this.archAngel.ak.a(paramGraphics, 82, 18, "HP:", 0);
       paramGraphics.setColor(9605802);
       paramGraphics.fillRect(102, 17, 42, 7);
       paramGraphics.setColor(14408703);
       paramGraphics.drawRect(102, 17, 41, 6);
       paramGraphics.setColor(16776960);
-      paramGraphics.fillRect(103, 18, this.ai.ae, 5);
+      paramGraphics.fillRect(103, 18, this.archAngel.ae, 5);
       break;
     }
-    int i1 = 40 * this.ai.aj.j >> 9;
+    int i1 = 40 * this.archAngel.aj.j >> 9;
     paramGraphics.setColor(255);
     paramGraphics.fillRect(192, 5, i1 / 2, 4);
-    if (this.ai.am.bi == 3)
+    if (this.archAngel.am.bi == 3)
     {
-      if (this.ai.am.bh == true)
+      if (this.archAngel.am.bh == true)
       {
-        if (this.ai.aj.t < this.ai.aj.r) {
-          this.ai.aj.t += 3;
+        if (this.archAngel.aj.t < this.archAngel.aj.r) {
+          this.archAngel.aj.t += 3;
         }
-        if (this.ai.aj.t == this.ai.aj.r) {
-          this.ai.am.bh = false;
+        if (this.archAngel.aj.t == this.archAngel.aj.r) {
+          this.archAngel.am.bh = false;
         }
       }
-      if (this.ai.aj.t <= 0)
+      if (this.archAngel.aj.t <= 0)
       {
         paramGraphics.setColor(16711680);
-        if (this.ai.x / 2 % 2 == 0)
+        if (this.archAngel.x / 2 % 2 == 0)
         {
           paramGraphics.fillRect(80, 194, 80, 19);
-          this.ai.ak.a(paramGraphics, 86, 197, "PRESS 0 KEY", 0);
-          this.ai.ak.a(paramGraphics, 92, 205, "TO RELOAD", 0);
+          this.archAngel.ak.a(paramGraphics, 86, 197, "PRESS 0 KEY", 0);
+          this.archAngel.ak.a(paramGraphics, 92, 205, "TO RELOAD", 0);
         }
       }
-      i1 = this.ai.aj.t * 40 / this.ai.aj.r;
+      i1 = this.archAngel.aj.t * 40 / this.archAngel.aj.r;
     }
-    else if (this.ai.am.bi == 1)
+    else if (this.archAngel.am.bi == 1)
     {
-      i1 = this.ai.aj.o * 40 / this.ai.aj.m;
+      i1 = this.archAngel.aj.o * 40 / this.archAngel.aj.m;
     }
     else
     {
@@ -2106,65 +2106,65 @@ public class b
   
   public void p(Graphics paramGraphics)
   {
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      if (this.ai.x == 0)
+      if (this.archAngel.x == 0)
       {
         for (int i1 = 11; i1 < 19; i1++) {
-          this.ai.ak.a(24 + i1);
+          this.archAngel.ak.a(24 + i1);
         }
-        this.ai.ak.a();
-        this.ai.ak.a("font");
-        this.ai.ak.a(1, 1);
-        this.ai.ak.d();
-        this.ai.a(paramGraphics);
-        this.ai.a(paramGraphics, "OK", false);
-        this.ai.s = false;
-        this.ai.m = false;
+        this.archAngel.ak.a();
+        this.archAngel.ak.a("font");
+        this.archAngel.ak.a(1, 1);
+        this.archAngel.ak.d();
+        this.archAngel.a(paramGraphics);
+        this.archAngel.a(paramGraphics, "OK", false);
+        this.archAngel.s = false;
+        this.archAngel.m = false;
       }
       q(paramGraphics);
       break;
     case 1: 
-      this.ai.a("m_win", 1);
-      this.ai.ak.a("result");
-      this.ai.ak.a(2, paramGraphics, 45, 93);
-      this.ai.ak.a(1, paramGraphics, 62, 98);
-      this.ai.ak.d();
+      this.archAngel.MPlay("m_win", 1);
+      this.archAngel.ak.a("result");
+      this.archAngel.ak.a(2, paramGraphics, 45, 93);
+      this.archAngel.ak.a(1, paramGraphics, 62, 98);
+      this.archAngel.ak.d();
       paramGraphics.setColor(16777215);
       paramGraphics.fillRect(45, 126, 150, 107);
-      if (this.ai.aj.b == 7)
+      if (this.archAngel.aj.b == 7)
       {
         paramGraphics.setColor(0);
         paramGraphics.fillRect(0, 0, 240, 300);
-        this.ai.b = 27;
+        this.archAngel.b = 27;
       }
       else
       {
-        this.ai.z = 4;
+        this.archAngel.z = 4;
       }
       break;
     case 4: 
-      if (this.ai.x == 0) {
+      if (this.archAngel.x == 0) {
         l(paramGraphics);
       }
       break;
     case 2: 
     case 3: 
     default: 
-      if (this.ai.x < 16)
+      if (this.archAngel.x < 16)
       {
         paramGraphics.setColor(0);
-        paramGraphics.fillRect(0, 0, 240, this.ai.x * 10);
-        paramGraphics.fillRect(0, 300 - this.ai.x * 10, 240, this.ai.x * 10);
+        paramGraphics.fillRect(0, 0, 240, this.archAngel.x * 10);
+        paramGraphics.fillRect(0, 300 - this.archAngel.x * 10, 240, this.archAngel.x * 10);
       }
-      if (this.ai.x == 16)
+      if (this.archAngel.x == 16)
       {
-        this.ai.ak.a();
+        this.archAngel.ak.a();
         System.gc();
-        this.ai.aj.b += 1;
-        this.ai.b();
-        this.ai.b = 5;
+        this.archAngel.aj.b += 1;
+        this.archAngel.b();
+        this.archAngel.b = 5;
       }
       break;
     }
@@ -2181,89 +2181,89 @@ public class b
     switch (i1)
     {
     case 0: 
-      i4 = this.ai.aj.q;
-      if (this.ai.aj.d == i2)
+      i4 = this.archAngel.aj.q;
+      if (this.archAngel.aj.d == i2)
       {
         g(paramGraphics);
         return;
       }
-      this.ai.aj.d = i2;
-      this.ai.aj.a(this.r);
+      this.archAngel.aj.d = i2;
+      this.archAngel.aj.a(this.r);
       break;
     case 1: 
-      i4 = this.ai.aj.v;
-      if (this.ai.aj.e == i2)
+      i4 = this.archAngel.aj.v;
+      if (this.archAngel.aj.e == i2)
       {
         g(paramGraphics);
         return;
       }
-      this.ai.aj.e = i2;
-      this.ai.aj.c(this.r);
+      this.archAngel.aj.e = i2;
+      this.archAngel.aj.c(this.r);
       break;
     case 2: 
-      i4 = this.ai.aj.l;
-      if (this.ai.aj.f == i2)
+      i4 = this.archAngel.aj.l;
+      if (this.archAngel.aj.f == i2)
       {
         g(paramGraphics);
         return;
       }
-      this.ai.aj.f = i2;
-      this.ai.aj.d(this.r);
+      this.archAngel.aj.f = i2;
+      this.archAngel.aj.d(this.r);
       break;
     }
-    this.ai.aj.a += i4 - paramInt2;
+    this.archAngel.aj.a += i4 - paramInt2;
     switch (this.x)
     {
     case 0: 
       str1 = "missile";
-      str2 = this.ai.aj.p;
+      str2 = this.archAngel.aj.p;
       break;
     case 1: 
       str1 = "plasma canon";
-      str2 = this.ai.aj.u;
+      str2 = this.archAngel.aj.u;
       break;
     case 2: 
       str1 = "Armor";
-      str2 = this.ai.aj.k;
+      str2 = this.archAngel.aj.k;
       break;
     }
-    this.ai.ak.a(paramGraphics, 12, 135, "You bought the");
-    this.ai.ak.a(paramGraphics, 12, 150, str1);
-    this.ai.ak.a(paramGraphics, 12, 165, str2);
-    this.ai.ak.a(paramGraphics, 12, 195, "My money : " + this.ai.aj.a);
+    this.archAngel.ak.a(paramGraphics, 12, 135, "You bought the");
+    this.archAngel.ak.a(paramGraphics, 12, 150, str1);
+    this.archAngel.ak.a(paramGraphics, 12, 165, str2);
+    this.archAngel.ak.a(paramGraphics, 12, 195, "My money : " + this.archAngel.aj.a);
   }
   
   public void q(Graphics paramGraphics)
   {
-    this.ai.z += 1;
-    this.ai.p = -1;
-    this.ai.h = false;
+    this.archAngel.z += 1;
+    this.archAngel.p = -1;
+    this.archAngel.h = false;
   }
   
   public void keyReleased(int paramInt)
   {
-    switch (this.ai.b)
+    switch (this.archAngel.b)
     {
     case 25: 
-      if (this.ai.am.bi == 1)
+      if (this.archAngel.am.bi == 1)
       {
         if ((paramInt == -5) || (paramInt == 53))
         {
-          this.ai.am.b(false);
-          this.ai.c();
+          this.archAngel.am.b(false);
+          this.archAngel.c();
         }
       }
-      else if ((this.ai.am.bi == 3) && ((paramInt == -5) || (paramInt == 53)) && (this.ai.ag != 1))
+      else if ((this.archAngel.am.bi == 3) && ((paramInt == -5) || (paramInt == 53)) && (this.archAngel.ag != 1))
       {
-        this.ai.am.d(false);
-        this.ai.c();
+        this.archAngel.am.d(false);
+        this.archAngel.c();
       }
       if ((paramInt == 49) || (paramInt == 50) || (paramInt == 51) || (paramInt == 52) || (paramInt == 54) || (paramInt == 57) || (paramInt == -1) || (paramInt == -2) || (paramInt == -4) || (paramInt == -3))
       {
-        this.ai.am.e();
-        this.ai.am.ba = 0;
-        this.ai.am.a9 = 0;
-        this.ai.am.bd = 0;
+        this.archAngel.am.e();
+        this.archAngel.am.ba = 0;
+        this.archAngel.am.a9 = 0;
+        this.archAngel.am.bd = 0;
       }
       break;
     }
@@ -2276,34 +2276,34 @@ public class b
     paramGraphics.fillRect(0, 119, 240, 181);
     if (paramInt1 == 11)
     {
-      this.ai.ak.a(paramGraphics, 17, 10, 126);
+      this.archAngel.ak.a(paramGraphics, 17, 10, 126);
     }
     else if ((paramInt1 >= 12) && (paramInt1 < 14))
     {
-      this.ai.ak.a(paramGraphics, 20, 6, 126);
-      this.ai.ak.c(paramGraphics, 22, 55, 170);
-      this.ai.ak.a(paramGraphics, 140, 140, "NAME:", 0);
-      this.ai.ak.a(paramGraphics, 140, 150, this.ai.am.m, 0);
-      this.ai.ak.a(paramGraphics, 140, 160, "DAMAGE:", 0);
-      this.ai.ak.a(paramGraphics, 140, 170, this.ai.am.k + "MP", 0);
+      this.archAngel.ak.a(paramGraphics, 20, 6, 126);
+      this.archAngel.ak.c(paramGraphics, 22, 55, 170);
+      this.archAngel.ak.a(paramGraphics, 140, 140, "NAME:", 0);
+      this.archAngel.ak.a(paramGraphics, 140, 150, this.archAngel.am.m, 0);
+      this.archAngel.ak.a(paramGraphics, 140, 160, "DAMAGE:", 0);
+      this.archAngel.ak.a(paramGraphics, 140, 170, this.archAngel.am.k + "MP", 0);
     }
     else if (paramInt1 >= 14)
     {
-      this.ai.ak.a(paramGraphics, 20, 6, 126);
-      this.ai.ak.c(paramGraphics, 21, 55, 170);
-      this.ai.ak.a(paramGraphics, 140, 140, "NAME:", 0);
-      this.ai.ak.a(paramGraphics, 140, 150, this.ai.am.q, 0);
-      this.ai.ak.a(paramGraphics, 140, 160, "DAMAGE:", 0);
-      this.ai.ak.a(paramGraphics, 140, 170, this.ai.am.o + "MP", 0);
+      this.archAngel.ak.a(paramGraphics, 20, 6, 126);
+      this.archAngel.ak.c(paramGraphics, 21, 55, 170);
+      this.archAngel.ak.a(paramGraphics, 140, 140, "NAME:", 0);
+      this.archAngel.ak.a(paramGraphics, 140, 150, this.archAngel.am.q, 0);
+      this.archAngel.ak.a(paramGraphics, 140, 160, "DAMAGE:", 0);
+      this.archAngel.ak.a(paramGraphics, 140, 170, this.archAngel.am.o + "MP", 0);
     }
-    this.ai.ak.a(paramGraphics, 18, 189, 175);
-    this.ai.ak.a(paramGraphics, 19, 0, 235);
+    this.archAngel.ak.a(paramGraphics, 18, 189, 175);
+    this.archAngel.ak.a(paramGraphics, 19, 0, 235);
     paramGraphics.setColor(0);
-    this.ai.al.a(paramInt1);
-    this.ai.al.b = 0;
-    this.ai.p = this.ai.al.o;
+    this.archAngel.al.a(paramInt1);
+    this.archAngel.al.b = 0;
+    this.archAngel.p = this.archAngel.al.o;
     String str;
-    while ((str = this.ai.al.a()) != null)
+    while ((str = this.archAngel.al.a()) != null)
     {
       paramGraphics.setColor(0);
       int i3 = str.indexOf(".");
@@ -2318,20 +2318,20 @@ public class b
         {
           i2 = -1;
         }
-        if (i2 > this.ai.al.b) {
-          this.ai.al.b = i2;
+        if (i2 > this.archAngel.al.b) {
+          this.archAngel.al.b = i2;
         }
       }
       paramGraphics.drawString(str, 11, i1, 20);
       i1 += 17;
     }
-    this.ai.g = false;
+    this.archAngel.g = false;
   }
   
   public void i(Graphics paramGraphics, int paramInt1, int paramInt2)
   {
-    this.ai.v = false;
-    if ((this.ai.b == 12) && ((paramInt1 == 100) || (paramInt1 == 200) || (paramInt1 == 300)))
+    this.archAngel.v = false;
+    if ((this.archAngel.b == 12) && ((paramInt1 == 100) || (paramInt1 == 200) || (paramInt1 == 300)))
     {
       b(paramGraphics, paramInt1, 130);
     }
@@ -2339,9 +2339,9 @@ public class b
     {
       int i1 = paramInt2;
       int i4 = 10;
-      if (this.ai.b != 7)
+      if (this.archAngel.b != 7)
       {
-        if (this.ai.b == 13)
+        if (this.archAngel.b == 13)
         {
           i4 = 5;
           paramGraphics.setColor(4343106);
@@ -2352,10 +2352,10 @@ public class b
         }
         else
         {
-          this.ai.ak.a(paramGraphics, 2, 2, 120);
+          this.archAngel.ak.a(paramGraphics, 2, 2, 120);
         }
       }
-      else if (this.ai.b == 7)
+      else if (this.archAngel.b == 7)
       {
         i4 = 18;
         paramGraphics.setColor(16777215);
@@ -2366,11 +2366,11 @@ public class b
         i4 = 30;
       }
       paramGraphics.setColor(40960);
-      this.ai.al.a(paramInt1);
-      this.ai.al.b = 0;
-      this.ai.p = this.ai.al.o;
+      this.archAngel.al.a(paramInt1);
+      this.archAngel.al.b = 0;
+      this.archAngel.p = this.archAngel.al.o;
       String str;
-      while ((str = this.ai.al.a()) != null)
+      while ((str = this.archAngel.al.a()) != null)
       {
         paramGraphics.setColor(0);
         int i3 = str.indexOf(".");
@@ -2385,11 +2385,11 @@ public class b
           {
             i2 = -1;
           }
-          if (i2 > this.ai.al.b) {
-            this.ai.al.b = i2;
+          if (i2 > this.archAngel.al.b) {
+            this.archAngel.al.b = i2;
           }
-          if (i2 == this.ai.al.a) {
-            if (this.ai.b == 13)
+          if (i2 == this.archAngel.al.a) {
+            if (this.archAngel.b == 13)
             {
               paramGraphics.setColor(83967);
               paramGraphics.fillRect(i4 + 15, i1 + 6, str.length() * 5 + 3, 9);
@@ -2401,116 +2401,116 @@ public class b
             }
           }
         }
-        if (this.ai.b == 13)
+        if (this.archAngel.b == 13)
         {
-          this.ai.ak.a(paramGraphics, i4, i1 + 8, str, 0);
+          this.archAngel.ak.a(paramGraphics, i4, i1 + 8, str, 0);
           paramGraphics.setColor(0);
-          if (this.ai.s)
+          if (this.archAngel.s)
           {
             paramGraphics.setColor(0);
-            this.ai.ak.a(paramGraphics, i4 + 66, 236, this.ai.an[(1 - this.ai.af)], 0);
-            this.ai.ak.a(paramGraphics, i4 + 72, 247, this.ai.ao[(1 - this.ai.ag)], 0);
+            this.archAngel.ak.a(paramGraphics, i4 + 66, 236, this.archAngel.an[(1 - this.archAngel.af)], 0);
+            this.archAngel.ak.a(paramGraphics, i4 + 72, 247, this.archAngel.ao[(1 - this.archAngel.ag)], 0);
           }
         }
         else
         {
-          this.ai.ak.a(paramGraphics, i4, i1, str);
-          if ((this.ai.b == 10) && (paramInt1 == 51) && ((this.ai.al.a <= 2) || (this.ai.al.a == 4))) {
+          this.archAngel.ak.a(paramGraphics, i4, i1, str);
+          if ((this.archAngel.b == 10) && (paramInt1 == 51) && ((this.archAngel.al.a <= 2) || (this.archAngel.al.a == 4))) {
             paramGraphics.setColor(0);
           }
         }
-        if (this.ai.b == 13) {
+        if (this.archAngel.b == 13) {
           i1 += 11;
         } else {
           i1 += 15;
         }
       }
-      if (this.ai.b == 11)
+      if (this.archAngel.b == 11)
       {
         paramGraphics.setColor(9540180);
         paramGraphics.fillRect(10, 135, 70, 42);
-        this.ai.ak.a(paramGraphics, 114, 10, 135);
+        this.archAngel.ak.a(paramGraphics, 114, 10, 135);
         paramGraphics.setColor(0);
-        this.ai.ak.a(paramGraphics, 12, 180, "My money:" + this.ai.aj.a);
-        this.ai.ak.a(paramGraphics, 10, 210, "1.Missile");
-        this.ai.ak.a(paramGraphics, 10, 225, "2.Plasma Canon");
-        this.ai.ak.a(paramGraphics, 10, 240, "3.Armor");
+        this.archAngel.ak.a(paramGraphics, 12, 180, "My money:" + this.archAngel.aj.a);
+        this.archAngel.ak.a(paramGraphics, 10, 210, "1.Missile");
+        this.archAngel.ak.a(paramGraphics, 10, 225, "2.Plasma Canon");
+        this.archAngel.ak.a(paramGraphics, 10, 240, "3.Armor");
       }
-      this.ai.g = false;
+      this.archAngel.g = false;
     }
-    this.ai.v = true;
+    this.archAngel.v = true;
   }
   
   public void showNotify()
   {
-    this.ai.t = true;
-    this.ai.x = -1;
-    if (this.ai.b == 25)
+    this.archAngel.t = true;
+    this.archAngel.x = -1;
+    if (this.archAngel.b == 25)
     {
-      this.ai.am.e();
-      this.ai.am.ba = 0;
-      this.ai.am.a9 = 0;
-      this.ai.am.bd = 0;
+      this.archAngel.am.e();
+      this.archAngel.am.ba = 0;
+      this.archAngel.am.a9 = 0;
+      this.archAngel.am.bd = 0;
     }
   }
   
   public void r(Graphics paramGraphics)
   {
-    if ((this.ai.z > 0) && (this.ai.x > 0)) {
+    if ((this.archAngel.z > 0) && (this.archAngel.x > 0)) {
       return;
     }
-    c(paramGraphics, this.ai.z, 210);
-    switch (this.ai.z)
+    c(paramGraphics, this.archAngel.z, 210);
+    switch (this.archAngel.z)
     {
     case 0: 
-      if (this.ai.x == 0)
+      if (this.archAngel.x == 0)
       {
-        this.ai.al.a("info");
+        this.archAngel.al.a("info");
         this.r = new e();
         this.o = 186;
         this.p = 5;
-        this.ai.ak.a("shop");
+        this.archAngel.ak.a("shop");
         for (int i1 = 0; i1 < 3; i1++) {
-          this.ai.ak.a(i1, 26 + i1);
+          this.archAngel.ak.a(i1, 26 + i1);
         }
-        this.ai.ak.d();
-        this.ai.ak.a(paramGraphics, 14, 17, 89);
+        this.archAngel.ak.d();
+        this.archAngel.ak.a(paramGraphics, 14, 17, 89);
         paramGraphics.setClip(17, 89, 223, 25);
-        this.ai.ak.a(paramGraphics, 13, 60, 90 - this.l * 33);
+        this.archAngel.ak.a(paramGraphics, 13, 60, 90 - this.l * 33);
         paramGraphics.setClip(0, 0, 240, 320);
       }
       q(paramGraphics);
       return;
     case 1: 
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "BACK", true);
-      this.ai.a(paramGraphics, "OK", false);
-      this.ai.d = 2;
-      this.ai.z = 5;
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "BACK", true);
+      this.archAngel.a(paramGraphics, "OK", false);
+      this.archAngel.d = 2;
+      this.archAngel.z = 5;
       break;
     case 10: 
       this.r.a("missile");
-      this.ai.d = 0;
-      a(paramGraphics, 100 + this.ai.aj.d, false, 0);
-      this.ai.al.c = true;
-      this.ai.al.g = 1;
+      this.archAngel.d = 0;
+      a(paramGraphics, 100 + this.archAngel.aj.d, false, 0);
+      this.archAngel.al.c = true;
+      this.archAngel.al.g = 1;
       break;
     case 20: 
       this.r.a("plasma");
-      this.ai.d = 1;
-      a(paramGraphics, 200 + this.ai.aj.e, false, 1);
-      this.ai.al.c = true;
-      this.ai.al.g = 2;
+      this.archAngel.d = 1;
+      a(paramGraphics, 200 + this.archAngel.aj.e, false, 1);
+      this.archAngel.al.c = true;
+      this.archAngel.al.g = 2;
       break;
     case 30: 
       this.r.a("arm");
-      this.ai.d = 2;
-      a(paramGraphics, 300 + this.ai.aj.f, false, 2);
-      this.ai.al.c = true;
-      this.ai.al.g = 3;
+      this.archAngel.d = 2;
+      a(paramGraphics, 300 + this.archAngel.aj.f, false, 2);
+      this.archAngel.al.c = true;
+      this.archAngel.al.g = 3;
       break;
     case 999: 
-      this.ai.b = 5;
+      this.archAngel.b = 5;
       this.r = null;
       return;
     }
@@ -2518,58 +2518,58 @@ public class b
   
   public void s(Graphics paramGraphics)
   {
-    if ((this.ai.z > 0) && (this.ai.x > 0)) {
+    if ((this.archAngel.z > 0) && (this.archAngel.x > 0)) {
       return;
     }
     this.v = false;
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      if (this.ai.x == 0)
+      if (this.archAngel.x == 0)
       {
-        this.ai.ak.a("shop");
+        this.archAngel.ak.a("shop");
         for (int i1 = 0; i1 < 3; i1++)
         {
-          this.ai.ak.a(26 + i1);
-          this.ai.ak.a(i1, 26 + i1);
+          this.archAngel.ak.a(26 + i1);
+          this.archAngel.ak.a(i1, 26 + i1);
         }
-        this.ai.ak.d();
-        this.ai.ak.a(paramGraphics, 14, 17, 89);
+        this.archAngel.ak.d();
+        this.archAngel.ak.a(paramGraphics, 14, 17, 89);
         paramGraphics.setClip(17, 89, 223, 25);
-        this.ai.ak.a(paramGraphics, 13, 60, 90 - this.l * 33);
+        this.archAngel.ak.a(paramGraphics, 13, 60, 90 - this.l * 33);
         paramGraphics.setClip(0, 0, 240, 320);
-        this.ai.a(paramGraphics);
-        this.ai.a(paramGraphics, "BACK", true);
-        this.ai.a(paramGraphics, "OK", false);
-        this.ai.al.a("shop");
+        this.archAngel.a(paramGraphics);
+        this.archAngel.a(paramGraphics, "BACK", true);
+        this.archAngel.a(paramGraphics, "OK", false);
+        this.archAngel.al.a("shop");
         this.r = new e();
-        this.ai.al.g = 1;
+        this.archAngel.al.g = 1;
       }
       q(paramGraphics);
       return;
     case 2: 
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "BACK", true);
-      this.ai.a(paramGraphics, "OK", false);
-      this.ai.z = 1;
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "BACK", true);
+      this.archAngel.a(paramGraphics, "OK", false);
+      this.archAngel.z = 1;
       break;
     case 1: 
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "BACK", true);
-      this.ai.a(paramGraphics, "OK", false);
-      this.ai.al.c = true;
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "BACK", true);
+      this.archAngel.a(paramGraphics, "OK", false);
+      this.archAngel.al.c = true;
       this.v = true;
       break;
     case 99: 
-      this.ai.z += 1;
+      this.archAngel.z += 1;
       this.r.a("missile");
-      this.ai.d = 0;
-      this.ai.al.g = 1;
+      this.archAngel.d = 0;
+      this.archAngel.al.g = 1;
       break;
     case 111: 
     case 211: 
-      this.ai.a = 1;
-      c(paramGraphics, this.ai.z, 230);
+      this.archAngel.a = 1;
+      c(paramGraphics, this.archAngel.z, 230);
       if (this.t >= this.r.m[2]) {
         g(paramGraphics, this.s, this.r.m[2]);
       } else {
@@ -2578,20 +2578,20 @@ public class b
       this.v = true;
       return;
     case 199: 
-      this.ai.z += 1;
+      this.archAngel.z += 1;
       this.r.a("plasma");
-      this.ai.d = 1;
-      this.ai.al.g = 2;
+      this.archAngel.d = 1;
+      this.archAngel.al.g = 2;
       break;
     case 299: 
-      this.ai.z += 1;
+      this.archAngel.z += 1;
       this.r.a("arm");
-      this.ai.d = 2;
-      this.ai.al.g = 3;
+      this.archAngel.d = 2;
+      this.archAngel.al.g = 3;
       break;
     case 311: 
-      this.ai.a = 1;
-      c(paramGraphics, this.ai.z, 230);
+      this.archAngel.a = 1;
+      c(paramGraphics, this.archAngel.z, 230);
       if (this.t >= this.r.m[2]) {
         g(paramGraphics, this.s, this.r.m[2]);
       } else {
@@ -2600,66 +2600,67 @@ public class b
       this.v = true;
       return;
     case 999: 
-      this.ai.b = 5;
+      this.archAngel.b = 5;
       this.r = null;
       return;
     default: 
-      if ((this.ai.z % 100 > 0) && (this.ai.z % 100 < 8) && (this.ai.z > 100))
+      if ((this.archAngel.z % 100 > 0) && (this.archAngel.z % 100 < 8) && (this.archAngel.z > 100))
       {
-        b(paramGraphics, this.ai.z);
-        this.ai.a(paramGraphics);
-        this.ai.a(paramGraphics, "BACK", true);
-        this.ai.a(paramGraphics, "OK", false);
+        b(paramGraphics, this.archAngel.z);
+        this.archAngel.a(paramGraphics);
+        this.archAngel.a(paramGraphics, "BACK", true);
+        this.archAngel.a(paramGraphics, "OK", false);
         paramGraphics.setClip(0, 0, 178, 75);
-        b(paramGraphics, this.ai.z, true, this.ai.d);
-        this.s = this.ai.z;
-        switch (this.ai.d)
+        b(paramGraphics, this.archAngel.z, true, this.archAngel.d);
+        this.s = this.archAngel.z;
+        switch (this.archAngel.d)
         {
         case 0: 
-          this.ai.z = 110;
+          this.archAngel.z = 110;
           break;
         case 1: 
-          this.ai.z = 210;
+          this.archAngel.z = 210;
           break;
         case 2: 
-          this.ai.z = 310;
+          this.archAngel.z = 310;
           break;
         }
         paramGraphics.setColor(0);
-        this.ai.s = true;
+        this.archAngel.s = true;
         paramGraphics.setColor(65280);
-/*        if (this.t - this.ai.aj.a > this.u) {
+        String str;
+        if (this.t - this.archAngel.aj.a > this.u) {
           str = "[+";
         } else {
           str = "[";
-        }*/
-        // String str = str + (this.t - this.ai.aj.a - this.u) + "]";
+        }
+        str = str + (this.t - this.archAngel.aj.a - this.u) + "]";
         this.v = true;
         return;
       }
       this.v = true;
     }
-    if ((this.ai.z == 100) || (this.ai.z == 200) || (this.ai.z == 300))
+    if ((this.archAngel.z == 100) || (this.archAngel.z == 200) || (this.archAngel.z == 300))
     {
-      if (this.ai.x == 0) {
-        this.ai.q = true;
+      if (this.archAngel.x == 0) {
+        this.archAngel.q = true;
       }
-      this.ai.al.c = false;
-      b(paramGraphics, this.ai.z);
-      e(paramGraphics, this.ai.z, 190);
-      this.ai.a(paramGraphics);
-      this.ai.a(paramGraphics, "BACK", true);
-      this.ai.a(paramGraphics, "OK", false);
+      this.archAngel.al.c = false;
+      b(paramGraphics, this.archAngel.z);
+      e(paramGraphics, this.archAngel.z, 190);
+      this.archAngel.a(paramGraphics);
+      this.archAngel.a(paramGraphics, "BACK", true);
+      this.archAngel.a(paramGraphics, "OK", false);
     }
     else
     {
-      c(paramGraphics, this.ai.z, 150);
+      c(paramGraphics, this.archAngel.z, 150);
     }
   }
   
   public void b(Graphics paramGraphics, int paramInt)
   {
-    if (this.ai.q)
+    if (this.archAngel.q)
     {
       paramGraphics.setColor(7171414);
       paramGraphics.fillRect(6, 127, 226, 147);
@@ -2669,21 +2670,21 @@ public class b
       paramGraphics.fillRect(10, 130, 72, 42);
       paramGraphics.setColor(16777130);
       paramGraphics.drawRect(10, 129, 72, 43);
-      if (this.ai.r)
+      if (this.archAngel.r)
       {
-        b(paramGraphics, 101, true, this.ai.d);
-        this.ai.r = false;
+        b(paramGraphics, 101, true, this.archAngel.d);
+        this.archAngel.r = false;
       }
-      else if (this.ai.a <= 6)
+      else if (this.archAngel.a <= 6)
       {
-        b(paramGraphics, this.ai.a + 100, true, this.ai.d);
+        b(paramGraphics, this.archAngel.a + 100, true, this.archAngel.d);
       }
       else
       {
-        b(paramGraphics, this.ai.a - 1 + 100, true, this.ai.d);
+        b(paramGraphics, this.archAngel.a - 1 + 100, true, this.archAngel.d);
       }
     }
-    this.ai.q = false;
+    this.archAngel.q = false;
   }
   
   public void run()
@@ -2693,13 +2694,13 @@ public class b
       try
       {
         repaint();
-        if ((this.ai.b == 25) && (this.ai.z == 4))
+        if ((this.archAngel.b == 25) && (this.archAngel.z == 4))
         {
-          this.ai.am.g();
-          this.ai.am.f();
+          this.archAngel.am.g();
+          this.archAngel.am.f();
         }
         serviceRepaints();
-        Thread.sleep((this.ai.b == 25) || (this.ai.b == 1) ? 30 : 30);
+        Thread.sleep((this.archAngel.b == 25) || (this.archAngel.b == 1) ? 30 : 30);
       }
       catch (Exception localException) {}
     }
@@ -2707,7 +2708,7 @@ public class b
   
   public void c(Graphics paramGraphics, int paramInt)
   {
-    this.ai.ak.a(paramGraphics, 12, 145, "Lack of " + (paramInt - this.t));
+    this.archAngel.ak.a(paramGraphics, 12, 145, "Lack of " + (paramInt - this.t));
   }
   
   public void t(Graphics paramGraphics)
@@ -2720,7 +2721,7 @@ public class b
     this.ae = 0;
     this.af = -1;
     this.ag = -1;
-    this.ai.ak.a(paramGraphics, 21, 0, 0);
+    this.archAngel.ak.a(paramGraphics, 21, 0, 0);
   }
   
   public void j(Graphics paramGraphics, int paramInt1, int paramInt2)
@@ -2732,32 +2733,32 @@ public class b
   
   public void u(Graphics paramGraphics)
   {
-    switch (this.ai.z)
+    switch (this.archAngel.z)
     {
     case 0: 
-      if (this.ai.x == 0)
+      if (this.archAngel.x == 0)
       {
         paramGraphics.setColor(16777215);
         paramGraphics.fillRect(0, 0, 240, 320);
-        this.ai.ak.a("logo", 0, paramGraphics, 48, 80);
-        this.ai.ak.a("logo", 1, paramGraphics, 46, 161);
-        this.ai.ak.a("intro");
-        this.ai.ak.a(0, 30);
-        this.ai.ak.d();
-        this.ai.ak.a("select");
+        this.archAngel.ak.a("logo", 0, paramGraphics, 48, 80);
+        this.archAngel.ak.a("logo", 1, paramGraphics, 46, 161);
+        this.archAngel.ak.a("intro");
+        this.archAngel.ak.a(0, 30);
+        this.archAngel.ak.d();
+        this.archAngel.ak.a("select");
         for (int i1 = 0; i1 < 7; i1++) {
-          this.ai.ak.a(i1, 6 + i1);
+          this.archAngel.ak.a(i1, 6 + i1);
         }
-        this.ai.ak.d();
+        this.archAngel.ak.d();
       }
-      if (this.ai.x == 8) {
-        this.ai.z += 1;
+      if (this.archAngel.x == 8) {
+        this.archAngel.z += 1;
       }
       break;
     case 1: 
-      if (this.ai.x == 0)
+      if (this.archAngel.x == 0)
       {
-        this.ai.a("m_front", 0);
+        this.archAngel.MPlay("m_front", 0);
         paramGraphics.setColor(0);
         paramGraphics.fillRect(0, 0, 240, 320);
         paramGraphics.setColor(4802901);
@@ -2768,21 +2769,21 @@ public class b
         paramGraphics.fillRect(0, 119, 240, 30);
         paramGraphics.fillRect(0, 171, 240, 10);
         paramGraphics.fillRect(0, 205, 240, 30);
-        this.ai.ak.a(paramGraphics, 3, 0, 0);
-        this.ai.ak.a(paramGraphics, 3, 0, 280);
-        this.ai.ak.a(paramGraphics, 4, 0, 60);
-        this.ai.ak.a(paramGraphics, 5, 27, 25);
-        this.ai.ak.a("logo", 2, paramGraphics, 0, 300);
+        this.archAngel.ak.a(paramGraphics, 3, 0, 0);
+        this.archAngel.ak.a(paramGraphics, 3, 0, 280);
+        this.archAngel.ak.a(paramGraphics, 4, 0, 60);
+        this.archAngel.ak.a(paramGraphics, 5, 27, 25);
+        this.archAngel.ak.a("logo", 2, paramGraphics, 0, 300);
       }
-      if (this.ai.x % 10 < 5) {
-        this.ai.ak.a(paramGraphics, 30, 0, 80);
+      if (this.archAngel.x % 10 < 5) {
+        this.archAngel.ak.a(paramGraphics, 30, 0, 80);
       } else {
-        this.ai.ak.a(paramGraphics, 62, 264, "Press Any Key");
+        this.archAngel.ak.a(paramGraphics, 62, 264, "Press Any Key");
       }
       break;
     case 2: 
-      this.ai.am.bd = 0;
-      if (this.ai.x < 21)
+      this.archAngel.am.bd = 0;
+      if (this.archAngel.x < 21)
       {
         paramGraphics.setColor(0);
         paramGraphics.fillRect(0, 60, 240, 240);
@@ -2790,16 +2791,16 @@ public class b
         paramGraphics.fillRect(0, 119, 240, 30);
         paramGraphics.fillRect(0, 171, 240, 10);
         paramGraphics.fillRect(0, 205, 240, 30);
-        paramGraphics.setClip(0, 80 + 5 * this.ai.x, 240, 200 - 10 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 30, 0, 80);
+        paramGraphics.setClip(0, 80 + 5 * this.archAngel.x, 240, 200 - 10 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 30, 0, 80);
         paramGraphics.setClip(0, 0, 240, 320);
-        this.ai.ak.a(paramGraphics, 4, 0, 60 + 5 * this.ai.x);
-        this.ai.ak.a(paramGraphics, 3, 0, 280 - 5 * this.ai.x);
+        this.archAngel.ak.a(paramGraphics, 4, 0, 60 + 5 * this.archAngel.x);
+        this.archAngel.ak.a(paramGraphics, 3, 0, 280 - 5 * this.archAngel.x);
       }
-      if (this.ai.x == 20)
+      if (this.archAngel.x == 20)
       {
-        this.ai.ak.a(30);
-        this.ai.b = 3;
+        this.archAngel.ak.a(30);
+        this.archAngel.b = 3;
       }
       break;
     }
@@ -2814,8 +2815,8 @@ public class b
   
   public void v(Graphics paramGraphics)
   {
-    this.ai.aj.b();
-    this.ai.aj.b(this.ai.al);
-    this.ai.b = 5;
+    this.archAngel.aj.b();
+    this.archAngel.aj.b(this.archAngel.al);
+    this.archAngel.b = 5;
   }
 }

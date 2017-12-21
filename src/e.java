@@ -56,12 +56,13 @@ public class e
   public int b(int paramInt)
   {
     int i2 = 0;
-    for (int i1 = paramInt; i1 < this.j; i1++) {
+    int i1;
+    for (i1 = paramInt; i1 < this.j; i1++) { // int i1 = paramInt
       if ((this.l[i1] >= 48) && (this.l[i1] <= 57)) {
         break;
       }
     }
-/*    while (i1 < this.j)
+    while (i1 < this.j)
     {
       if ((this.l[i1] >= 48) && (this.l[i1] > 57)) {
         break;
@@ -70,7 +71,7 @@ public class e
       i2 += this.l[i1] - 48;
       i1++;
     }
-    this.k = i1;*/
+    this.k = i1;
     return i2;
   }
   
@@ -92,7 +93,8 @@ public class e
   public String a()
   {
     String str = null;
-    for (int i1 = this.k; i1 < this.j; i1++)
+    int i1;
+    for (i1 = this.k; i1 < this.j; i1++) // int i1 = this.k
     {
       if (this.l[i1] == 60)
       {
@@ -105,7 +107,7 @@ public class e
         break;
       }
     }
-    //this.k = (i1 + 1);
+    this.k = (i1 + 1);
     return str;
   }
   
@@ -132,7 +134,8 @@ public class e
   
   public boolean a(char paramChar)
   {
-    for (int i1 = this.k; i1 < this.j; i1++)
+	int i1;
+    for (i1 = this.k; i1 < this.j; i1++) // int i1 = this.k
     {
       if (this.l[i1] == 10)
       {
@@ -143,7 +146,7 @@ public class e
         break;
       }
     }
-    //this.k = i1;
+    this.k = i1;
     return true;
   }
 }
