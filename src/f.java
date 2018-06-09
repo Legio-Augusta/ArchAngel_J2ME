@@ -374,6 +374,7 @@ public class f
     this.a8 = 0;
     this.bd = 0;
     this.aa = 0;
+    this.az = (this.ay = this.a0 = this.a2 = false);
     //this.az = (this.ay = this.a0 = this.a2 = 0);
     this.a3 = 20;
     this.a4 = 0;
@@ -540,7 +541,7 @@ public class f
       i2 = 0;
     }
     this.b.a(paramGraphics, 7, this.a5[0], 27);
-    //this.b.a(paramGraphics, 7, this.a5[0] + (this.a7[0] != 0 ? 65296 : 240), 27);
+    this.b.a(paramGraphics, 7, this.a5[0] + (this.a7[0] != false ? 65296 : 240), 27); // != 0
     this.b.b(paramGraphics, 8, this.a5[1], 166);
   }
   
@@ -575,7 +576,8 @@ public class f
     for (int i1 = 0; i1 < 3; i1++)
     {
       this.b.b(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)], this.a6[i1] - arrayOfInt[i1][i2]);
-      //this.b.b(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)] + (this.a7[(i1 + 1)] != 0 ? 65296 : 240), this.a6[i1] - arrayOfInt[i1][i2]);
+      // this.b.b(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)] + (this.a7[(i1 + 1)] != 0 ? 65296 : 240), this.a6[i1] - arrayOfInt[i1][i2]);
+      this.b.b(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)] + (this.a7[(i1 + 1)] != false ? 65296 : 240), this.a6[i1] - arrayOfInt[i1][i2]);
     }
     if ((this.a.ad == 2) || (this.a.b == 0)) {
       this.b.a(paramGraphics, 18 + i2, 0, 166);
@@ -782,19 +784,19 @@ public class f
       }
       if (i1 == 5)
       {
-        /*this.b.a(112);
+        this.b.a(112);
         for (int i3 = 0; i3 < 11; i3++) {
           this.b.a(24 + i3);
         }
-        for (i3 = 0; i3 < 9; i3++)
+        for (int i3 = 0; i3 < 9; i3++)
         {
           this.b.a(53 + i3);
           this.b.a(44 + i3);
         }
-        for (i3 = 10; i3 < 13; i3++) {
+        for (int i3 = 10; i3 < 13; i3++) {
           this.b.a(71 + i3);
         }
-        for (i3 = 18; i3 < 24; i3++) {
+        for (int i3 = 18; i3 < 24; i3++) {
           this.b.a(84 + i3);
         }
         this.b.a(paramGraphics, 38, this.bb + arrayOfByte1[3][0], this.bc + arrayOfByte1[3][1]);
@@ -802,14 +804,14 @@ public class f
         this.bc = 144;
         System.gc();
         this.b.a("boss" + this.a.ac);
-        for (i3 = 0; i3 < 7; i3++) {
+        for (int i3 = 0; i3 < 7; i3++) {
           this.b.a(i3, 62 + i3);
         }
         this.b.d();
         this.b.a("plasma");
-        for (i3 = 0; i3 < 18; i3++) {
+        for (int i3 = 0; i3 < 18; i3++) {
           this.b.a(i3, 84 + i3);
-        }*/
+        }
         this.b.d();
         this.bi = 3;
       }
@@ -1232,13 +1234,13 @@ public class f
       }
     }
     paramGraphics.setClip(0, 50, 240, 250);
-    /*for (i1 = 0; i1 < 9; i1++) {
+    for (int i1 = 0; i1 < 9; i1++) {
       for (int i2 = 0; i2 < 18; i2++) {
         if ((ae[i2].c != 0) && (ae[i2].d == i1)) {
           b(paramGraphics, ae[i2]);
         }
       }
-    }*/
+    }
   }
   
   public void e()
@@ -1426,15 +1428,16 @@ public class f
   
   public boolean d(int paramInt1, int paramInt2)
   {
-    for (int i1 = 0; i1 < 18; i1++) {
+	int i1;
+    for (i1 = 0; i1 < 18; i1++) {
       if (ae[i1].c == 0) {
         break;
       }
     }
-    /*if (i1 == 18) {
+    if (i1 == 18) {
       return false;
     }
-    b(ae[i1], paramInt1, paramInt2);*/
+    b(ae[i1], paramInt1, paramInt2);
     return true;
   }
   

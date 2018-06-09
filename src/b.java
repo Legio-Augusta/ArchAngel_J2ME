@@ -1689,9 +1689,9 @@ public class b
       }
       this.ai.ak.d();
       this.ai.ak.a("font");
-      /*for (i1 = 1; i1 < 3; i1++) {
+      for (int i1 = 1; i1 < 3; i1++) {
         this.ai.ak.a(i1, i1);
-      }*/
+      }
       this.ai.ak.a(5, 5);
       this.ai.ak.d();
       this.ai.w = true;
@@ -1768,11 +1768,14 @@ public class b
     String str;
     while ((str = this.ai.al.a()) != null)
     {
+    	//return; // Avoid draw string error outOfBound
+    	/**/
       paramGraphics.setColor(16777215);
       if (this.ai.b == 4) {
         paramGraphics.drawString(str, 120, i1, 17);
       }
       i1 += 17;
+      /**/
     }
   }
   
@@ -1887,7 +1890,9 @@ public class b
   
   public void paint(Graphics paramGraphics)
   {
-    if (this.ah) {
+    if (this.ah) { // like GameOff, true then stop paint
+//      System.out.println(">>>>> paint stop <<<<<");
+      // Paint done ? can it just remove return to debug
       return;
     }
     this.ah = true;
@@ -2027,7 +2032,7 @@ public class b
     case 1: 
       paramGraphics.setColor(14408703);
       paramGraphics.drawString(this.ai.am.ca + " m", 120, 3, 17);
-/*      i1 = this.ai.am.f;
+      int i1 = this.ai.am.f;
       int i2 = Math.abs(i1) / 60 + 1;
       if ((i1 <= 5) && (i1 >= -5))
       {
@@ -2045,7 +2050,7 @@ public class b
             this.ai.ak.a(paramGraphics, 22, 106 - i3 * 4, 20);
           }
         }
-      }*/
+      }
       break;
     case 2: 
       if (this.ai.ac < 7)
@@ -2628,12 +2633,13 @@ public class b
         paramGraphics.setColor(0);
         this.ai.s = true;
         paramGraphics.setColor(65280);
-/*        if (this.t - this.ai.aj.a > this.u) {
+        String str = "";
+        if (this.t - this.ai.aj.a > this.u) {
           str = "[+";
         } else {
           str = "[";
-        }*/
-        // String str = str + (this.t - this.ai.aj.a - this.u) + "]";
+        }
+        str = str + (this.t - this.ai.aj.a - this.u) + "]"; // String 
         this.v = true;
         return;
       }
@@ -2701,7 +2707,9 @@ public class b
         serviceRepaints();
         Thread.sleep((this.ai.b == 25) || (this.ai.b == 1) ? 30 : 30);
       }
-      catch (Exception localException) {}
+      catch (Exception localException) {
+    	  System.out.println(">>>>> run exception <<<<<");
+      }
     }
   }
   

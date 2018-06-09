@@ -30,7 +30,7 @@ public class c
     this.t = this.r;
   }
   
-  public void a(h paramh)
+  public void a(AARecordStore paramh)
   {
     this.a = paramh.b();
     this.b = paramh.b();
@@ -90,7 +90,7 @@ public class c
     this.d = (this.e = this.f = 1);
   }
   
-  public void b(h paramh)
+  public void b(AARecordStore paramh)
   {
     paramh.a(this.a);
     paramh.a(this.b);

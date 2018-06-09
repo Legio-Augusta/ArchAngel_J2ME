@@ -57,7 +57,7 @@ public class ArchAngel
   
   public void a()
   {
-    h localh = new h();
+    AARecordStore localh = new AARecordStore();
     if (localh.a("Angel1", false))
     {
       this.af = localh.b();
@@ -68,7 +68,7 @@ public class ArchAngel
   
   public void b()
   {
-    h localh = new h();
+    AARecordStore localh = new AARecordStore();
     if (localh.a("Angel", true))
     {
       this.aj.b(localh);
@@ -108,7 +108,7 @@ public class ArchAngel
   
   public boolean d()
   {
-    h localh = new h();
+    AARecordStore localh = new AARecordStore();
     if (localh.a("Angel", false))
     {
       this.aj.a(localh);
@@ -146,12 +146,15 @@ public class ArchAngel
   
   public void a(int paramInt)
   {
-    this.al.a("ms" + paramInt);
+    this.al.a("ms" + paramInt); // e.a()
     this.al.a(1);
-    this.am.r = this.al.m[0];
+    System.out.println(" AA.a(int) al.a(1) ");
+    this.am.r = this.al.m[0]; // f.r = 
     this.am.s = this.al.m[1];
     this.am.y = this.al.m[2];
     this.al.a(2);
+    System.out.println(" AA.a(int) al.a(2) ");
+    
     this.am.m = this.al.a();
     if (this.ah == 0) {
       this.am.j = (this.al.m[0] / 2);
@@ -162,6 +165,8 @@ public class ArchAngel
     this.am.l = this.al.m[2];
     this.am.h = this.al.m[3];
     this.al.a(3);
+    System.out.println(" AA.a(int) al.a(3) ");
+    
     this.am.q = this.al.a();
     if (this.ah == 0) {
       this.am.n = (this.al.m[0] / 2);
@@ -172,13 +177,16 @@ public class ArchAngel
     this.am.p = this.al.m[2];
     this.am.i = this.al.m[3];
     this.al.a(10);
+    System.out.println(" AA.a(int) al.a(10) ");
+    
     this.am.e = this.al.a();
     this.al.a(4);
+    System.out.println(" AA.a(int) al.a(4) ");
   }
   
   public boolean e()
   {
-    h localh = new h();
+    AARecordStore localh = new AARecordStore();
     if (localh.a("Angel", false))
     {
       localh.a();
@@ -214,7 +222,7 @@ public class ArchAngel
   
   public void f()
   {
-    h localh = new h();
+    AARecordStore localh = new AARecordStore();
     if (localh.a("Angel1", true))
     {
       localh.a(this.af);

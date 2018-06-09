@@ -2,7 +2,7 @@ import java.io.PrintStream;
 import javax.microedition.rms.RecordStore;
 import javax.microedition.rms.RecordStoreException;
 
-public class h
+public class AARecordStore
 {
   private RecordStore a = null;
   private int b = 0;
@@ -25,6 +25,7 @@ public class h
   
   public boolean a(String paramString, boolean paramBoolean)
   {
+	paramBoolean = true; // Try to create new if not exist
     try
     {
       if (paramBoolean) {

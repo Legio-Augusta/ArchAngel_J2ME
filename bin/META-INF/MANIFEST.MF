@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+MIDlet-Version: 2.57.3
+MIDlet-Vendor: mobers.ru
+
+MIDlet-1: Arch Angel, /m_logo.png, ArchAngel
+MIDlet-Name: Arch Angel
+MicroEdition-Profile: MIDP-1.0
+MicroEdition-Configuration: CLDC-1.0
+Nokia-MIDlet-Category: Game
+SiteURL: mobers.ru
