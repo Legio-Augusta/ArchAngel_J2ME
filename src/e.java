@@ -49,9 +49,8 @@ public class e
     while (a('+')) { // boolean a (String str)
     	// Exception on i1 = 8 or 9
     	System.out.println(" bool e.a i1= " + i1 + " k= " + this.k);
-    	if (i1 < 8) {
-    		this.o = (this.m[(i1)] = b(this.k)); // i1++
-    		i1++;
+    	if (i1 <= 8) {
+    		this.o = (this.m[(i1++)] = b(this.k));
     	} else {    		
     		break;
     	}
@@ -85,7 +84,7 @@ public class e
     return i2;
   }
   
-  public void a(String paramString)
+  public void a(String paramString) // Load text seem has problem, it not shown on screen
   {
     String str = "/text/" + paramString + ".txt";
     try

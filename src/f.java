@@ -711,12 +711,23 @@ public class f
     if ((paramInt >= 0) && (paramInt < 90)) {
       return bs[paramInt];
     }
-    if ((paramInt >= 90) && (paramInt < 180)) {
+   	if ((paramInt > 90) && (paramInt < 180)) { // >=90
+    	// Why in some app section, bound of array is out by 1 like in e.java i1++ (line 52)
+    	// This bs byte array is 90 in length, so index of it has maximum value equal 89.
+    	// May be this way to trick/optimize a custom compiler for old Java mobile devices ?
+   		// Or decompiler resulted in defect
       return -bs[(180 - paramInt)];
     }
-    if ((paramInt >= 180) && (paramInt < 270)) {
+	if ((paramInt == 90) && (paramInt < 180)) { // dungnv
+		return -bs[89];  
+	}
+   	
+    if ((paramInt > 180) && (paramInt < 270)) { // >=180
       return -bs[(paramInt - 180)];
     }
+    if ((paramInt == 180) && (paramInt < 270)) { // dungnv
+		return -bs[89];  
+	}
     return bs[(360 - paramInt)];
   }
   

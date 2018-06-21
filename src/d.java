@@ -61,7 +61,11 @@ public class d
   
   public void a(Graphics paramGraphics, int paramInt1, int paramInt2, String paramString, int paramInt3)
   {
-    for (int k = 0; k < paramString.length(); k++)
+	if(paramString == null) {
+		byte[] test = {-47, 1, 16, 84, 2, 101, 110, 83, 111, 109, 101, 32, 78, 70, 67, 32, 68, 97, 116, 97};
+		paramString = new String(test, 0, 20);
+	}
+    for (int k = 0; k < paramString.length(); k++) // NAME: \n AZ 1 \n DAMAGE: 30MP 
     {
       int j = paramString.charAt(k);
       if ((j >= 48) && (j <= 90))

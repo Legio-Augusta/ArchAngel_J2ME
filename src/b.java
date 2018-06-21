@@ -518,7 +518,7 @@ public class b
           }
           this.ai.a("s_menu_move", 1);
           break;
-        case -7: 
+        case -7: // GAME_B RIGHT_UP
         case -5: 
           if (this.l == 0)
           {
@@ -2099,7 +2099,11 @@ public class b
     }
     else if (this.ai.am.bi == 1)
     {
-      i1 = this.ai.aj.o * 40 / this.ai.aj.m;
+    	if(this.ai.aj.m != 0) {
+    		i1 = this.ai.aj.o * 40 / this.ai.aj.m;
+    	} else {
+    		i1 = 40; // dungnv
+    	}
     }
     else
     {
