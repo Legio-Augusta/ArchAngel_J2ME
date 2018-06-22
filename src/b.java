@@ -2095,14 +2095,16 @@ public class b
           this.ai.ak.a(paramGraphics, 92, 205, "TO RELOAD", 0);
         }
       }
-      i1 = this.ai.aj.t * 40 / this.ai.aj.r;
+      if (this.ai.aj.r != 0) {
+    	  i1 = this.ai.aj.t * 40 / this.ai.aj.r;
+      }
     }
     else if (this.ai.am.bi == 1)
     {
     	if(this.ai.aj.m != 0) {
     		i1 = this.ai.aj.o * 40 / this.ai.aj.m;
     	} else {
-    		i1 = 40; // dungnv
+    		i1 = 20; // dungnv
     	}
     }
     else
