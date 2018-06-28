@@ -236,6 +236,7 @@ public class f
       if ((i1 = paramg.k) == -1) {
         return;
       }
+      System.out.println("i1i1i1i1i11i1 " + i1 + " " + ae.length + " ii11i1i11i11");
       if (ae[i1].c == 0)
       {
         paramg.c = 0;
@@ -387,6 +388,7 @@ public class f
     this.bl = false;
     this.bm = -1;
     this.bn = 0;
+    System.out.println("aeaoeaeeaeaee " + ae.length + " aeaeoeoaoe");
     for (int i1 = 0; i1 < 18; i1++) {
       ae[i1].c = 0;
     }
@@ -433,7 +435,10 @@ public class f
     {
       i3 = i1 >> 8;
       i4 = i2 >> 8;
-      paramGraphics.setColor(arrayOfInt[(i5 - 11)]);
+      if( (i5 - 11) < arrayOfInt.length) {
+    	  paramGraphics.setColor(arrayOfInt[(i5 - 11)]);
+      }
+      //System.out.println("-::_:_:_:_:_:__" + i5 + " _______________");
       paramGraphics.fillRect(28 + i3, 21 - i4, 3, 3);
     }
     i2 += 300;
@@ -709,7 +714,12 @@ public class f
       paramInt -= 360;
     }
     if ((paramInt >= 0) && (paramInt < 90)) {
-      return bs[paramInt];
+      //System.out.println("bsbsbssbs " + bs.length + " " + paramInt + " bsbsbbsbs");
+      if(paramInt < bs.length) {    	  
+    	  return bs[paramInt];
+      } else {
+    	  return bs[89];
+      }
     }
    	if ((paramInt > 90) && (paramInt < 180)) { // >=90
     	// Why in some app section, bound of array is out by 1 like in e.java i1++ (line 52)
@@ -728,7 +738,11 @@ public class f
     if ((paramInt == 180) && (paramInt < 270)) { // dungnv
 		return -bs[89];  
 	}
-    return bs[(360 - paramInt)];
+    if ( (360 - paramInt) < bs.length ) {    	
+    	return bs[(360 - paramInt)];
+    } else {
+    	return bs[89];
+    }
   }
   
   public void b(Graphics paramGraphics, int paramInt1, int paramInt2, int paramInt3, int paramInt4)

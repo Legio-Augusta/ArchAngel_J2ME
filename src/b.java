@@ -2085,10 +2085,12 @@ public class b
           this.ai.am.bh = false;
         }
       }
-      if (this.ai.aj.t <= 0)
+      System.out.println(":):):):):) " + this.ai.aj.t + " :(:(:(:(:(");
+      if (this.ai.aj.t <= 0) // may be number of enemies left
       {
+    	this.ai.aj.t = 3; // Try play flow
         paramGraphics.setColor(16711680);
-        if (this.ai.x / 2 % 2 == 0)
+        if (this.ai.x / 2 % 2 == 0) // boss scene, out of amour 
         {
           paramGraphics.fillRect(80, 194, 80, 19);
           this.ai.ak.a(paramGraphics, 86, 197, "PRESS 0 KEY", 0);
@@ -2101,16 +2103,18 @@ public class b
     }
     else if (this.ai.am.bi == 1)
     {
+    	//System.out.println(">>>>> "+this.ai.aj.m + " <<<<<");
     	if(this.ai.aj.m != 0) {
     		i1 = this.ai.aj.o * 40 / this.ai.aj.m;
     	} else {
-    		i1 = 20; // dungnv
+    		i1 = 0; // dungnv
     	}
     }
     else
     {
       i1 = 40;
     }
+    //System.out.println(":(:(:(:(:(:(:( "+i1 + " "+ this.ai.aj.o + " <<<<<");
     paramGraphics.setColor(16711680);
     paramGraphics.fillRect(192, 17, i1, 4);
   }
