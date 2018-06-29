@@ -13,25 +13,25 @@ public class ArchAngel
   public int b = 0;
   public int c;
   public int d = 0;
-  public boolean e = false;
-  public boolean f = true;
-  public boolean g = false;
-  public boolean h = false;
-  public boolean i;
-  public boolean j = false;
-  public boolean k = false;
-  public boolean l = false;
-  public boolean m = false;
-  public boolean n = false;
+  public boolean bool_e = false;
+  public boolean bool_f = true;
+  public boolean bool_g = false;
+  public boolean bool_h = false;
+  public boolean bool_i;
+  public boolean bool_j = false;
+  public boolean bool_k = false;
+  public boolean bool_l = false;
+  public boolean bool_m = false;
+  public boolean bool_n = false;
   public Random rnd = new Random();
   public int p = 0;
-  public boolean q;
-  public boolean r;
-  public boolean s;
-  public boolean t;
-  public boolean u = false;
-  public boolean v = true;
-  public boolean w = true;
+  public boolean bool_q;
+  public boolean bool_r;
+  public boolean bool_s;
+  public boolean bool_t;
+  public boolean bool_u = false;
+  public boolean bool_v = true;
+  public boolean bool_w = true;
   public int x = 0;
   public int y = -1;
   public int z = 0;
@@ -48,14 +48,14 @@ public class ArchAngel
   public ReadMedia readMedia = new ReadMedia();
   public ReadText readText = new ReadText();
   public MainGameScreen mainGameScreen = new MainGameScreen(this, this.readMedia);
-  public String[] an = { "ON", "OFF" };
-  public String[] ao = { "AUTOMATIC", "MANUAL" };
-  public String[] ap = { "Easy", "Hard" };
+  public String[] on_off = { "ON", "OFF" };
+  public String[] auto_manual = { "AUTOMATIC", "MANUAL" };
+  public String[] easy_hard = { "Easy", "Hard" };
   //public AudioClip aq = null;
   public Thread thread = null;
-  private boolean as = true;
+  private boolean bool_as = true;
   
-  public void a()
+  public void addScore1()
   {
     AARecordStore localh = new AARecordStore();
     if (localh.readRecordStore("Angel1", false))
@@ -66,7 +66,7 @@ public class ArchAngel
     }
   }
   
-  public void b()
+  public void addScore()
   {
     AARecordStore localh = new AARecordStore();
     if (localh.readRecordStore("Angel", true))
@@ -79,7 +79,7 @@ public class ArchAngel
   
   public ArchAngel()
   {
-    a();
+    addScore1();
   }
   
   public void pauseApp()
@@ -120,7 +120,7 @@ public class ArchAngel
     return false;
   }
   
-  public void a(String paramString, int paramInt)
+  public void playSound(String paramString, int paramInt)
   {
     if (this.af == 0) {
       return;
@@ -200,7 +200,7 @@ public class ArchAngel
     this.game_scrn.b();
   }
   
-  public void a(Graphics paramGraphics)
+  public void drawImage(Graphics paramGraphics)
   {
     paramGraphics.setClip(0, 0, 240, 320);
     this.readMedia.drawImageAnchor20(paramGraphics, 3, 0, 300);
@@ -208,7 +208,7 @@ public class ArchAngel
   
   public void startApp()
   {
-    if (this.as)
+    if (this.bool_as)
     {
       this.game_scrn = new GameScreen(this);
       this.game_scrn.setFullScreenMode(true);
@@ -216,11 +216,11 @@ public class ArchAngel
       this.thread = new Thread(this.game_scrn);
       this.thread.start();
       this.ac = 0;
-      this.as = false;
+      this.bool_as = false;
     }
   }
   
-  public void f()
+  public void addScore12()
   {
     AARecordStore localh = new AARecordStore();
     if (localh.readRecordStore("Angel1", true))

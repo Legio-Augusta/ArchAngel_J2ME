@@ -201,7 +201,7 @@ public class MainGameScreen
         this.af += -1;
         return;
       }
-      if ((this.bi == 3) && (this.AA.n == true))
+      if ((this.bi == 3) && (this.AA.bool_n == true))
       {
         if (paramg.n == true)
         {
@@ -209,7 +209,7 @@ public class MainGameScreen
           paramg.c = 0;
           this.af += -1;
           this.au += 3;
-          this.gameSetting.a(paramg.m);
+          this.gameSetting.loseHP(paramg.m);
           if (this.gameSetting.j <= 0) {
             d();
           }
@@ -220,7 +220,7 @@ public class MainGameScreen
         paramg.c = 0;
         this.af += -1;
         this.au += 3;
-        this.gameSetting.a(paramg.m);
+        this.gameSetting.loseHP(paramg.m);
         b(false);
         if (this.gameSetting.j <= 0) {
           d();
@@ -415,7 +415,7 @@ public class MainGameScreen
   
   public void a(Graphics paramGraphics)
   {
-    this.AA.l = true;
+    this.AA.bool_l = true;
     c(paramGraphics);
     d(paramGraphics);
     g(paramGraphics);
@@ -788,7 +788,7 @@ public class MainGameScreen
         this.readMedia.drawImageAnchor20(paramGraphics, 34, this.bb + 38 - arrayOfByte2[this.z][0], this.bc + 11 - arrayOfByte2[this.z][1] - 11 * (this.ap % 2));
         paramGraphics.setClip(0, 0, 240, 300);
       }
-      this.AA.m = true;
+      this.AA.bool_m = true;
       break;
     case 2: 
       this.AA.c();
@@ -930,13 +930,13 @@ public class MainGameScreen
       this.b9 = (94 - this.bc);
       a(paramGraphics, false, 88 - this.b8, 133 - this.b9, 30, 8, 4);
       if ((this.bi == 1) && (!this.ay)) {
-        this.AA.a("s_explo", 1);
+        this.AA.playSound("s_explo", 1);
       }
       if ((this.bi == 3) && (!this.az)) {
-        this.AA.a("s_explo", 1);
+        this.AA.playSound("s_explo", 1);
       }
       this.au += -1;
-      if ((this.AA.n == true) && (this.au == 2) && (this.az == true)) {
+      if ((this.AA.bool_n == true) && (this.au == 2) && (this.az == true)) {
         d(false);
       }
     }
@@ -947,11 +947,11 @@ public class MainGameScreen
     if (this.gameSetting.o <= 0)
     {
       this.AA.x = 1;
-      this.AA.j = true;
+      this.AA.bool_j = true;
     }
     else
     {
-      this.AA.a("s_missile", 1);
+      this.AA.playSound("s_missile", 1);
     }
     this.a0 = true;
   }
@@ -997,7 +997,7 @@ public class MainGameScreen
   {
     this.ay = paramBoolean;
     if (this.ay == true) {
-      this.AA.a("s_gun", 0);
+      this.AA.playSound("s_gun", 0);
     } else {
       this.AA.c();
     }
@@ -1355,7 +1355,7 @@ public class MainGameScreen
       this.bn = 12;
     }
     int i1;
-    if ((this.az) && (this.AA.x % 5 == 0) && (this.AA.n == true) && (this.gameSetting.t > 0))
+    if ((this.az) && (this.AA.x % 5 == 0) && (this.AA.bool_n == true) && (this.gameSetting.t > 0))
     {
       i1 = this.aj;
       if ((this.aj < 0) || (this.ak > 0)) {
@@ -1399,9 +1399,9 @@ public class MainGameScreen
     } else {
       this.az = paramBoolean;
     }
-    if ((this.gameSetting.t > 0) && (this.AA.n == true)) {
+    if ((this.gameSetting.t > 0) && (this.AA.bool_n == true)) {
       if (this.az == true) {
-        this.AA.a("s_plasma", 0);
+        this.AA.playSound("s_plasma", 0);
       } else {
         this.AA.c();
       }
@@ -1501,7 +1501,7 @@ public class MainGameScreen
       paramg.l = 2;
       this.v += 1;
       paramg.d = 0;
-      this.AA.n = true;
+      this.AA.bool_n = true;
       break;
     case 13: 
       paramg.m = this.j;
@@ -1637,7 +1637,7 @@ public class MainGameScreen
       }
       break;
     case 11: 
-      if (this.AA.n == true)
+      if (this.AA.bool_n == true)
       {
         if (paramg.l == 29)
         {
