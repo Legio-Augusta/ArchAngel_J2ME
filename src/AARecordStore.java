@@ -4,26 +4,26 @@ import javax.microedition.rms.RecordStoreException;
 
 public class AARecordStore
 {
-  private RecordStore a = null;
-  private int b = 0;
-  private boolean c = false;
-  public byte[] d = null;
+  private RecordStore recordStore = null;
+  private int int_b = 0;
+  private boolean flag_c = false;
+  public byte[] byte_arr_d = null;
   
-  public void a()
+  public void addScore()
   {
     try
     {
-      if (this.c) {
-        this.a.addRecord(this.d, 0, this.d.length);
+      if (this.flag_c) {
+        this.recordStore.addRecord(this.byte_arr_d, 0, this.byte_arr_d.length);
       }
-      this.a.closeRecordStore();
-      this.a = null;
+      this.recordStore.closeRecordStore();
+      this.recordStore = null;
     }
     catch (RecordStoreException localRecordStoreException) {}
-    this.d = null;
+    this.byte_arr_d = null;
   }
   
-  public boolean a(String paramString, boolean paramBoolean)
+  public boolean readRecordStore(String paramString, boolean paramBoolean)
   {
 	paramBoolean = true; // Try to create new if not exist
     try
@@ -33,11 +33,11 @@ public class AARecordStore
       }
     }
     catch (Exception localException) {}
-    this.c = paramBoolean;
+    this.flag_c = paramBoolean;
     try
     {
-      this.a = RecordStore.openRecordStore(paramString, paramBoolean);
-      this.b = 0;
+      this.recordStore = RecordStore.openRecordStore(paramString, paramBoolean);
+      this.int_b = 0;
     }
     catch (RecordStoreException localRecordStoreException1)
     {
@@ -45,34 +45,34 @@ public class AARecordStore
       return false;
     }
     if (paramBoolean) {
-      this.d = new byte[100];
+      this.byte_arr_d = new byte[100];
     } else {
       try
       {
-        this.d = this.a.getRecord(1);
+        this.byte_arr_d = this.recordStore.getRecord(1);
       }
       catch (RecordStoreException localRecordStoreException2) {}
     }
     return true;
   }
   
-  public int b()
+  public int returnByteCalc()
   {
     int i = 0;
-    i = this.d[this.b] & 0xFF;
-    i += ((this.d[(this.b + 1)] & 0xFF) << 8);
-    i += ((this.d[(this.b + 2)] & 0xFF) << 16);
-    i += ((this.d[(this.b + 3)] & 0xFF) << 24);
-    this.b += 4;
+    i = this.byte_arr_d[this.int_b] & 0xFF;
+    i += ((this.byte_arr_d[(this.int_b + 1)] & 0xFF) << 8);
+    i += ((this.byte_arr_d[(this.int_b + 2)] & 0xFF) << 16);
+    i += ((this.byte_arr_d[(this.int_b + 3)] & 0xFF) << 24);
+    this.int_b += 4;
     return i;
   }
   
-  public void a(int paramInt)
+  public void byteCalculate(int paramInt)
   {
-    this.d[this.b] = ((byte)(paramInt & 0xFF));
-    this.d[(this.b + 1)] = ((byte)(paramInt >> 8 & 0xFF));
-    this.d[(this.b + 2)] = ((byte)(paramInt >> 16 & 0xFF));
-    this.d[(this.b + 3)] = ((byte)(paramInt >> 24 & 0xFF));
-    this.b += 4;
+    this.byte_arr_d[this.int_b] = ((byte)(paramInt & 0xFF));
+    this.byte_arr_d[(this.int_b + 1)] = ((byte)(paramInt >> 8 & 0xFF));
+    this.byte_arr_d[(this.int_b + 2)] = ((byte)(paramInt >> 16 & 0xFF));
+    this.byte_arr_d[(this.int_b + 3)] = ((byte)(paramInt >> 24 & 0xFF));
+    this.int_b += 4;
   }
 }

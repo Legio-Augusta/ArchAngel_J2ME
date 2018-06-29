@@ -1,12 +1,12 @@
 import java.util.Random;
 import javax.microedition.lcdui.Graphics;
 
-public class f
+public class MainGameScreen
 {
-  public ArchAngel a;
-  public d b;
-  public c c;
-  public Random d = new Random();
+  public ArchAngel AA;
+  public ReadMedia readMedia;
+  public GameSettings gameSetting;
+  public Random rnd = new Random();
   public String e;
   public int f;
   public int g;
@@ -142,14 +142,14 @@ public class f
       {
         this.ca = 0;
         paramg.c = 0;
-        this.b.a("etc");
-        this.b.a(1, 112);
-        this.b.d();
-        this.b.a("aa");
+        this.readMedia.readMediaStream("etc");
+        this.readMedia.reloadImageArr(1, 112);
+        this.readMedia.closeInputStream();
+        this.readMedia.readMediaStream("aa");
         for (i3 = 11; i3 < 19; i3++) {
-          this.b.a(i3, 24 + i3);
+          this.readMedia.reloadImageArr(i3, 24 + i3);
         }
-        this.b.d();
+        this.readMedia.closeInputStream();
         this.bi = 2;
         this.aa = 2;
         this.ap = 0;
@@ -167,9 +167,9 @@ public class f
         this.au += 2;
         paramg.c = 0;
         this.ah += -1;
-        this.c.j -= 50;
+        this.gameSetting.j -= 50;
         b(false);
-        if (this.c.j <= 0) {
+        if (this.gameSetting.j <= 0) {
           d();
         }
       }
@@ -201,7 +201,7 @@ public class f
         this.af += -1;
         return;
       }
-      if ((this.bi == 3) && (this.a.n == true))
+      if ((this.bi == 3) && (this.AA.n == true))
       {
         if (paramg.n == true)
         {
@@ -209,8 +209,8 @@ public class f
           paramg.c = 0;
           this.af += -1;
           this.au += 3;
-          this.c.a(paramg.m);
-          if (this.c.j <= 0) {
+          this.gameSetting.a(paramg.m);
+          if (this.gameSetting.j <= 0) {
             d();
           }
         }
@@ -220,9 +220,9 @@ public class f
         paramg.c = 0;
         this.af += -1;
         this.au += 3;
-        this.c.a(paramg.m);
+        this.gameSetting.a(paramg.m);
         b(false);
-        if (this.c.j <= 0) {
+        if (this.gameSetting.j <= 0) {
           d();
         }
       }
@@ -246,8 +246,8 @@ public class f
       {
         paramg.c = 4;
         paramg.l = 2;
-        ae[i1].m -= this.c.s;
-        this.a.ae = (40 * ae[i1].m / this.n);
+        ae[i1].m -= this.gameSetting.s;
+        this.AA.ae = (40 * ae[i1].m / this.n);
         if (ae[i1].m <= 0)
         {
           ae[i1].c = 7;
@@ -269,14 +269,14 @@ public class f
         paramg.c = 0;
         return;
       }
-      if (this.c.o > 0) {
+      if (this.gameSetting.o > 0) {
         a(paramg, ae[i1].a, ae[i1].b);
       }
       if (Math.abs(paramg.a - ae[i1].a) + Math.abs(paramg.b - ae[i1].b) < 300)
       {
         paramg.c = 4;
         paramg.l = 2;
-        ae[i1].m -= this.c.n;
+        ae[i1].m -= this.gameSetting.n;
         if (ae[i1].m <= 0)
         {
           ae[i1].c = 8;
@@ -308,7 +308,7 @@ public class f
         this.ag += -1;
         paramg.c = 0;
         this.t += 1;
-        this.a.ab = 6;
+        this.AA.ab = 6;
         this.g = (this.t * this.i + this.u * this.h);
       }
       break;
@@ -365,7 +365,7 @@ public class f
     this.bb = 90;
     this.bc = 169;
     this.a5[1] = -82;
-    this.a.ae = 40;
+    this.AA.ae = 40;
     this.f = (this.ax = this.al = this.am = this.as = this.aq = this.ar = this.an = this.ao = 0);
     this.aw = 20;
     this.av = 90;
@@ -384,7 +384,7 @@ public class f
     this.v = (this.w = 0);
     this.at = 262143;
     this.af = (this.ag = this.ah = 0);
-    this.a.ab = 25;
+    this.AA.ab = 25;
     this.bl = false;
     this.bm = -1;
     this.bn = 0;
@@ -415,7 +415,7 @@ public class f
   
   public void a(Graphics paramGraphics)
   {
-    this.a.l = true;
+    this.AA.l = true;
     c(paramGraphics);
     d(paramGraphics);
     g(paramGraphics);
@@ -466,13 +466,13 @@ public class f
     int i2 = paramInt2 - (paramInt3 >> 1);
     if (paramBoolean)
     {
-      this.b.a(paramGraphics, 93 + paramInt4, i1, i2);
+      this.readMedia.drawImageAnchor20(paramGraphics, 93 + paramInt4, i1, i2);
       this.be = i1;
       this.bf = i2;
     }
     else
     {
-      this.b.a(paramGraphics, 84 + (29 - paramInt4), i1, i2);
+      this.readMedia.drawImageAnchor20(paramGraphics, 84 + (29 - paramInt4), i1, i2);
     }
   }
   
@@ -522,9 +522,9 @@ public class f
         int i3 = ae[this.aj].d * 8 + 4;
         if (this.bi == 1) {
           if (ae[this.aj].d < 4) {
-            this.b.a(paramGraphics, 82, i1 - 10, i2 - 6);
+            this.readMedia.drawImageAnchor20(paramGraphics, 82, i1 - 10, i2 - 6);
           } else {
-            this.b.a(paramGraphics, 81, i1 - 17, i2 - 12);
+            this.readMedia.drawImageAnchor20(paramGraphics, 81, i1 - 17, i2 - 12);
           }
         }
       }
@@ -533,7 +533,7 @@ public class f
     {
       this.aj = -1;
       if (this.bi == 1) {
-        this.b.a(paramGraphics, 83, this.ai, 136);
+        this.readMedia.drawImageAnchor20(paramGraphics, 83, this.ai, 136);
       }
     }
   }
@@ -545,9 +545,9 @@ public class f
     if (i2 < 0) {
       i2 = 0;
     }
-    this.b.a(paramGraphics, 7, this.a5[0], 27);
-    this.b.a(paramGraphics, 7, this.a5[0] + (this.a7[0] != false ? 65296 : 240), 27); // != 0
-    this.b.b(paramGraphics, 8, this.a5[1], 166);
+    this.readMedia.drawImageAnchor20(paramGraphics, 7, this.a5[0], 27);
+    this.readMedia.drawImageAnchor20(paramGraphics, 7, this.a5[0] + (this.a7[0] != false ? 65296 : 240), 27); // != 0
+    this.readMedia.drawImageAnchor36(paramGraphics, 8, this.a5[1], 166);
   }
   
   public boolean a(g paramg1, g paramg2)
@@ -580,12 +580,12 @@ public class f
     int[][] arrayOfInt = { new int[3], { 1, 2, 3 }, { 2, 3, 4 } };
     for (int i1 = 0; i1 < 3; i1++)
     {
-      this.b.b(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)], this.a6[i1] - arrayOfInt[i1][i2]);
+      this.readMedia.drawImageAnchor36(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)], this.a6[i1] - arrayOfInt[i1][i2]);
       // this.b.b(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)] + (this.a7[(i1 + 1)] != 0 ? 65296 : 240), this.a6[i1] - arrayOfInt[i1][i2]);
-      this.b.b(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)] + (this.a7[(i1 + 1)] != false ? 65296 : 240), this.a6[i1] - arrayOfInt[i1][i2]);
+      this.readMedia.drawImageAnchor36(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)] + (this.a7[(i1 + 1)] != false ? 65296 : 240), this.a6[i1] - arrayOfInt[i1][i2]);
     }
-    if ((this.a.ad == 2) || (this.a.b == 0)) {
-      this.b.a(paramGraphics, 18 + i2, 0, 166);
+    if ((this.AA.ad == 2) || (this.AA.b == 0)) {
+      this.readMedia.drawImageAnchor20(paramGraphics, 18 + i2, 0, 166);
     }
   }
   
@@ -669,31 +669,31 @@ public class f
     int i2;
     if (paramBoolean)
     {
-      this.b.c(paramGraphics, 71 + paramInt4, paramInt1, paramInt2);
+      this.readMedia.drawImageInArr(paramGraphics, 71 + paramInt4, paramInt1, paramInt2);
       for (i4 = 0; i4 < paramInt5; i4++)
       {
-        i3 = Math.abs(this.d.nextInt() % 7);
-        i1 = Math.abs(this.d.nextInt() % paramInt3) - (paramInt3 >> 1);
-        i2 = Math.abs(this.d.nextInt() % paramInt3) - (paramInt3 >> 1);
+        i3 = Math.abs(this.rnd.nextInt() % 7);
+        i1 = Math.abs(this.rnd.nextInt() % paramInt3) - (paramInt3 >> 1);
+        i2 = Math.abs(this.rnd.nextInt() % paramInt3) - (paramInt3 >> 1);
         if ((i4 & 0x1) == 1) {
-          this.b.c(paramGraphics, 71 + i3, paramInt1 + i1, paramInt2 + i2);
+          this.readMedia.drawImageInArr(paramGraphics, 71 + i3, paramInt1 + i1, paramInt2 + i2);
         } else {
-          this.b.c(paramGraphics, 71 + i3, paramInt1 + i1, paramInt2 + i2);
+          this.readMedia.drawImageInArr(paramGraphics, 71 + i3, paramInt1 + i1, paramInt2 + i2);
         }
       }
     }
     else
     {
-      this.b.c(paramGraphics, 71 + paramInt4, paramInt1 + 5, paramInt2 - 25);
+      this.readMedia.drawImageInArr(paramGraphics, 71 + paramInt4, paramInt1 + 5, paramInt2 - 25);
       for (i4 = 0; i4 < paramInt5; i4++)
       {
-        i3 = Math.abs(this.d.nextInt() % 7);
-        i1 = Math.abs(this.d.nextInt() % paramInt3) - (paramInt3 >> 1);
-        i2 = Math.abs(this.d.nextInt() % paramInt3) - (paramInt3 >> 1);
+        i3 = Math.abs(this.rnd.nextInt() % 7);
+        i1 = Math.abs(this.rnd.nextInt() % paramInt3) - (paramInt3 >> 1);
+        i2 = Math.abs(this.rnd.nextInt() % paramInt3) - (paramInt3 >> 1);
         if ((i4 & 0x1) == 1) {
-          this.b.c(paramGraphics, 71 + i3, paramInt1 + i1 + 5, paramInt2 + i2 - 25);
+          this.readMedia.drawImageInArr(paramGraphics, 71 + i3, paramInt1 + i1 + 5, paramInt2 + i2 - 25);
         } else {
-          this.b.c(paramGraphics, 71 + i3, paramInt1 + i1 + 5, paramInt2 + i2 - 25);
+          this.readMedia.drawImageInArr(paramGraphics, 71 + i3, paramInt1 + i1 + 5, paramInt2 + i2 - 25);
         }
       }
     }
@@ -750,7 +750,7 @@ public class f
     int i1 = paramInt1 - (paramInt3 >> 1);
     int i2 = paramInt2 - (paramInt3 >> 1);
     if (paramInt4 < 6) {
-      this.b.c(paramGraphics, 102 + paramInt4, i1 - 5, i2);
+      this.readMedia.drawImageInArr(paramGraphics, 102 + paramInt4, i1 - 5, i2);
     }
   }
   
@@ -776,25 +776,25 @@ public class f
     switch (this.bi)
     {
     case 1: 
-      this.b.c(paramGraphics, 24 + this.z, this.bb + 30, this.bc + 11);
+      this.readMedia.drawImageInArr(paramGraphics, 24 + this.z, this.bb + 30, this.bc + 11);
       if ((this.ay == true) && (this.ap % 2 == 0)) {
-        this.b.c(paramGraphics, 80, 120, 165);
+        this.readMedia.drawImageInArr(paramGraphics, 80, 120, 165);
       }
-      if (this.a.z != 3)
+      if (this.AA.z != 3)
       {
         paramGraphics.setClip(this.bb + 10 + arrayOfByte2[this.z][0], this.bc + 11 + arrayOfByte2[this.z][1], 12, 11);
-        this.b.a(paramGraphics, 33, this.bb + 10 + arrayOfByte2[this.z][0], this.bc + 11 + arrayOfByte2[this.z][1] - 11 * (this.ap % 2));
+        this.readMedia.drawImageAnchor20(paramGraphics, 33, this.bb + 10 + arrayOfByte2[this.z][0], this.bc + 11 + arrayOfByte2[this.z][1] - 11 * (this.ap % 2));
         paramGraphics.setClip(this.bb + 38 - arrayOfByte2[this.z][0], this.bc + 11 - arrayOfByte2[this.z][1], 12, 11);
-        this.b.a(paramGraphics, 34, this.bb + 38 - arrayOfByte2[this.z][0], this.bc + 11 - arrayOfByte2[this.z][1] - 11 * (this.ap % 2));
+        this.readMedia.drawImageAnchor20(paramGraphics, 34, this.bb + 38 - arrayOfByte2[this.z][0], this.bc + 11 - arrayOfByte2[this.z][1] - 11 * (this.ap % 2));
         paramGraphics.setClip(0, 0, 240, 300);
       }
-      this.a.m = true;
+      this.AA.m = true;
       break;
     case 2: 
-      this.a.c();
+      this.AA.c();
       paramGraphics.setClip(0, 0, 240, 300);
       if (i1 / 2 % 2 == 0) {
-        this.b.a(paramGraphics, 112, 66, 103);
+        this.readMedia.drawImageAnchor20(paramGraphics, 112, 66, 103);
       }
       this.aw = 10;
       this.a8 = 0;
@@ -802,42 +802,42 @@ public class f
       this.bg = true;
       if (i1 < 5) {
         if (i1 == 0) {
-          this.b.a(paramGraphics, 24, this.bb, this.bc);
+          this.readMedia.drawImageAnchor20(paramGraphics, 24, this.bb, this.bc);
         } else {
-          this.b.a(paramGraphics, 24 + i1 + 10, this.bb + arrayOfByte1[(i1 - 1)][0], this.bc + arrayOfByte1[(i1 - 1)][1]);
+          this.readMedia.drawImageAnchor20(paramGraphics, 24 + i1 + 10, this.bb + arrayOfByte1[(i1 - 1)][0], this.bc + arrayOfByte1[(i1 - 1)][1]);
         }
       }
       if (i1 == 5)
       {
-        this.b.a(112);
+        this.readMedia.destroyImage(112);
         for (int i3 = 0; i3 < 11; i3++) {
-          this.b.a(24 + i3);
+          this.readMedia.destroyImage(24 + i3);
         }
         for (int i3 = 0; i3 < 9; i3++)
         {
-          this.b.a(53 + i3);
-          this.b.a(44 + i3);
+          this.readMedia.destroyImage(53 + i3);
+          this.readMedia.destroyImage(44 + i3);
         }
         for (int i3 = 10; i3 < 13; i3++) {
-          this.b.a(71 + i3);
+          this.readMedia.destroyImage(71 + i3);
         }
         for (int i3 = 18; i3 < 24; i3++) {
-          this.b.a(84 + i3);
+          this.readMedia.destroyImage(84 + i3);
         }
-        this.b.a(paramGraphics, 38, this.bb + arrayOfByte1[3][0], this.bc + arrayOfByte1[3][1]);
+        this.readMedia.drawImageAnchor20(paramGraphics, 38, this.bb + arrayOfByte1[3][0], this.bc + arrayOfByte1[3][1]);
         this.bb = 93;
         this.bc = 144;
         System.gc();
-        this.b.a("boss" + this.a.ac);
+        this.readMedia.readMediaStream("boss" + this.AA.ac);
         for (int i3 = 0; i3 < 7; i3++) {
-          this.b.a(i3, 62 + i3);
+          this.readMedia.reloadImageArr(i3, 62 + i3);
         }
-        this.b.d();
-        this.b.a("plasma");
+        this.readMedia.closeInputStream();
+        this.readMedia.readMediaStream("plasma");
         for (int i3 = 0; i3 < 18; i3++) {
-          this.b.a(i3, 84 + i3);
+          this.readMedia.reloadImageArr(i3, 84 + i3);
         }
-        this.b.d();
+        this.readMedia.closeInputStream();
         this.bi = 3;
       }
       break;
@@ -876,21 +876,21 @@ public class f
         }
         break;
       }
-      this.b.a(paramGraphics, 38 + this.ba, this.bb, this.bc);
+      this.readMedia.drawImageAnchor20(paramGraphics, 38 + this.ba, this.bb, this.bc);
       if (this.ba == 1)
       {
         paramGraphics.setClip(this.bb + 14, this.bc + 21, 19, 14);
-        this.b.a(paramGraphics, 42, this.bb + 14, this.bc + 7);
+        this.readMedia.drawImageAnchor20(paramGraphics, 42, this.bb + 14, this.bc + 7);
       }
       else if (this.ba == 2)
       {
         paramGraphics.setClip(this.bb + 20, this.bc + 21, 19, 14);
-        this.b.a(paramGraphics, 42, this.bb + 20, this.bc + 21);
+        this.readMedia.drawImageAnchor20(paramGraphics, 42, this.bb + 20, this.bc + 21);
       }
       else
       {
         paramGraphics.setClip(this.bb + 16, this.bc + 21, 22, 14);
-        this.b.a(paramGraphics, 41, this.bb + 16, this.bc + 21 - 15 * (i1 / 3 % 2));
+        this.readMedia.drawImageAnchor20(paramGraphics, 41, this.bb + 16, this.bc + 21 - 15 * (i1 / 3 % 2));
       }
       paramGraphics.setClip(0, 0, 240, 300);
       break;
@@ -930,13 +930,13 @@ public class f
       this.b9 = (94 - this.bc);
       a(paramGraphics, false, 88 - this.b8, 133 - this.b9, 30, 8, 4);
       if ((this.bi == 1) && (!this.ay)) {
-        this.a.a("s_explo", 1);
+        this.AA.a("s_explo", 1);
       }
       if ((this.bi == 3) && (!this.az)) {
-        this.a.a("s_explo", 1);
+        this.AA.a("s_explo", 1);
       }
       this.au += -1;
-      if ((this.a.n == true) && (this.au == 2) && (this.az == true)) {
+      if ((this.AA.n == true) && (this.au == 2) && (this.az == true)) {
         d(false);
       }
     }
@@ -944,14 +944,14 @@ public class f
   
   public void c()
   {
-    if (this.c.o <= 0)
+    if (this.gameSetting.o <= 0)
     {
-      this.a.x = 1;
-      this.a.j = true;
+      this.AA.x = 1;
+      this.AA.j = true;
     }
     else
     {
-      this.a.a("s_missile", 1);
+      this.AA.a("s_missile", 1);
     }
     this.a0 = true;
   }
@@ -968,8 +968,8 @@ public class f
     }
     else
     {
-      i1 = (Math.abs(this.d.nextInt()) & 0x7) + 5;
-      int i2 = Math.abs(this.d.nextInt() & 0x7);
+      i1 = (Math.abs(this.rnd.nextInt()) & 0x7) + 5;
+      int i2 = Math.abs(this.rnd.nextInt() & 0x7);
       i3 = Math.abs(paramg.e - 3500) >> 8;
       if (i2 >= i3)
       {
@@ -997,9 +997,9 @@ public class f
   {
     this.ay = paramBoolean;
     if (this.ay == true) {
-      this.a.a("s_gun", 0);
+      this.AA.a("s_gun", 0);
     } else {
-      this.a.c();
+      this.AA.c();
     }
   }
   
@@ -1039,11 +1039,11 @@ public class f
     }
   }
   
-  public f(ArchAngel paramArchAngel, d paramd)
+  public MainGameScreen(ArchAngel paramArchAngel, ReadMedia paramd)
   {
-    this.a = paramArchAngel;
-    this.b = paramd;
-    this.c = paramArchAngel.aj;
+    this.AA = paramArchAngel;
+    this.readMedia = paramd;
+    this.gameSetting = paramArchAngel.gameSetting;
     for (int i1 = 0; i1 < 18; i1++) {
       ae[i1] = new g();
     }
@@ -1070,11 +1070,11 @@ public class f
   public void d()
   {
     this.au = 1000;
-    this.c.j = 0;
+    this.gameSetting.j = 0;
     this.ay = false;
     this.az = false;
     this.a0 = false;
-    this.a.ab = 7;
+    this.AA.ab = 7;
     e();
     this.ar = -20;
   }
@@ -1252,7 +1252,7 @@ public class f
   
   public void g(Graphics paramGraphics)
   {
-    this.b.a(paramGraphics, 21, 0, 0);
+    this.readMedia.drawImageAnchor20(paramGraphics, 21, 0, 0);
     for (int i1 = 0; i1 < 18; i1++) {
       if (ae[i1].c != 0) {
         a(paramGraphics, ae[i1]);
@@ -1355,7 +1355,7 @@ public class f
       this.bn = 12;
     }
     int i1;
-    if ((this.az) && (this.a.x % 5 == 0) && (this.a.n == true) && (this.c.t > 0))
+    if ((this.az) && (this.AA.x % 5 == 0) && (this.AA.n == true) && (this.gameSetting.t > 0))
     {
       i1 = this.aj;
       if ((this.aj < 0) || (this.ak > 0)) {
@@ -1363,17 +1363,17 @@ public class f
       }
       if (d(11, i1))
       {
-        this.c.t += -1;
-        if (this.c.t <= 0)
+        this.gameSetting.t += -1;
+        if (this.gameSetting.t <= 0)
         {
-          this.a.c();
+          this.AA.c();
           this.az = false;
         }
       }
     }
     if (this.a0)
     {
-      if (this.c.o > 0)
+      if (this.gameSetting.o > 0)
       {
         i1 = this.aj;
         if ((this.aj < 0) || (this.ak > 0)) {
@@ -1381,8 +1381,8 @@ public class f
         }
         if (d(1, i1))
         {
-          this.c.o += -1;
-          if (this.c.o <= 0) {
+          this.gameSetting.o += -1;
+          if (this.gameSetting.o <= 0) {
             this.a0 = false;
           }
           this.a3 = 20;
@@ -1394,16 +1394,16 @@ public class f
   
   public void d(boolean paramBoolean)
   {
-    if (this.a.ag == 1) {
+    if (this.AA.ag == 1) {
       this.az = (!this.az);
     } else {
       this.az = paramBoolean;
     }
-    if ((this.c.t > 0) && (this.a.n == true)) {
+    if ((this.gameSetting.t > 0) && (this.AA.n == true)) {
       if (this.az == true) {
-        this.a.a("s_plasma", 0);
+        this.AA.a("s_plasma", 0);
       } else {
-        this.a.c();
+        this.AA.c();
       }
     }
   }
@@ -1412,7 +1412,7 @@ public class f
   {
     int i3 = 8;
     int i5;
-    if (this.a.ac < 4) {
+    if (this.AA.ac < 4) {
       i5 = 1;
     } else {
       i5 = 2;
@@ -1427,8 +1427,8 @@ public class f
     else
     {
       i4 = paramg.j;
-      i1 = (Math.abs(this.d.nextInt()) & 0x7) + 5;
-      int i2 = Math.abs(this.d.nextInt() & 0x7);
+      i1 = (Math.abs(this.rnd.nextInt()) & 0x7) + 5;
+      int i2 = Math.abs(this.rnd.nextInt() & 0x7);
       i3 = Math.abs(paramg.e - 3500) >> 9;
       if (i2 >= i3)
       {
@@ -1437,7 +1437,7 @@ public class f
         }
         i1 = 4;
       }
-      i4 = Math.abs(this.d.nextInt() % 18) * 10;
+      i4 = Math.abs(this.rnd.nextInt() % 18) * 10;
       if (i4 < 80) {
         i4 = 80;
       }
@@ -1481,8 +1481,8 @@ public class f
       break;
     case 10: 
       paramg.m = 50;
-      i1 = (this.d.nextInt() & 0x1F) - 15;
-      int i2 = (this.d.nextInt() & 0x7) + 63;
+      i1 = (this.rnd.nextInt() & 0x1F) - 15;
+      int i2 = (this.rnd.nextInt() & 0x7) + 63;
       paramg.a = (i2 * b(i1 + this.av));
       paramg.b = (i2 * c(i1 + this.av));
       paramg.h = (paramg.i = 0);
@@ -1501,11 +1501,11 @@ public class f
       paramg.l = 2;
       this.v += 1;
       paramg.d = 0;
-      this.a.n = true;
+      this.AA.n = true;
       break;
     case 13: 
       paramg.m = this.j;
-      i1 = (this.d.nextInt() & 0x7F) - 63;
+      i1 = (this.rnd.nextInt() & 0x7F) - 63;
       paramg.a = (60 * b(i1 + this.av));
       paramg.b = (60 * c(i1 + this.av));
       paramg.e = i1;
@@ -1535,7 +1535,7 @@ public class f
       paramg.e = 64;
       paramg.k = paramInt2;
       paramg.l = 30;
-      paramg.m = this.c.s;
+      paramg.m = this.gameSetting.s;
       break;
     case 1: 
       i1 = paramg.j = this.av;
@@ -1546,7 +1546,7 @@ public class f
       paramg.e = 64;
       paramg.k = paramInt2;
       paramg.l = 30;
-      paramg.m = this.c.n;
+      paramg.m = this.gameSetting.n;
       break;
     case 6: 
       i1 = paramg.j = this.av;
@@ -1557,7 +1557,7 @@ public class f
       paramg.e = 64;
       paramg.l = (10 + this.cc);
       this.cc = (1 - this.cc);
-      paramg.m = (this.c.n / 10);
+      paramg.m = (this.gameSetting.n / 10);
       break;
     }
     paramg.c = paramInt1;
@@ -1591,16 +1591,16 @@ public class f
       break;
     case 10: 
       if (i4 < 8) {
-        this.b.c(paramGraphics, 44 + i4, i2 + 88 + 32, 163 + i3);
+        this.readMedia.drawImageInArr(paramGraphics, 44 + i4, i2 + 88 + 32, 163 + i3);
       }
       break;
     case 13: 
       if (i4 < 8) {
-        this.b.c(paramGraphics, 53 + i4, i2 + 88 + 32, 158 - i3);
+        this.readMedia.drawImageInArr(paramGraphics, 53 + i4, i2 + 88 + 32, 158 - i3);
       }
       break;
     case 14: 
-      this.b.c(paramGraphics, 63 + i4, i2 + 88 + 32, 158 - i3);
+      this.readMedia.drawImageInArr(paramGraphics, 63 + i4, i2 + 88 + 32, 158 - i3);
       break;
     case 12: 
       if (this.bi == 3)
@@ -1637,7 +1637,7 @@ public class f
       }
       break;
     case 11: 
-      if (this.a.n == true)
+      if (this.AA.n == true)
       {
         if (paramg.l == 29)
         {

@@ -23,7 +23,7 @@ public class ArchAngel
   public boolean l = false;
   public boolean m = false;
   public boolean n = false;
-  public Random o = new Random();
+  public Random rnd = new Random();
   public int p = 0;
   public boolean q;
   public boolean r;
@@ -43,37 +43,37 @@ public class ArchAngel
   public int af = 1;
   public int ag = 0;
   public int ah = 0;
-  public b ai = null;
-  public c aj = new c();
-  public d ak = new d();
-  public e al = new e();
-  public f am = new f(this, this.ak);
+  public GameScreen game_scrn = null;
+  public GameSettings gameSetting = new GameSettings();
+  public ReadMedia readMedia = new ReadMedia();
+  public ReadText readText = new ReadText();
+  public MainGameScreen mainGameScreen = new MainGameScreen(this, this.readMedia);
   public String[] an = { "ON", "OFF" };
   public String[] ao = { "AUTOMATIC", "MANUAL" };
   public String[] ap = { "Easy", "Hard" };
   //public AudioClip aq = null;
-  public Thread ar = null;
+  public Thread thread = null;
   private boolean as = true;
   
   public void a()
   {
     AARecordStore localh = new AARecordStore();
-    if (localh.a("Angel1", false))
+    if (localh.readRecordStore("Angel1", false))
     {
-      this.af = localh.b();
-      this.ag = localh.b();
-      localh.a();
+      this.af = localh.returnByteCalc();
+      this.ag = localh.returnByteCalc();
+      localh.addScore();
     }
   }
   
   public void b()
   {
     AARecordStore localh = new AARecordStore();
-    if (localh.a("Angel", true))
+    if (localh.readRecordStore("Angel", true))
     {
-      this.aj.b(localh);
-      localh.a(this.ah);
-      localh.a();
+      this.gameSetting.calcFromRecord(localh);
+      localh.byteCalculate(this.ah);
+      localh.addScore();
     }
   }
   
@@ -84,7 +84,7 @@ public class ArchAngel
   
   public void pauseApp()
   {
-    this.ai.a();
+    this.game_scrn.a();
   }
   
   public void c()
@@ -100,21 +100,21 @@ public class ArchAngel
   {
     int i1 = paramString.length() * 9;
     if (paramBoolean) {
-      this.ak.a(paramGraphics, 5, 305, paramString);
+      this.readMedia.drawGraphicStr40_122(paramGraphics, 5, 305, paramString);
     } else {
-      this.ak.a(paramGraphics, 235 - i1, 305, paramString);
+      this.readMedia.drawGraphicStr40_122(paramGraphics, 235 - i1, 305, paramString);
     }
   }
   
   public boolean d()
   {
     AARecordStore localh = new AARecordStore();
-    if (localh.a("Angel", false))
+    if (localh.readRecordStore("Angel", false))
     {
-      this.aj.a(localh);
-      this.aj.b(this.al);
-      this.ah = localh.b();
-      localh.a();
+      this.gameSetting.readRSSetting(localh);
+      this.gameSetting.readArmPlasmaMissile(this.readText);
+      this.ah = localh.returnByteCalc();
+      localh.addScore();
       return true;
     }
     return false;
@@ -146,50 +146,50 @@ public class ArchAngel
   
   public void a(int paramInt)
   {
-    this.al.a("ms" + paramInt); // e.a()
-    this.al.a(1);
+    this.readText.readTextFromStream("ms" + paramInt); // e.a()
+    this.readText.processTxt(1);
     System.out.println(" AA.a(int) al.a(1) ");
-    this.am.r = this.al.m[0]; // f.r = 
-    this.am.s = this.al.m[1];
-    this.am.y = this.al.m[2];
-    this.al.a(2);
+    this.mainGameScreen.r = this.readText.int_arr_m[0]; // f.r = 
+    this.mainGameScreen.s = this.readText.int_arr_m[1];
+    this.mainGameScreen.y = this.readText.int_arr_m[2];
+    this.readText.processTxt(2);
     System.out.println(" AA.a(int) al.a(2) ");
     
-    this.am.m = this.al.a();
+    this.mainGameScreen.m = this.readText.buildString();
     if (this.ah == 0) {
-      this.am.j = (this.al.m[0] / 2);
+      this.mainGameScreen.j = (this.readText.int_arr_m[0] / 2);
     } else {
-      this.am.j = this.al.m[0];
+      this.mainGameScreen.j = this.readText.int_arr_m[0];
     }
-    this.am.k = this.al.m[1];
-    this.am.l = this.al.m[2];
-    this.am.h = this.al.m[3];
-    this.al.a(3);
+    this.mainGameScreen.k = this.readText.int_arr_m[1];
+    this.mainGameScreen.l = this.readText.int_arr_m[2];
+    this.mainGameScreen.h = this.readText.int_arr_m[3];
+    this.readText.processTxt(3);
     System.out.println(" AA.a(int) al.a(3) ");
     
-    this.am.q = this.al.a();
+    this.mainGameScreen.q = this.readText.buildString();
     if (this.ah == 0) {
-      this.am.n = (this.al.m[0] / 2);
+      this.mainGameScreen.n = (this.readText.int_arr_m[0] / 2);
     } else {
-      this.am.n = this.al.m[0];
+      this.mainGameScreen.n = this.readText.int_arr_m[0];
     }
-    this.am.o = this.al.m[1];
-    this.am.p = this.al.m[2];
-    this.am.i = this.al.m[3];
-    this.al.a(10);
+    this.mainGameScreen.o = this.readText.int_arr_m[1];
+    this.mainGameScreen.p = this.readText.int_arr_m[2];
+    this.mainGameScreen.i = this.readText.int_arr_m[3];
+    this.readText.processTxt(10);
     System.out.println(" AA.a(int) al.a(10) ");
     
-    this.am.e = this.al.a();
-    this.al.a(4);
+    this.mainGameScreen.e = this.readText.buildString();
+    this.readText.processTxt(4);
     System.out.println(" AA.a(int) al.a(4) ");
   }
   
   public boolean e()
   {
     AARecordStore localh = new AARecordStore();
-    if (localh.a("Angel", false))
+    if (localh.readRecordStore("Angel", false))
     {
-      localh.a();
+      localh.addScore();
       return true;
     }
     return false;
@@ -197,24 +197,24 @@ public class ArchAngel
   
   public void destroyApp(boolean paramBoolean)
   {
-    this.ai.b();
+    this.game_scrn.b();
   }
   
   public void a(Graphics paramGraphics)
   {
     paramGraphics.setClip(0, 0, 240, 320);
-    this.ak.a(paramGraphics, 3, 0, 300);
+    this.readMedia.drawImageAnchor20(paramGraphics, 3, 0, 300);
   }
   
   public void startApp()
   {
     if (this.as)
     {
-      this.ai = new b(this);
-      this.ai.setFullScreenMode(true);
-      Display.getDisplay(this).setCurrent(this.ai);
-      this.ar = new Thread(this.ai);
-      this.ar.start();
+      this.game_scrn = new GameScreen(this);
+      this.game_scrn.setFullScreenMode(true);
+      Display.getDisplay(this).setCurrent(this.game_scrn);
+      this.thread = new Thread(this.game_scrn);
+      this.thread.start();
       this.ac = 0;
       this.as = false;
     }
@@ -223,11 +223,11 @@ public class ArchAngel
   public void f()
   {
     AARecordStore localh = new AARecordStore();
-    if (localh.a("Angel1", true))
+    if (localh.readRecordStore("Angel1", true))
     {
-      localh.a(this.af);
-      localh.a(this.ag);
-      localh.a();
+      localh.byteCalculate(this.af);
+      localh.byteCalculate(this.ag);
+      localh.addScore();
     }
   }
 }
