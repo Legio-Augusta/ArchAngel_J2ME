@@ -84,10 +84,10 @@ public class ArchAngel
   
   public void pauseApp()
   {
-    this.game_scrn.a();
+    this.game_scrn.empty_func();
   }
   
-  public void c()
+  public void stopSound()
   {
     /*if (this.aq != null)
     {
@@ -155,7 +155,7 @@ public class ArchAngel
     this.readText.processTxt(2);
     System.out.println(" AA.a(int) al.a(2) ");
     
-    this.mainGameScreen.m = this.readText.buildString();
+    this.mainGameScreen.str_m = this.readText.buildString();
     if (this.ah == 0) {
       this.mainGameScreen.j = (this.readText.int_arr_m[0] / 2);
     } else {
@@ -167,7 +167,7 @@ public class ArchAngel
     this.readText.processTxt(3);
     System.out.println(" AA.a(int) al.a(3) ");
     
-    this.mainGameScreen.q = this.readText.buildString();
+    this.mainGameScreen.str_q = this.readText.buildString();
     if (this.ah == 0) {
       this.mainGameScreen.n = (this.readText.int_arr_m[0] / 2);
     } else {
@@ -179,7 +179,7 @@ public class ArchAngel
     this.readText.processTxt(10);
     System.out.println(" AA.a(int) al.a(10) ");
     
-    this.mainGameScreen.e = this.readText.buildString();
+    this.mainGameScreen.str_e = this.readText.buildString();
     this.readText.processTxt(4);
     System.out.println(" AA.a(int) al.a(4) ");
   }
@@ -197,7 +197,7 @@ public class ArchAngel
   
   public void destroyApp(boolean paramBoolean)
   {
-    this.game_scrn.b();
+    this.game_scrn.void_empty();
   }
   
   public void drawImage(Graphics paramGraphics)

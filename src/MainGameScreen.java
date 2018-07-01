@@ -7,7 +7,7 @@ public class MainGameScreen
   public ReadMedia readMedia;
   public GameSettings gameSetting;
   public Random rnd = new Random();
-  public String e;
+  public String str_e;
   public int f;
   public int g;
   public int h;
@@ -15,11 +15,11 @@ public class MainGameScreen
   public int j;
   public int k;
   public int l = 0;
-  public String m;
+  public String str_m;
   public int n;
   public int o;
   public int p = 0;
-  public String q;
+  public String str_q;
   public int r;
   public int s;
   public int t;
@@ -30,10 +30,10 @@ public class MainGameScreen
   public int y;
   public int z;
   public int aa;
-  public final byte ab = 0;
-  public final byte ac = 1;
-  public final byte ad = 2;
-  public static g[] ae = new g[18];
+  public final byte byte_ab = 0;
+  public final byte byte_ac = 1;
+  public final byte byte_ad = 2;
+  public static GameConfig[] gameConfigArr = new GameConfig[18];
   public int af = 0;
   public int ag = 0;
   public int ah = 0;
@@ -53,16 +53,16 @@ public class MainGameScreen
   public int av = 90;
   public int aw = 20;
   public int ax = 0;
-  public boolean ay = false;
-  public boolean az = false;
-  public boolean a0 = false;
-  public boolean a1 = false;
-  public boolean a2 = false;
+  public boolean bool_ay = false;
+  public boolean bool_az = false;
+  public boolean bool_a0 = false;
+  public boolean bool_a1 = false;
+  public boolean bool_a2 = false;
   public int a3 = 0;
   public int a4 = 0;
-  public int[] a5 = new int[5];
-  public int[] a6 = { 187, 232, 304 };
-  public boolean[] a7 = new boolean[4];
+  public int[] int_arr_a5 = new int[5];
+  public int[] int_arr_a6 = { 187, 232, 304 };
+  public boolean[] bool_arr_a7 = new boolean[4];
   public int a8;
   public int a9;
   public int ba;
@@ -71,21 +71,21 @@ public class MainGameScreen
   public int bd;
   public int be;
   public int bf;
-  public boolean bg;
-  public boolean bh;
+  public boolean bool_bg;
+  public boolean bool_bh;
   public int bi;
   public int bj;
   public int bk;
-  public boolean bl = false;
+  public boolean bool_bl = false;
   public int bm = -1;
   public int bn = 0;
   public int bo = 0;
   public int bp = 64;
   public int bq = 0;
   public int br = 0;
-  public static byte[] bs = { 64, 63, 63, 63, 63, 63, 63, 63, 63, 63, 63, 62, 62, 62, 62, 61, 61, 61, 60, 60, 60, 59, 59, 58, 58, 58, 57, 57, 56, 55, 55, 54, 54, 53, 53, 52, 51, 51, 50, 49, 49, 48, 47, 46, 46, 45, 44, 43, 42, 41, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 31, 30, 29, 28, 27, 26, 25, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 8, 7, 6, 5, 4, 3, 2, 1 };
-  public static byte[] bt = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 22, 23, 24, 25, 27, 28, 29, 31, 32, 34, 35, 36, 38, 39, 41, 43, 44, 46, 48, 50, 51, 53, 55, 57, 59, 61, 64 };
-  public int[][] bu = new int[3][2];
+  public static byte[] stt_byte_arr_bs = { 64, 63, 63, 63, 63, 63, 63, 63, 63, 63, 63, 62, 62, 62, 62, 61, 61, 61, 60, 60, 60, 59, 59, 58, 58, 58, 57, 57, 56, 55, 55, 54, 54, 53, 53, 52, 51, 51, 50, 49, 49, 48, 47, 46, 46, 45, 44, 43, 42, 41, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 31, 30, 29, 28, 27, 26, 25, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 8, 7, 6, 5, 4, 3, 2, 1 };
+  public static byte[] stt_byte_arr_bt = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 22, 23, 24, 25, 27, 28, 29, 31, 32, 34, 35, 36, 38, 39, 41, 43, 44, 46, 48, 50, 51, 53, 55, 57, 59, 61, 64 };
+  public int[][] int_arr_bu = new int[3][2];
   public int bv;
   public int bw;
   public int bx;
@@ -105,20 +105,20 @@ public class MainGameScreen
   public int cb = 0;
   public int cc = 0;
   
-  public void a(g paramg, int paramInt)
+  public void init_game(GameConfig paramGameCnf, int paramInt)
   {
     int i2;
-    if ((i2 = paramg.c) == 0) {
+    if ((i2 = paramGameCnf.c) == 0) {
       return;
     }
-    paramg.l += -1;
-    if ((i2 <= 6) && (paramg.l <= 0))
+    paramGameCnf.l += -1;
+    if ((i2 <= 6) && (paramGameCnf.l <= 0))
     {
-      paramg.c = 0;
+      paramGameCnf.c = 0;
       return;
     }
-    paramg.a += paramg.h;
-    paramg.b += paramg.i;
+    paramGameCnf.a += paramGameCnf.h;
+    paramGameCnf.b += paramGameCnf.i;
     int i3;
     int i1;
     switch (i2)
@@ -126,22 +126,22 @@ public class MainGameScreen
     case 9: 
       if (this.aa == 1)
       {
-        if (this.a1 == true)
+        if (this.bool_a1 == true)
         {
-          paramg.a = this.r;
-          paramg.b = this.s;
-          paramg.e = 99999;
-          paramg.h = 0;
-          paramg.i = 0;
-          this.a1 = false;
+          paramGameCnf.a = this.r;
+          paramGameCnf.b = this.s;
+          paramGameCnf.e = 99999;
+          paramGameCnf.h = 0;
+          paramGameCnf.i = 0;
+          this.bool_a1 = false;
         }
-        this.f = a(b(paramg.a, paramg.b), this.av);
-        this.ca = (Math.abs(paramg.a) + Math.abs(paramg.b) - 200);
+        this.f = turn_calc(angle_helper(paramGameCnf.a, paramGameCnf.b), this.av);
+        this.ca = (Math.abs(paramGameCnf.a) + Math.abs(paramGameCnf.b) - 200);
       }
       if ((this.ca <= 0) && (this.aa == 1))
       {
         this.ca = 0;
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         this.readMedia.readMediaStream("etc");
         this.readMedia.reloadImageArr(1, 112);
         this.readMedia.closeInputStream();
@@ -156,157 +156,157 @@ public class MainGameScreen
       }
       break;
     case 10: 
-      if (paramg.d == 8)
+      if (paramGameCnf.d == 8)
       {
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         this.ah += -1;
         return;
       }
-      if ((paramg.d >= 7) && (paramg.f > -20) && (paramg.f < 20))
+      if ((paramGameCnf.d >= 7) && (paramGameCnf.f > -20) && (paramGameCnf.f < 20))
       {
         this.au += 2;
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         this.ah += -1;
         this.gameSetting.j -= 50;
-        b(false);
+        play_s_gun(false);
         if (this.gameSetting.j <= 0) {
-          d();
+          setup2();
         }
       }
       if (this.bi == 2)
       {
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         this.ah = 2;
       }
       break;
     case 14: 
-      if (paramg.l <= 0) {
-        paramg.l = c(paramg, paramInt);
+      if (paramGameCnf.l <= 0) {
+        paramGameCnf.l = complex_helper2(paramGameCnf, paramInt);
       }
       break;
     case 13: 
-      if (paramg.l <= 0) {
-        paramg.l = b(paramg, paramInt);
+      if (paramGameCnf.l <= 0) {
+        paramGameCnf.l = random_helper(paramGameCnf, paramInt);
       }
       if (this.bi == 2)
       {
         this.ag = 2;
-        paramg.c = 0;
+        paramGameCnf.c = 0;
       }
       break;
     case 12: 
-      if (paramg.l <= 0)
+      if (paramGameCnf.l <= 0)
       {
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         this.af += -1;
         return;
       }
       if ((this.bi == 3) && (this.AA.bool_n == true))
       {
-        if (paramg.n == true)
+        if (paramGameCnf.bool_n == true)
         {
-          paramg.n = false;
-          paramg.c = 0;
+          paramGameCnf.bool_n = false;
+          paramGameCnf.c = 0;
           this.af += -1;
           this.au += 3;
-          this.gameSetting.loseHP(paramg.m);
+          this.gameSetting.loseHP(paramGameCnf.m);
           if (this.gameSetting.j <= 0) {
-            d();
+            setup2();
           }
         }
       }
-      else if (paramg.e < 150)
+      else if (paramGameCnf.e < 150)
       {
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         this.af += -1;
         this.au += 3;
-        this.gameSetting.loseHP(paramg.m);
-        b(false);
+        this.gameSetting.loseHP(paramGameCnf.m);
+        play_s_gun(false);
         if (this.gameSetting.j <= 0) {
-          d();
+          setup2();
         }
       }
       break;
     case 11: 
-      if (paramg.l <= 0)
+      if (paramGameCnf.l <= 0)
       {
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         return;
       }
-      if ((i1 = paramg.k) == -1) {
+      if ((i1 = paramGameCnf.k) == -1) {
         return;
       }
-      System.out.println("i1i1i1i1i11i1 " + i1 + " " + ae.length + " ii11i1i11i11");
-      if (ae[i1].c == 0)
+      System.out.println("i1i1i1i1i11i1 " + i1 + " " + gameConfigArr.length + " ii11i1i11i11");
+      if (gameConfigArr[i1].c == 0)
       {
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         return;
       }
-      if (((paramg.l & 0x1) == 0) && (Math.abs(paramg.a - ae[i1].a) + Math.abs(paramg.b - ae[i1].b) < 300))
+      if (((paramGameCnf.l & 0x1) == 0) && (Math.abs(paramGameCnf.a - gameConfigArr[i1].a) + Math.abs(paramGameCnf.b - gameConfigArr[i1].b) < 300))
       {
-        paramg.c = 4;
-        paramg.l = 2;
-        ae[i1].m -= this.gameSetting.s;
-        this.AA.ae = (40 * ae[i1].m / this.n);
-        if (ae[i1].m <= 0)
+        paramGameCnf.c = 4;
+        paramGameCnf.l = 2;
+        gameConfigArr[i1].m -= this.gameSetting.s;
+        this.AA.ae = (40 * gameConfigArr[i1].m / this.n);
+        if (gameConfigArr[i1].m <= 0)
         {
-          ae[i1].c = 7;
-          ae[i1].l = 4;
+          gameConfigArr[i1].c = 7;
+          gameConfigArr[i1].l = 4;
         }
       }
       break;
     case 1: 
-      if (paramg.l <= 0)
+      if (paramGameCnf.l <= 0)
       {
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         return;
       }
-      if ((i1 = paramg.k) == -1) {
+      if ((i1 = paramGameCnf.k) == -1) {
         return;
       }
-      if (ae[i1].c == 0)
+      if (gameConfigArr[i1].c == 0)
       {
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         return;
       }
       if (this.gameSetting.o > 0) {
-        a(paramg, ae[i1].a, ae[i1].b);
+        config2(paramGameCnf, gameConfigArr[i1].a, gameConfigArr[i1].b);
       }
-      if (Math.abs(paramg.a - ae[i1].a) + Math.abs(paramg.b - ae[i1].b) < 300)
+      if (Math.abs(paramGameCnf.a - gameConfigArr[i1].a) + Math.abs(paramGameCnf.b - gameConfigArr[i1].b) < 300)
       {
-        paramg.c = 4;
-        paramg.l = 2;
-        ae[i1].m -= this.gameSetting.n;
-        if (ae[i1].m <= 0)
+        paramGameCnf.c = 4;
+        paramGameCnf.l = 2;
+        gameConfigArr[i1].m -= this.gameSetting.n;
+        if (gameConfigArr[i1].m <= 0)
         {
-          ae[i1].c = 8;
-          ae[i1].l = 4;
+          gameConfigArr[i1].c = 8;
+          gameConfigArr[i1].l = 4;
         }
       }
       break;
     case 6: 
       for (i3 = 0; i3 < 18; i3++) {
-        if ((ae[i3].c >= 13) && (a(paramg, ae[i3])))
+        if ((gameConfigArr[i3].c >= 13) && (config_helper(paramGameCnf, gameConfigArr[i3])))
         {
-          paramg.c = 5;
-          paramg.l = 2;
+          paramGameCnf.c = 5;
+          paramGameCnf.l = 2;
           return;
         }
       }
       break;
     case 8: 
-      if (paramg.l <= 0)
+      if (paramGameCnf.l <= 0)
       {
         this.ag += -1;
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         this.u += 1;
       }
       break;
     case 7: 
-      if (paramg.l <= 0)
+      if (paramGameCnf.l <= 0)
       {
         this.ag += -1;
-        paramg.c = 0;
+        paramGameCnf.c = 0;
         this.t += 1;
         this.AA.ab = 6;
         this.g = (this.t * this.i + this.u * this.h);
@@ -315,7 +315,7 @@ public class MainGameScreen
     }
   }
   
-  public int a(int paramInt1, int paramInt2)
+  public int turn_calc(int paramInt1, int paramInt2)
   {
     int i1 = paramInt2 - paramInt1;
     if (i1 > 180) {
@@ -327,7 +327,7 @@ public class MainGameScreen
     return i1;
   }
   
-  public void a(Graphics paramGraphics, int paramInt1, int paramInt2, int paramInt3, int paramInt4)
+  public void graphic_helper(Graphics paramGraphics, int paramInt1, int paramInt2, int paramInt3, int paramInt4)
   {
     paramGraphics.setColor(this.bj);
     switch (paramInt4 & 0x3)
@@ -353,18 +353,18 @@ public class MainGameScreen
     paramGraphics.fillRect(paramInt1 - (paramInt3 >> 1), paramInt2 - (paramInt3 >> 1), paramInt3, paramInt3);
   }
   
-  public void a(boolean paramBoolean)
+  public void left_right(boolean paramBoolean)
   {
-    if (!this.bg) {
+    if (!this.bool_bg) {
       this.aq = (paramBoolean ? -4 : 4);
     }
   }
   
-  public void a()
+  public void init_game2()
   {
     this.bb = 90;
     this.bc = 169;
-    this.a5[1] = -82;
+    this.int_arr_a5[1] = -82;
     this.AA.ae = 40;
     this.f = (this.ax = this.al = this.am = this.as = this.aq = this.ar = this.an = this.ao = 0);
     this.aw = 20;
@@ -375,7 +375,7 @@ public class MainGameScreen
     this.a8 = 0;
     this.bd = 0;
     this.aa = 0;
-    this.az = (this.ay = this.a0 = this.a2 = false);
+    this.bool_az = (this.bool_ay = this.bool_a0 = this.bool_a2 = false);
     //this.az = (this.ay = this.a0 = this.a2 = 0);
     this.a3 = 20;
     this.a4 = 0;
@@ -385,53 +385,53 @@ public class MainGameScreen
     this.at = 262143;
     this.af = (this.ag = this.ah = 0);
     this.AA.ab = 25;
-    this.bl = false;
+    this.bool_bl = false;
     this.bm = -1;
     this.bn = 0;
-    System.out.println("aeaoeaeeaeaee " + ae.length + " aeaeoeoaoe");
+    System.out.println("aeaoeaeeaeaee " + gameConfigArr.length + " aeaeoeoaoe");
     for (int i1 = 0; i1 < 18; i1++) {
-      ae[i1].c = 0;
+      gameConfigArr[i1].c = 0;
     }
-    b();
+    init_600();
     this.bi = 1;
-    this.bg = false;
-    this.bh = false;
-    d(9, 0);
+    this.bool_bg = false;
+    this.bool_bh = false;
+    setup_18_item(9, 0);
   }
   
-  public int a(int paramInt1, int paramInt2, int paramInt3)
+  public int shift_byte_6(int paramInt1, int paramInt2, int paramInt3)
   {
-    return b(paramInt1) * paramInt2 - c(paramInt1) * paramInt3 >> 6;
+    return turn_helper(paramInt1) * paramInt2 - turn_helper2(paramInt1) * paramInt3 >> 6;
   }
   
-  public void b()
+  public void init_600()
   {
     for (int i1 = 0; i1 < 2; i1++)
     {
-      this.bu[i1][0] = (600 * i1 * 2);
-      this.bu[i1][1] = (600 * (i1 * 2 + 1));
+      this.int_arr_bu[i1][0] = (600 * i1 * 2);
+      this.int_arr_bu[i1][1] = (600 * (i1 * 2 + 1));
     }
   }
   
-  public void a(Graphics paramGraphics)
+  public void main_paint(Graphics paramGraphics)
   {
-    this.AA.bool_l = true;
-    c(paramGraphics);
-    d(paramGraphics);
-    g(paramGraphics);
-    b(paramGraphics);
-    f(paramGraphics);
+    this.AA.bool_l = true; // gameStart, gameOn ?
+    shift_14(paramGraphics);
+    draw_anchor_helper3(paramGraphics);
+    clip_color_arr_helper(paramGraphics);
+    draw_anchor_helper2(paramGraphics);
+    sound_explode(paramGraphics);
   }
   
-  public void a(Graphics paramGraphics, g paramg)
+  public void set_color_arr(Graphics paramGraphics, GameConfig paramg)
   {
     int[] arrayOfInt = { 255, 16711680, 16776960, 16776960 };
     int i5 = paramg.c;
     int i3 = paramg.a;
     int i4 = paramg.b;
-    int i1 = a(450 - this.av, i3, i4);
-    int i2 = b(450 - this.av, i3, i4);
-    if ((i5 >= 11) && ((paramg.e = c(i3, i4)) < 4284))
+    int i1 = shift_byte_6(450 - this.av, i3, i4);
+    int i2 = return_turn_helper(450 - this.av, i3, i4);
+    if ((i5 >= 11) && ((paramg.e = shift_3(i3, i4)) < 4284))
     {
       i3 = i1 >> 8;
       i4 = i2 >> 8;
@@ -457,7 +457,7 @@ public class MainGameScreen
     paramg.b -= this.am;
   }
   
-  public void a(Graphics paramGraphics, int paramInt1, int paramInt2, int paramInt3, int paramInt4, boolean paramBoolean)
+  public void draw_anchor_helper(Graphics paramGraphics, int paramInt1, int paramInt2, int paramInt3, int paramInt4, boolean paramBoolean)
   {
     if (paramInt3 > 20) {
       paramInt3 = 20;
@@ -476,24 +476,24 @@ public class MainGameScreen
     }
   }
   
-  public void b(Graphics paramGraphics)
+  public void draw_anchor_helper2(Graphics paramGraphics)
   {
     int i6 = 0;
     paramGraphics.setColor(65280);
     this.ai = (85 + this.as * 7);
-    if ((this.aj >= 0) && (ae[this.aj].c == 0)) {
+    if ((this.aj >= 0) && (gameConfigArr[this.aj].c == 0)) {
       this.aj = -1;
     }
     int i1;
     int i2;
     for (int i7 = 0; i7 < 18; i7++)
     {
-      int i4 = ae[i7].c;
-      int i5 = ae[i7].d;
+      int i4 = gameConfigArr[i7].c;
+      int i5 = gameConfigArr[i7].d;
       if ((i4 >= 13) && (i5 >= 1) && (i5 < 6))
       {
-        i1 = ae[i7].f + 88 + 32;
-        i2 = 158 - ae[i7].g;
+        i1 = gameConfigArr[i7].f + 88 + 32;
+        i2 = 158 - gameConfigArr[i7].g;
         this.bw = i1;
         this.bx = i2;
         if ((i1 > this.ai) && (i1 < this.ai + 88) && (i2 > 87) && (i2 < 188)) {
@@ -517,11 +517,11 @@ public class MainGameScreen
     {
       if (this.aj >= 0)
       {
-        i1 = ae[this.aj].f + 88 + 32;
-        i2 = 155 - ae[this.aj].g;
-        int i3 = ae[this.aj].d * 8 + 4;
+        i1 = gameConfigArr[this.aj].f + 88 + 32;
+        i2 = 155 - gameConfigArr[this.aj].g;
+        int i3 = gameConfigArr[this.aj].d * 8 + 4;
         if (this.bi == 1) {
-          if (ae[this.aj].d < 4) {
+          if (gameConfigArr[this.aj].d < 4) {
             this.readMedia.drawImageAnchor20(paramGraphics, 82, i1 - 10, i2 - 6);
           } else {
             this.readMedia.drawImageAnchor20(paramGraphics, 81, i1 - 17, i2 - 12);
@@ -538,34 +538,34 @@ public class MainGameScreen
     }
   }
   
-  public void c(Graphics paramGraphics)
+  public void shift_14(Graphics paramGraphics)
   {
     int i1 = -this.av * 4 + 360;
     int i2 = this.at >> 14;
     if (i2 < 0) {
       i2 = 0;
     }
-    this.readMedia.drawImageAnchor20(paramGraphics, 7, this.a5[0], 27);
-    this.readMedia.drawImageAnchor20(paramGraphics, 7, this.a5[0] + (this.a7[0] != false ? 65296 : 240), 27); // != 0
-    this.readMedia.drawImageAnchor36(paramGraphics, 8, this.a5[1], 166);
+    this.readMedia.drawImageAnchor20(paramGraphics, 7, this.int_arr_a5[0], 27);
+    this.readMedia.drawImageAnchor20(paramGraphics, 7, this.int_arr_a5[0] + (this.bool_arr_a7[0] != false ? 65296 : 240), 27); // != 0
+    this.readMedia.drawImageAnchor36(paramGraphics, 8, this.int_arr_a5[1], 166);
   }
   
-  public boolean a(g paramg1, g paramg2)
+  public boolean config_helper(GameConfig paramgcnf1, GameConfig paramgcnf2)
   {
-    if (Math.abs(paramg1.a - paramg2.a) + Math.abs(paramg1.b - paramg2.b) < 200)
+    if (Math.abs(paramgcnf1.a - paramgcnf2.a) + Math.abs(paramgcnf1.b - paramgcnf2.b) < 200)
     {
-      paramg2.m -= paramg1.m;
-      paramg2.l += 5;
-      if (paramg2.m <= 0) {
-        if (paramg2.c == 14)
+      paramgcnf2.m -= paramgcnf1.m;
+      paramgcnf2.l += 5;
+      if (paramgcnf2.m <= 0) {
+        if (paramgcnf2.c == 14)
         {
-          paramg2.c = 7;
-          paramg2.l = 4;
+          paramgcnf2.c = 7;
+          paramgcnf2.l = 4;
         }
         else
         {
-          paramg2.c = 8;
-          paramg2.l = 2;
+          paramgcnf2.c = 8;
+          paramgcnf2.l = 2;
         }
       }
       return true;
@@ -573,23 +573,23 @@ public class MainGameScreen
     return false;
   }
   
-  public void d(Graphics paramGraphics)
+  public void draw_anchor_helper3(Graphics paramGraphics)
   {
     this.bv += 1;
     int i2 = this.bv / (5 - this.a8) % 3;
     int[][] arrayOfInt = { new int[3], { 1, 2, 3 }, { 2, 3, 4 } };
     for (int i1 = 0; i1 < 3; i1++)
     {
-      this.readMedia.drawImageAnchor36(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)], this.a6[i1] - arrayOfInt[i1][i2]);
+      this.readMedia.drawImageAnchor36(paramGraphics, 9 + i1 * 3 + i2, this.int_arr_a5[(i1 + 2)], this.int_arr_a6[i1] - arrayOfInt[i1][i2]);
       // this.b.b(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)] + (this.a7[(i1 + 1)] != 0 ? 65296 : 240), this.a6[i1] - arrayOfInt[i1][i2]);
-      this.readMedia.drawImageAnchor36(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)] + (this.a7[(i1 + 1)] != false ? 65296 : 240), this.a6[i1] - arrayOfInt[i1][i2]);
+      this.readMedia.drawImageAnchor36(paramGraphics, 9 + i1 * 3 + i2, this.int_arr_a5[(i1 + 2)] + (this.bool_arr_a7[(i1 + 1)] != false ? 65296 : 240), this.int_arr_a6[i1] - arrayOfInt[i1][i2]);
     }
     if ((this.AA.ad == 2) || (this.AA.b == 0)) {
       this.readMedia.drawImageAnchor20(paramGraphics, 18 + i2, 0, 166);
     }
   }
   
-  public int b(int paramInt1, int paramInt2)
+  public int angle_helper(int paramInt1, int paramInt2)
   {
     int i4 = 90;
     if (paramInt1 == 0)
@@ -622,7 +622,7 @@ public class MainGameScreen
       for (int i7 = 0; i7 < 5; i7++)
       {
         i4 = i5 + i6 >> 1;
-        if (i3 > bt[i4]) {
+        if (i3 > stt_byte_arr_bt[i4]) {
           i5 = i4;
         } else {
           i6 = i4;
@@ -641,7 +641,7 @@ public class MainGameScreen
     return i4;
   }
   
-  public int c(int paramInt1, int paramInt2)
+  public int shift_3(int paramInt1, int paramInt2)
   {
     int i1 = 0;
     if (paramInt1 < 0) {
@@ -661,7 +661,7 @@ public class MainGameScreen
     return i1 / 10;
   }
   
-  public void a(Graphics paramGraphics, boolean paramBoolean, int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5)
+  public void shift_1(Graphics paramGraphics, boolean paramBoolean, int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5)
   {
     int i4;
     int i3;
@@ -699,7 +699,7 @@ public class MainGameScreen
     }
   }
   
-  public int a(int paramInt)
+  public int turnAngleCalc(int paramInt)
   {
     if (paramInt < 0) {
       paramInt += 360;
@@ -715,10 +715,10 @@ public class MainGameScreen
     }
     if ((paramInt >= 0) && (paramInt < 90)) {
       //System.out.println("bsbsbssbs " + bs.length + " " + paramInt + " bsbsbbsbs");
-      if(paramInt < bs.length) {    	  
-    	  return bs[paramInt];
+      if(paramInt < stt_byte_arr_bs.length) {    	  
+    	  return stt_byte_arr_bs[paramInt];
       } else {
-    	  return bs[89];
+    	  return stt_byte_arr_bs[89];
       }
     }
    	if ((paramInt > 90) && (paramInt < 180)) { // >=90
@@ -726,26 +726,26 @@ public class MainGameScreen
     	// This bs byte array is 90 in length, so index of it has maximum value equal 89.
     	// May be this way to trick/optimize a custom compiler for old Java mobile devices ?
    		// Or decompiler resulted in defect
-      return -bs[(180 - paramInt)];
+      return -stt_byte_arr_bs[(180 - paramInt)];
     }
 	if ((paramInt == 90) && (paramInt < 180)) { // dungnv
-		return -bs[89];  
+		return -stt_byte_arr_bs[89];  
 	}
    	
     if ((paramInt > 180) && (paramInt < 270)) { // >=180
-      return -bs[(paramInt - 180)];
+      return -stt_byte_arr_bs[(paramInt - 180)];
     }
     if ((paramInt == 180) && (paramInt < 270)) { // dungnv
-		return -bs[89];  
+		return -stt_byte_arr_bs[89];  
 	}
-    if ( (360 - paramInt) < bs.length ) {    	
-    	return bs[(360 - paramInt)];
+    if ( (360 - paramInt) < stt_byte_arr_bs.length ) {    	
+    	return stt_byte_arr_bs[(360 - paramInt)];
     } else {
-    	return bs[89];
+    	return stt_byte_arr_bs[89];
     }
   }
   
-  public void b(Graphics paramGraphics, int paramInt1, int paramInt2, int paramInt3, int paramInt4)
+  public void draw_img_helper(Graphics paramGraphics, int paramInt1, int paramInt2, int paramInt3, int paramInt4)
   {
     int i1 = paramInt1 - (paramInt3 >> 1);
     int i2 = paramInt2 - (paramInt3 >> 1);
@@ -754,7 +754,7 @@ public class MainGameScreen
     }
   }
   
-  public void e(Graphics paramGraphics)
+  public void draw_arr_byte_plasma_boss(Graphics paramGraphics)
   {
     byte[][] arrayOfByte1 = { { 5, -8 }, { 2, -18 }, { 6, -22 }, { 3, -25 } };
     byte[][] arrayOfByte2 = { new byte[2], { 1, 6 }, { -2, -10 }, { 4, 8 }, { 1, -12 }, { -1, -4 }, { 0, 4 }, { 0, -6 }, { 1, 5 } };
@@ -777,7 +777,7 @@ public class MainGameScreen
     {
     case 1: 
       this.readMedia.drawImageInArr(paramGraphics, 24 + this.z, this.bb + 30, this.bc + 11);
-      if ((this.ay == true) && (this.ap % 2 == 0)) {
+      if ((this.bool_ay == true) && (this.ap % 2 == 0)) {
         this.readMedia.drawImageInArr(paramGraphics, 80, 120, 165);
       }
       if (this.AA.z != 3)
@@ -791,15 +791,15 @@ public class MainGameScreen
       this.AA.bool_m = true;
       break;
     case 2: 
-      this.AA.c();
+      this.AA.stopSound();
       paramGraphics.setClip(0, 0, 240, 300);
       if (i1 / 2 % 2 == 0) {
         this.readMedia.drawImageAnchor20(paramGraphics, 112, 66, 103);
       }
       this.aw = 10;
       this.a8 = 0;
-      this.ay = false;
-      this.bg = true;
+      this.bool_ay = false;
+      this.bool_bg = true;
       if (i1 < 5) {
         if (i1 == 0) {
           this.readMedia.drawImageAnchor20(paramGraphics, 24, this.bb, this.bc);
@@ -897,16 +897,16 @@ public class MainGameScreen
     }
   }
   
-  public int b(int paramInt)
+  public int turn_helper(int paramInt)
   {
     if (paramInt == this.bo) {
       return this.bp;
     }
     this.bo = paramInt;
-    return this.bp = a(paramInt);
+    return this.bp = turnAngleCalc(paramInt);
   }
   
-  public void a(Graphics paramGraphics, int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5)
+  public void fillRect_helper(Graphics paramGraphics, int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5)
   {
     paramGraphics.setColor(paramInt5);
     int i1 = paramInt1 - paramInt3;
@@ -921,28 +921,28 @@ public class MainGameScreen
     paramGraphics.fillRect(i1, i2, paramInt3, paramInt3);
   }
   
-  public void f(Graphics paramGraphics)
+  public void sound_explode(Graphics paramGraphics)
   {
-    e(paramGraphics);
+    draw_arr_byte_plasma_boss(paramGraphics);
     if (this.au > 0)
     {
       this.b8 = (61 - this.bb);
       this.b9 = (94 - this.bc);
-      a(paramGraphics, false, 88 - this.b8, 133 - this.b9, 30, 8, 4);
-      if ((this.bi == 1) && (!this.ay)) {
+      shift_1(paramGraphics, false, 88 - this.b8, 133 - this.b9, 30, 8, 4);
+      if ((this.bi == 1) && (!this.bool_ay)) {
         this.AA.playSound("s_explo", 1);
       }
-      if ((this.bi == 3) && (!this.az)) {
+      if ((this.bi == 3) && (!this.bool_az)) {
         this.AA.playSound("s_explo", 1);
       }
       this.au += -1;
-      if ((this.AA.bool_n == true) && (this.au == 2) && (this.az == true)) {
-        d(false);
+      if ((this.AA.bool_n == true) && (this.au == 2) && (this.bool_az == true)) {
+        play_s_plasma(false);
       }
     }
   }
   
-  public void c()
+  public void play_missile_sound()
   {
     if (this.gameSetting.o <= 0)
     {
@@ -953,17 +953,17 @@ public class MainGameScreen
     {
       this.AA.playSound("s_missile", 1);
     }
-    this.a0 = true;
+    this.bool_a0 = true;
   }
   
-  public int b(g paramg, int paramInt)
+  public int random_helper(GameConfig paramg, int paramInt)
   {
     int i3 = 8;
     int i4;
     int i1;
     if (paramg.e > 4000)
     {
-      i4 = b(-paramg.a, -paramg.b);
+      i4 = angle_helper(-paramg.a, -paramg.b);
       i1 = 20;
     }
     else
@@ -974,7 +974,7 @@ public class MainGameScreen
       if (i2 >= i3)
       {
         if (this.af < 1) {
-          d(12, paramInt);
+          setup_18_item(12, paramInt);
         }
         i1 = 10;
       }
@@ -987,41 +987,41 @@ public class MainGameScreen
         i4 -= 360;
       }
     }
-    paramg.h = (this.al - this.an + b(i4));
-    paramg.i = (this.am - this.ao + c(i4));
+    paramg.h = (this.al - this.an + turn_helper(i4));
+    paramg.i = (this.am - this.ao + turn_helper2(i4));
     paramg.j = i4;
     return i1;
   }
   
-  public void b(boolean paramBoolean)
+  public void play_s_gun(boolean paramBoolean)
   {
-    this.ay = paramBoolean;
-    if (this.ay == true) {
+    this.bool_ay = paramBoolean;
+    if (this.bool_ay == true) {
       this.AA.playSound("s_gun", 0);
     } else {
-      this.AA.c();
+      this.AA.stopSound();
     }
   }
   
-  public int c(int paramInt)
+  public int turn_helper2(int paramInt)
   {
     if (paramInt == this.bq) {
       return this.br;
     }
     this.bq = paramInt;
-    return this.br = a(90 - paramInt);
+    return this.br = turnAngleCalc(90 - paramInt);
   }
   
-  public void c(boolean paramBoolean)
+  public void simple_bool(boolean paramBoolean)
   {
-    if (!this.bg) {
+    if (!this.bool_bg) {
       this.ar = (paramBoolean ? 20 : -20);
     }
   }
   
-  public void d(int paramInt)
+  public void simple_helper2(int paramInt)
   {
-    if (!this.bg) {
+    if (!this.bool_bg) {
       if (paramInt == 1)
       {
         this.a8 += 1;
@@ -1045,11 +1045,11 @@ public class MainGameScreen
     this.readMedia = paramd;
     this.gameSetting = paramArchAngel.gameSetting;
     for (int i1 = 0; i1 < 18; i1++) {
-      ae[i1] = new g();
+      gameConfigArr[i1] = new GameConfig();
     }
   }
   
-  public void a(g paramg, int paramInt1, int paramInt2)
+  public void config2(GameConfig paramg, int paramInt1, int paramInt2)
   {
     int i1 = paramg.a;
     int i2 = paramg.b;
@@ -1062,125 +1062,125 @@ public class MainGameScreen
       i6 = -i6;
     }
     i5 += i6;
-    paramg.h = (6 * b(i5));
-    paramg.i = (6 * c(i5));
+    paramg.h = (6 * turn_helper(i5));
+    paramg.i = (6 * turn_helper2(i5));
     paramg.j = i5;
   }
   
-  public void d()
+  public void setup2()
   {
     this.au = 1000;
     this.gameSetting.j = 0;
-    this.ay = false;
-    this.az = false;
-    this.a0 = false;
+    this.bool_ay = false;
+    this.bool_az = false;
+    this.bool_a0 = false;
     this.AA.ab = 7;
-    e();
+    setup3();
     this.ar = -20;
   }
   
-  public void e(int paramInt)
+  public void follow_boss(int paramInt)
   {
     int i1;
-    if (!this.bg)
+    if (!this.bool_bg)
     {
       if (paramInt == 2)
       {
         this.bd += 1;
-        this.a5[0] -= 4;
-        if (this.a5[0] < 65296) {
-          this.a5[0] = 0;
+        this.int_arr_a5[0] -= 4;
+        if (this.int_arr_a5[0] < 65296) {
+          this.int_arr_a5[0] = 0;
         }
-        if (this.a5[0] < 0) {
-          this.a7[0] = false;
+        if (this.int_arr_a5[0] < 0) {
+          this.bool_arr_a7[0] = false;
         }
-        this.a5[1] -= 6;
-        if (this.a5[1] < 65196) {
-          this.a5[1] = 240;
+        this.int_arr_a5[1] -= 6;
+        if (this.int_arr_a5[1] < 65196) {
+          this.int_arr_a5[1] = 240;
         }
         for (i1 = 0; i1 < 3; i1++)
         {
-          this.a5[(i1 + 2)] -= 6 - 2 * i1;
-          if (this.a5[(i1 + 2)] < 65296) {
-            this.a5[(i1 + 2)] = 0;
+          this.int_arr_a5[(i1 + 2)] -= 6 - 2 * i1;
+          if (this.int_arr_a5[(i1 + 2)] < 65296) {
+            this.int_arr_a5[(i1 + 2)] = 0;
           }
-          if (this.a5[(i1 + 2)] < 0) {
-            this.a7[(i1 + 1)] = false;
+          if (this.int_arr_a5[(i1 + 2)] < 0) {
+            this.bool_arr_a7[(i1 + 1)] = false;
           }
         }
       }
       else if (paramInt == 1)
       {
         this.bd += 1;
-        this.a5[0] += 4;
-        if (this.a5[0] > 240) {
-          this.a5[0] = 0;
+        this.int_arr_a5[0] += 4;
+        if (this.int_arr_a5[0] > 240) {
+          this.int_arr_a5[0] = 0;
         }
-        if (this.a5[0] > 0) {
-          this.a7[0] = true;
+        if (this.int_arr_a5[0] > 0) {
+          this.bool_arr_a7[0] = true;
         }
-        this.a5[1] += 6;
-        if (this.a5[1] > 240) {
-          this.a5[1] = 65196;
+        this.int_arr_a5[1] += 6;
+        if (this.int_arr_a5[1] > 240) {
+          this.int_arr_a5[1] = 65196;
         }
         for (i1 = 0; i1 < 3; i1++)
         {
-          this.a5[(i1 + 2)] += 6 - 2 * i1;
-          if (this.a5[(i1 + 2)] > 240) {
-            this.a5[(i1 + 2)] = 0;
+          this.int_arr_a5[(i1 + 2)] += 6 - 2 * i1;
+          if (this.int_arr_a5[(i1 + 2)] > 240) {
+            this.int_arr_a5[(i1 + 2)] = 0;
           }
-          if (this.a5[(i1 + 2)] > 0) {
-            this.a7[(i1 + 1)] = true;
+          if (this.int_arr_a5[(i1 + 2)] > 0) {
+            this.bool_arr_a7[(i1 + 1)] = true;
           }
         }
       }
       if (paramInt == 4)
       {
         this.bd += 1;
-        this.a5[0] -= 4;
-        if (this.a5[0] < 65296) {
-          this.a5[0] = 0;
+        this.int_arr_a5[0] -= 4;
+        if (this.int_arr_a5[0] < 65296) {
+          this.int_arr_a5[0] = 0;
         }
-        if (this.a5[0] < 0) {
-          this.a7[0] = false;
+        if (this.int_arr_a5[0] < 0) {
+          this.bool_arr_a7[0] = false;
         }
-        this.a5[1] -= 2;
-        if (this.a5[1] < 65196) {
-          this.a5[1] = 240;
+        this.int_arr_a5[1] -= 2;
+        if (this.int_arr_a5[1] < 65196) {
+          this.int_arr_a5[1] = 240;
         }
         for (i1 = 0; i1 < 3; i1++)
         {
-          this.a5[(i1 + 2)] -= 2 + 2 * i1;
-          if (this.a5[(i1 + 2)] < 65296) {
-            this.a5[(i1 + 2)] = 0;
+          this.int_arr_a5[(i1 + 2)] -= 2 + 2 * i1;
+          if (this.int_arr_a5[(i1 + 2)] < 65296) {
+            this.int_arr_a5[(i1 + 2)] = 0;
           }
-          if (this.a5[(i1 + 2)] < 0) {
-            this.a7[(i1 + 1)] = false;
+          if (this.int_arr_a5[(i1 + 2)] < 0) {
+            this.bool_arr_a7[(i1 + 1)] = false;
           }
         }
       }
       else if (paramInt == 3)
       {
         this.bd += 1;
-        this.a5[0] += 4;
-        if (this.a5[0] > 240) {
-          this.a5[0] = 0;
+        this.int_arr_a5[0] += 4;
+        if (this.int_arr_a5[0] > 240) {
+          this.int_arr_a5[0] = 0;
         }
-        if (this.a5[0] > 0) {
-          this.a7[0] = true;
+        if (this.int_arr_a5[0] > 0) {
+          this.bool_arr_a7[0] = true;
         }
-        this.a5[1] += 2;
-        if (this.a5[1] > 240) {
-          this.a5[1] = 65196;
+        this.int_arr_a5[1] += 2;
+        if (this.int_arr_a5[1] > 240) {
+          this.int_arr_a5[1] = 65196;
         }
         for (i1 = 0; i1 < 3; i1++)
         {
-          this.a5[(i1 + 2)] += 2 + 2 * i1;
-          if (this.a5[(i1 + 2)] > 240) {
-            this.a5[(i1 + 2)] = 0;
+          this.int_arr_a5[(i1 + 2)] += 2 + 2 * i1;
+          if (this.int_arr_a5[(i1 + 2)] > 240) {
+            this.int_arr_a5[(i1 + 2)] = 0;
           }
-          if (this.a5[(i1 + 2)] > 0) {
-            this.a7[(i1 + 1)] = true;
+          if (this.int_arr_a5[(i1 + 2)] > 0) {
+            this.bool_arr_a7[(i1 + 1)] = true;
           }
         }
       }
@@ -1197,25 +1197,25 @@ public class MainGameScreen
         if (this.x < -10) {
           this.x = -10;
         }
-        this.a5[0] -= 2;
-        if (this.a5[0] < 65296) {
-          this.a5[0] = 0;
+        this.int_arr_a5[0] -= 2;
+        if (this.int_arr_a5[0] < 65296) {
+          this.int_arr_a5[0] = 0;
         }
-        if (this.a5[0] < 0) {
-          this.a7[0] = false;
+        if (this.int_arr_a5[0] < 0) {
+          this.bool_arr_a7[0] = false;
         }
-        this.a5[1] -= 1;
-        if (this.a5[1] < 65196) {
-          this.a5[1] = 240;
+        this.int_arr_a5[1] -= 1;
+        if (this.int_arr_a5[1] < 65196) {
+          this.int_arr_a5[1] = 240;
         }
         for (i1 = 0; i1 < 3; i1++)
         {
-          this.a5[(i1 + 2)] -= 2 + 1 * i1;
-          if (this.a5[(i1 + 2)] < 65296) {
-            this.a5[(i1 + 2)] = 0;
+          this.int_arr_a5[(i1 + 2)] -= 2 + 1 * i1;
+          if (this.int_arr_a5[(i1 + 2)] < 65296) {
+            this.int_arr_a5[(i1 + 2)] = 0;
           }
-          if (this.a5[(i1 + 2)] < 0) {
-            this.a7[(i1 + 1)] = false;
+          if (this.int_arr_a5[(i1 + 2)] < 0) {
+            this.bool_arr_a7[(i1 + 1)] = false;
           }
         }
       }
@@ -1226,62 +1226,62 @@ public class MainGameScreen
       if (this.x > 10) {
         this.x = 10;
       }
-      this.a5[0] += 2;
-      if (this.a5[0] > 240) {
-        this.a5[0] = 0;
+      this.int_arr_a5[0] += 2;
+      if (this.int_arr_a5[0] > 240) {
+        this.int_arr_a5[0] = 0;
       }
-      if (this.a5[0] > 0) {
-        this.a7[0] = true;
+      if (this.int_arr_a5[0] > 0) {
+        this.bool_arr_a7[0] = true;
       }
-      this.a5[1] += 1;
-      if (this.a5[1] > 240) {
-        this.a5[1] = 65196;
+      this.int_arr_a5[1] += 1;
+      if (this.int_arr_a5[1] > 240) {
+        this.int_arr_a5[1] = 65196;
       }
       for (i1 = 0; i1 < 3; i1++)
       {
-        this.a5[(i1 + 2)] += 2 + 1 * i1;
-        if (this.a5[(i1 + 2)] > 240) {
-          this.a5[(i1 + 2)] = 0;
+        this.int_arr_a5[(i1 + 2)] += 2 + 1 * i1;
+        if (this.int_arr_a5[(i1 + 2)] > 240) {
+          this.int_arr_a5[(i1 + 2)] = 0;
         }
-        if (this.a5[(i1 + 2)] > 0) {
-          this.a7[(i1 + 1)] = true;
+        if (this.int_arr_a5[(i1 + 2)] > 0) {
+          this.bool_arr_a7[(i1 + 1)] = true;
         }
       }
     }
   }
   
-  public void g(Graphics paramGraphics)
+  public void clip_color_arr_helper(Graphics paramGraphics)
   {
     this.readMedia.drawImageAnchor20(paramGraphics, 21, 0, 0);
     for (int i1 = 0; i1 < 18; i1++) {
-      if (ae[i1].c != 0) {
-        a(paramGraphics, ae[i1]);
+      if (gameConfigArr[i1].c != 0) {
+        set_color_arr(paramGraphics, gameConfigArr[i1]);
       }
     }
     paramGraphics.setClip(0, 50, 240, 250);
     for (int i1 = 0; i1 < 9; i1++) {
       for (int i2 = 0; i2 < 18; i2++) {
-        if ((ae[i2].c != 0) && (ae[i2].d == i1)) {
-          b(paramGraphics, ae[i2]);
+        if ((gameConfigArr[i2].c != 0) && (gameConfigArr[i2].d == i1)) {
+          complex_draw_helper(paramGraphics, gameConfigArr[i2]);
         }
       }
     }
   }
   
-  public void e()
+  public void setup3()
   {
     this.aq = 0;
     this.ar = 0;
     this.an = (this.ao = 0);
   }
   
-  public void f()
+  public void config2()
   {
     int i2 = 0;
     this.ap += 1;
     this.bn += -1;
     for (int i3 = 0; i3 < 18; i3++) {
-      a(ae[i3], i3);
+      init_game(gameConfigArr[i3], i3);
     }
     if ((this.ap & 0x3) == 0)
     {
@@ -1289,14 +1289,14 @@ public class MainGameScreen
       {
         i2 = 14;
         if (i2 > 0) {
-          d(i2, 0);
+          setup_18_item(i2, 0);
         }
       }
       if ((this.ag < 2) && (this.bi == 1))
       {
         i2 = 13;
         if (i2 > 0) {
-          d(i2, 0);
+          setup_18_item(i2, 0);
         }
       }
     }
@@ -1304,17 +1304,17 @@ public class MainGameScreen
     if (i1 != this.cb)
     {
       if ((this.ah < 2) && (i2 != 14) && (this.bi == 1)) {
-        d(10, 0);
+        setup_18_item(10, 0);
       }
       this.cb = i1;
     }
   }
   
-  public void g()
+  public void complex_helper()
   {
-    d(this.a9);
+    simple_helper2(this.a9);
     if ((this.x <= 10) && (this.x >= -10)) {
-      e(this.ba);
+      follow_boss(this.ba);
     }
     this.as += this.aq;
     if (this.aq == 0)
@@ -1339,8 +1339,8 @@ public class MainGameScreen
     if (this.av >= 360) {
       this.av -= 360;
     }
-    this.al = ((b(this.av) * this.aw >> 6) + this.an);
-    this.am = ((c(this.av) * this.aw >> 6) + this.ao);
+    this.al = ((turn_helper(this.av) * this.aw >> 6) + this.an);
+    this.am = ((turn_helper2(this.av) * this.aw >> 6) + this.ao);
     this.at -= this.am;
     this.aw += this.ar;
     if (this.aw > 140) {
@@ -1351,27 +1351,27 @@ public class MainGameScreen
     }
     this.a3 += -1;
     this.a4 += -1;
-    if ((this.ay) && (this.a4 <= 0) && (d(6, 0)) && (this.bn <= 0)) {
+    if ((this.bool_ay) && (this.a4 <= 0) && (setup_18_item(6, 0)) && (this.bn <= 0)) {
       this.bn = 12;
     }
     int i1;
-    if ((this.az) && (this.AA.x % 5 == 0) && (this.AA.bool_n == true) && (this.gameSetting.t > 0))
+    if ((this.bool_az) && (this.AA.x % 5 == 0) && (this.AA.bool_n == true) && (this.gameSetting.t > 0))
     {
       i1 = this.aj;
       if ((this.aj < 0) || (this.ak > 0)) {
         i1 = -1;
       }
-      if (d(11, i1))
+      if (setup_18_item(11, i1))
       {
         this.gameSetting.t += -1;
         if (this.gameSetting.t <= 0)
         {
-          this.AA.c();
-          this.az = false;
+          this.AA.stopSound();
+          this.bool_az = false;
         }
       }
     }
-    if (this.a0)
+    if (this.bool_a0)
     {
       if (this.gameSetting.o > 0)
       {
@@ -1379,36 +1379,36 @@ public class MainGameScreen
         if ((this.aj < 0) || (this.ak > 0)) {
           i1 = -1;
         }
-        if (d(1, i1))
+        if (setup_18_item(1, i1))
         {
           this.gameSetting.o += -1;
           if (this.gameSetting.o <= 0) {
-            this.a0 = false;
+            this.bool_a0 = false;
           }
           this.a3 = 20;
         }
       }
-      this.a0 = false;
+      this.bool_a0 = false;
     }
   }
   
-  public void d(boolean paramBoolean)
+  public void play_s_plasma(boolean paramBoolean)
   {
     if (this.AA.ag == 1) {
-      this.az = (!this.az);
+      this.bool_az = (!this.bool_az);
     } else {
-      this.az = paramBoolean;
+      this.bool_az = paramBoolean;
     }
     if ((this.gameSetting.t > 0) && (this.AA.bool_n == true)) {
-      if (this.az == true) {
+      if (this.bool_az == true) {
         this.AA.playSound("s_plasma", 0);
       } else {
-        this.AA.c();
+        this.AA.stopSound();
       }
     }
   }
   
-  public int c(g paramg, int paramInt)
+  public int complex_helper2(GameConfig paramg, int paramInt)
   {
     int i3 = 8;
     int i5;
@@ -1421,7 +1421,7 @@ public class MainGameScreen
     int i1;
     if (paramg.e > 4000)
     {
-      i4 = b(-paramg.a, -paramg.b);
+      i4 = angle_helper(-paramg.a, -paramg.b);
       i1 = 20;
     }
     else
@@ -1433,7 +1433,7 @@ public class MainGameScreen
       if (i2 >= i3)
       {
         if (this.af < i5) {
-          d(12, paramInt);
+          setup_18_item(12, paramInt);
         }
         i1 = 4;
       }
@@ -1445,28 +1445,28 @@ public class MainGameScreen
         i4 = 100;
       }
     }
-    paramg.h = (this.al - this.an + b(i4) * 2);
-    paramg.i = (this.am - this.ao + c(i4) * 2);
+    paramg.h = (this.al - this.an + turn_helper(i4) * 2);
+    paramg.i = (this.am - this.ao + turn_helper2(i4) * 2);
     paramg.j = i4;
     return i1;
   }
   
-  public boolean d(int paramInt1, int paramInt2)
+  public boolean setup_18_item(int paramInt1, int paramInt2)
   {
 	int i1;
     for (i1 = 0; i1 < 18; i1++) {
-      if (ae[i1].c == 0) {
+      if (gameConfigArr[i1].c == 0) {
         break;
       }
     }
     if (i1 == 18) {
       return false;
     }
-    b(ae[i1], paramInt1, paramInt2);
+    turn_helper2(gameConfigArr[i1], paramInt1, paramInt2);
     return true;
   }
   
-  public void b(g paramg, int paramInt1, int paramInt2)
+  public void turn_helper2(GameConfig paramg, int paramInt1, int paramInt2)
   {
     paramg.m = 0;
     int i1;
@@ -1483,8 +1483,8 @@ public class MainGameScreen
       paramg.m = 50;
       i1 = (this.rnd.nextInt() & 0x1F) - 15;
       int i2 = (this.rnd.nextInt() & 0x7) + 63;
-      paramg.a = (i2 * b(i1 + this.av));
-      paramg.b = (i2 * c(i1 + this.av));
+      paramg.a = (i2 * turn_helper(i1 + this.av));
+      paramg.b = (i2 * turn_helper2(i1 + this.av));
       paramg.h = (paramg.i = 0);
       paramg.e = i1;
       this.ah += 1;
@@ -1493,8 +1493,8 @@ public class MainGameScreen
       paramg.m = this.n;
       this.av = 90;
       i1 = 0;
-      paramg.a = (60 * b(i1 + this.av));
-      paramg.b = (60 * c(i1 + this.av));
+      paramg.a = (60 * turn_helper(i1 + this.av));
+      paramg.b = (60 * turn_helper2(i1 + this.av));
       paramg.e = i1;
       paramg.h = (paramg.i = 0);
       paramg.j = this.av;
@@ -1506,8 +1506,8 @@ public class MainGameScreen
     case 13: 
       paramg.m = this.j;
       i1 = (this.rnd.nextInt() & 0x7F) - 63;
-      paramg.a = (60 * b(i1 + this.av));
-      paramg.b = (60 * c(i1 + this.av));
+      paramg.a = (60 * turn_helper(i1 + this.av));
+      paramg.b = (60 * turn_helper2(i1 + this.av));
       paramg.e = i1;
       paramg.h = (paramg.i = 0);
       paramg.j = ((this.av + 180) % 360);
@@ -1516,22 +1516,22 @@ public class MainGameScreen
       this.ag += 1;
       break;
     case 12: 
-      paramg.a = ae[paramInt2].a;
-      paramg.b = ae[paramInt2].b;
-      paramg.e = c(paramg.a, paramg.b);
-      i1 = paramg.j = b(-paramg.a + this.al, -paramg.b + this.am);
-      paramg.h = (3 * b(i1) + this.al);
-      paramg.i = (3 * c(i1) + this.am);
+      paramg.a = gameConfigArr[paramInt2].a;
+      paramg.b = gameConfigArr[paramInt2].b;
+      paramg.e = shift_3(paramg.a, paramg.b);
+      i1 = paramg.j = angle_helper(-paramg.a + this.al, -paramg.b + this.am);
+      paramg.h = (3 * turn_helper(i1) + this.al);
+      paramg.i = (3 * turn_helper2(i1) + this.am);
       paramg.l = 30;
-      paramg.m = (ae[paramInt2].c == 14 ? this.o : this.k);
+      paramg.m = (gameConfigArr[paramInt2].c == 14 ? this.o : this.k);
       this.af += 1;
       break;
     case 11: 
       i1 = paramg.j = this.av;
-      paramg.h = (6 * b(i1));
-      paramg.i = (6 * c(i1));
-      paramg.a = (b(this.av - 90) + paramg.h);
-      paramg.b = (c(this.av - 90) + paramg.i);
+      paramg.h = (6 * turn_helper(i1));
+      paramg.i = (6 * turn_helper2(i1));
+      paramg.a = (turn_helper(this.av - 90) + paramg.h);
+      paramg.b = (turn_helper2(this.av - 90) + paramg.i);
       paramg.e = 64;
       paramg.k = paramInt2;
       paramg.l = 30;
@@ -1539,10 +1539,10 @@ public class MainGameScreen
       break;
     case 1: 
       i1 = paramg.j = this.av;
-      paramg.h = (6 * b(i1));
-      paramg.i = (6 * c(i1));
-      paramg.a = (b(this.av - 90) + paramg.h);
-      paramg.b = (c(this.av - 90) + paramg.i);
+      paramg.h = (6 * turn_helper(i1));
+      paramg.i = (6 * turn_helper2(i1));
+      paramg.a = (turn_helper(this.av - 90) + paramg.h);
+      paramg.b = (turn_helper2(this.av - 90) + paramg.i);
       paramg.e = 64;
       paramg.k = paramInt2;
       paramg.l = 30;
@@ -1550,10 +1550,10 @@ public class MainGameScreen
       break;
     case 6: 
       i1 = paramg.j = this.av;
-      paramg.h = (6 * b(i1));
-      paramg.i = (6 * c(i1));
-      paramg.a = (b(this.av + 90) + paramg.h);
-      paramg.b = (c(this.av + 90) + paramg.i);
+      paramg.h = (6 * turn_helper(i1));
+      paramg.i = (6 * turn_helper2(i1));
+      paramg.a = (turn_helper(this.av + 90) + paramg.h);
+      paramg.b = (turn_helper2(this.av + 90) + paramg.i);
       paramg.e = 64;
       paramg.l = (10 + this.cc);
       this.cc = (1 - this.cc);
@@ -1563,22 +1563,22 @@ public class MainGameScreen
     paramg.c = paramInt1;
   }
   
-  public int b(int paramInt1, int paramInt2, int paramInt3)
+  public int return_turn_helper(int paramInt1, int paramInt2, int paramInt3)
   {
-    return c(paramInt1) * paramInt2 + b(paramInt1) * paramInt3 >> 6;
+    return turn_helper2(paramInt1) * paramInt2 + turn_helper(paramInt1) * paramInt3 >> 6;
   }
   
-  public void e(boolean paramBoolean)
+  public void simple_90(boolean paramBoolean)
   {
-    if (!this.bg)
+    if (!this.bool_bg)
     {
       int i1 = paramBoolean ? 90 : -90;
-      this.an = (2 * b(this.av + i1));
-      this.ao = (2 * c(this.av + i1));
+      this.an = (2 * turn_helper(this.av + i1));
+      this.ao = (2 * turn_helper2(this.av + i1));
     }
   }
   
-  public void b(Graphics paramGraphics, g paramg)
+  public void complex_draw_helper(Graphics paramGraphics, GameConfig paramg)
   {
     int i1 = paramg.c;
     int i2 = paramg.f;
@@ -1611,18 +1611,18 @@ public class MainGameScreen
           this.b1 = (i3 + 98 + 50);
           this.b2 = (this.bb + 27);
           this.b3 = (this.bc + 30);
-          a(paramGraphics, this.b0, this.b1, i3 >> 2, paramg.d, true);
+          draw_anchor_helper(paramGraphics, this.b0, this.b1, i3 >> 2, paramg.d, true);
         }
         else
         {
           this.b6 = (this.b0 + paramg.d * ((this.b2 - this.b0) / 10));
           this.b7 = (this.b1 + paramg.d * ((this.b3 - this.b1) / 10));
-          a(paramGraphics, this.b6, this.b7, i3 >> 2, paramg.d, true);
+          draw_anchor_helper(paramGraphics, this.b6, this.b7, i3 >> 2, paramg.d, true);
         }
         if (paramg.d == 8) {
           if ((this.bb - this.be > -50) && (this.bb - this.be < 27) && (this.bc - this.bf > -50) && (this.bc - this.bf < 30))
           {
-            paramg.n = true;
+            paramg.bool_n = true;
           }
           else
           {
@@ -1633,7 +1633,7 @@ public class MainGameScreen
       }
       else if (paramg.d < 8)
       {
-        a(paramGraphics, i2 + 88 + 32, i3 + 98 + 50, i3 >> 2, 16776960, 8388608);
+        fillRect_helper(paramGraphics, i2 + 88 + 32, i3 + 98 + 50, i3 >> 2, 16776960, 8388608);
       }
       break;
     case 11: 
@@ -1646,22 +1646,22 @@ public class MainGameScreen
         }
         this.b4 = (i2 + 88 + 32 - this.by + (7 - paramg.d) * (this.by / 10));
         this.b5 = (i3 + 100 + 50 - this.bz + (7 - paramg.d) * (this.bz / 10));
-        a(paramGraphics, this.b4, this.b5, i3 >> 1, paramg.l, false);
+        draw_anchor_helper(paramGraphics, this.b4, this.b5, i3 >> 1, paramg.l, false);
       }
       break;
     case 1: 
-      b(paramGraphics, i2 + 88 + 32, i3 + 100 + 50, i3 >> 1, paramg.d);
+      draw_img_helper(paramGraphics, i2 + 88 + 32, i3 + 100 + 50, i3 >> 1, paramg.d);
       break;
     case 6: 
-      a(paramGraphics, i2 + 93 + 2 + 32, i3 + 94 + 50, i3 >> 2, paramg.l);
+      graphic_helper(paramGraphics, i2 + 93 + 2 + 32, i3 + 94 + 50, i3 >> 2, paramg.l);
       break;
     case 4: 
     case 7: 
     case 8: 
-      a(paramGraphics, true, i2 + 88 + 32, 158 - i3, i4 * 4 + 2, i4 + 1, i4 + 1);
+      shift_1(paramGraphics, true, i2 + 88 + 32, 158 - i3, i4 * 4 + 2, i4 + 1, i4 + 1);
       break;
     case 5: 
-      a(paramGraphics, true, i2 + 88 + 32, 158 - i3, i4 * 4 + 2, i4 + 1, i4 + 1);
+      shift_1(paramGraphics, true, i2 + 88 + 32, 158 - i3, i4 * 4 + 2, i4 + 1, i4 + 1);
       break;
     }
   }
