@@ -105,6 +105,8 @@ public class MainGameScreen
   public int cb = 0;
   public int cc = 0;
   
+  public MainGameHelper gameHelper = new MainGameHelper(); // new MainGameHelper(this.readMedia)
+  
   public void init_game(GameConfig paramGameCnf, int paramInt)
   {
     int i2;
@@ -1262,7 +1264,8 @@ public class MainGameScreen
     for (int i1 = 0; i1 < 9; i1++) {
       for (int i2 = 0; i2 < 18; i2++) {
         if ((gameConfigArr[i2].c != 0) && (gameConfigArr[i2].d == i1)) {
-          complex_draw_helper(paramGraphics, gameConfigArr[i2]);
+//          complex_draw_helper(paramGraphics, gameConfigArr[i2]);
+          this.gameHelper.complex_draw_helper(paramGraphics, gameConfigArr[i2], this.readMedia, this.af, this.b0, this.b1, this.b2, this.b3, this.b4, this.b5, this.b6, this.b7, this.bb, this.bc, this.be, this.bf, this.bi, this.bj, this.bk, this.by, this.bz, this.AA.bool_n, this.rnd);
         }
       }
     }
@@ -1463,6 +1466,7 @@ public class MainGameScreen
       return false;
     }
     turn_helper2(gameConfigArr[i1], paramInt1, paramInt2);
+//    this.gameHelper.turn_helper2(gameConfigArr[i1], this.gameSetting, paramInt1, paramInt2, this.rnd, this.AA.bool_n, this.af, this.ah, this.ag, this.al, this.am, this.an, this.av, this.bo, this.bp, this.bq, this.br, this.cc, this.j, this.n, this.o, this.k, this.r, this.s, this.v, this.w, stt_byte_arr_bs, stt_byte_arr_bt);
     return true;
   }
   
@@ -1578,91 +1582,5 @@ public class MainGameScreen
     }
   }
   
-  public void complex_draw_helper(Graphics paramGraphics, GameConfig paramg)
-  {
-    int i1 = paramg.c;
-    int i2 = paramg.f;
-    int i3 = paramg.g;
-    int i4 = paramg.d;
-    paramGraphics.setClip(0, 50, 240, 250);
-    switch (i1)
-    {
-    case 9: 
-      break;
-    case 10: 
-      if (i4 < 8) {
-        this.readMedia.drawImageInArr(paramGraphics, 44 + i4, i2 + 88 + 32, 163 + i3);
-      }
-      break;
-    case 13: 
-      if (i4 < 8) {
-        this.readMedia.drawImageInArr(paramGraphics, 53 + i4, i2 + 88 + 32, 158 - i3);
-      }
-      break;
-    case 14: 
-      this.readMedia.drawImageInArr(paramGraphics, 63 + i4, i2 + 88 + 32, 158 - i3);
-      break;
-    case 12: 
-      if (this.bi == 3)
-      {
-        if (paramg.l == 29)
-        {
-          this.b0 = (i2 + 88 + 32);
-          this.b1 = (i3 + 98 + 50);
-          this.b2 = (this.bb + 27);
-          this.b3 = (this.bc + 30);
-          draw_anchor_helper(paramGraphics, this.b0, this.b1, i3 >> 2, paramg.d, true);
-        }
-        else
-        {
-          this.b6 = (this.b0 + paramg.d * ((this.b2 - this.b0) / 10));
-          this.b7 = (this.b1 + paramg.d * ((this.b3 - this.b1) / 10));
-          draw_anchor_helper(paramGraphics, this.b6, this.b7, i3 >> 2, paramg.d, true);
-        }
-        if (paramg.d == 8) {
-          if ((this.bb - this.be > -50) && (this.bb - this.be < 27) && (this.bc - this.bf > -50) && (this.bc - this.bf < 30))
-          {
-            paramg.bool_n = true;
-          }
-          else
-          {
-            paramg.c = 0;
-            this.af += -1;
-          }
-        }
-      }
-      else if (paramg.d < 8)
-      {
-        fillRect_helper(paramGraphics, i2 + 88 + 32, i3 + 98 + 50, i3 >> 2, 16776960, 8388608);
-      }
-      break;
-    case 11: 
-      if (this.AA.bool_n == true)
-      {
-        if (paramg.l == 29)
-        {
-          this.by = (93 - this.bb);
-          this.bz = (144 - this.bc);
-        }
-        this.b4 = (i2 + 88 + 32 - this.by + (7 - paramg.d) * (this.by / 10));
-        this.b5 = (i3 + 100 + 50 - this.bz + (7 - paramg.d) * (this.bz / 10));
-        draw_anchor_helper(paramGraphics, this.b4, this.b5, i3 >> 1, paramg.l, false);
-      }
-      break;
-    case 1: 
-      draw_img_helper(paramGraphics, i2 + 88 + 32, i3 + 100 + 50, i3 >> 1, paramg.d);
-      break;
-    case 6: 
-      graphic_helper(paramGraphics, i2 + 93 + 2 + 32, i3 + 94 + 50, i3 >> 2, paramg.l);
-      break;
-    case 4: 
-    case 7: 
-    case 8: 
-      shift_1(paramGraphics, true, i2 + 88 + 32, 158 - i3, i4 * 4 + 2, i4 + 1, i4 + 1);
-      break;
-    case 5: 
-      shift_1(paramGraphics, true, i2 + 88 + 32, 158 - i3, i4 * 4 + 2, i4 + 1, i4 + 1);
-      break;
-    }
-  }
+
 }
