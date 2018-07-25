@@ -6,6 +6,27 @@ public class MainGameHelper {
 		
 	}
 	
+	public void init_600(int[][] int_arr_bu)
+	{
+	    for (int i1 = 0; i1 < 2; i1++)
+	    {
+	      int_arr_bu[i1][0] = (600 * i1 * 2);
+	      int_arr_bu[i1][1] = (600 * (i1 * 2 + 1));
+	    }
+	}
+	  
+	public int turn_calc(int paramInt1, int paramInt2)
+	{
+	    int i1 = paramInt2 - paramInt1;
+	    if (i1 > 180) {
+	      i1 -= 360;
+	    }
+	    if (i1 < 65356) {
+	      i1 = 360 + i1;
+	    }
+	    return i1;
+	}
+	  
 	public int angle_helper(int paramInt1, int paramInt2, byte[] stt_byte_arr_bt)
 	{
 	    int i4 = 90;
@@ -57,7 +78,127 @@ public class MainGameHelper {
 	    }
 	    return i4;
 	}
+	
+	public boolean config_helper(GameConfig paramgcnf1, GameConfig paramgcnf2)
+	{
+	    if (Math.abs(paramgcnf1.a - paramgcnf2.a) + Math.abs(paramgcnf1.b - paramgcnf2.b) < 200)
+	    {
+	      paramgcnf2.m -= paramgcnf1.m;
+	      paramgcnf2.l += 5;
+	      if (paramgcnf2.m <= 0) {
+	        if (paramgcnf2.c == 14)
+	        {
+	          paramgcnf2.c = 7;
+	          paramgcnf2.l = 4;
+	        }
+	        else
+	        {
+	          paramgcnf2.c = 8;
+	          paramgcnf2.l = 2;
+	        }
+	      }
+	      return true;
+	    }
+	    return false;
+	}
 	  
+	public int random_helper(GameConfig paramg, int paramInt, Random rnd, int af, int al, int am, int an, int ao, int bo, 
+			int bp, int bq, int br, byte[] stt_byte_arr_bt, byte[] stt_byte_arr_bs)
+	{
+	    int i3 = 8;
+	    int i4;
+	    int i1;
+	    if (paramg.e > 4000)
+	    {
+//	      i4 = angle_helper(-paramg.a, -paramg.b);
+	      i4 = angle_helper(-paramg.a, -paramg.b, stt_byte_arr_bt);
+	      i1 = 20;
+	    }
+	    else
+	    {
+	      i1 = (Math.abs(rnd.nextInt()) & 0x7) + 5;
+	      int i2 = Math.abs(rnd.nextInt() & 0x7);
+	      i3 = Math.abs(paramg.e - 3500) >> 8;
+	      if (i2 >= i3)
+	      {
+	        if (af < 1) {
+	          setup_18_item(12, paramInt);
+	        }
+	        i1 = 10;
+	      }
+	      i4 = paramg.j;
+	      i4 += (i2 << 2) - 14;
+	      if (i4 < 0) {
+	        i4 += 360;
+	      }
+	      if (i4 >= 360) {
+	        i4 -= 360;
+	      }
+	    }
+	    paramg.h = (al - an + turn_helper(i4, bo, bp, stt_byte_arr_bs));
+	    paramg.i = (am - ao + turn_helper2(i4, bq, br, stt_byte_arr_bs));
+	    paramg.j = i4;
+	    return i1;
+	}
+	
+	public void setup2(GameSettings gameSetting, ArchAngel AA, int an, int ao, int aq, int ar, int au, boolean bool_ay, boolean bool_az, boolean bool_a0)
+	{
+	    au = 1000;
+	    gameSetting.j = 0;
+	    bool_ay = false;
+	    bool_az = false;
+	    bool_a0 = false;
+	    AA.ab = 7;
+	    setup3(an, ao, aq, ar);
+	    ar = -20;
+	}
+	
+	public void setup3(int an, int ao, int aq, int ar)
+	{
+	    aq = 0;
+	    ar = 0;
+	    an = (ao = 0);
+	}
+	
+	public int shift_byte_6(int paramInt1, int paramInt2, int paramInt3, int bo, int bp, int bq, int br, byte[] stt_byte_arr_bs)
+	{
+	    return turn_helper(paramInt1, bo, bp, stt_byte_arr_bs) * paramInt2 - turn_helper2(paramInt1, bq, br, stt_byte_arr_bs) * paramInt3 >> 6;
+	}
+	  
+	public void set_color_arr(Graphics paramGraphics, GameConfig paramg, int al, int am, int av, int bo, int bp, int bq, int br, byte[] stt_byte_arr_bs)
+	{
+	    int[] arrayOfInt = { 255, 16711680, 16776960, 16776960 };
+	    int i5 = paramg.c;
+	    int i3 = paramg.a;
+	    int i4 = paramg.b;
+	    int i1 = shift_byte_6(450 - av, i3, i4, bo, bp, bq, br, stt_byte_arr_bs);
+	    int i2 = return_turn_helper(450 - av, i3, i4, bo, bp, bq, br, stt_byte_arr_bs);
+	    if ((i5 >= 11) && ((paramg.e = shift_3(i3, i4)) < 4284))
+	    {
+	      i3 = i1 >> 8;
+	      i4 = i2 >> 8;
+	      if( (i5 - 11) < arrayOfInt.length) {
+	    	  paramGraphics.setColor(arrayOfInt[(i5 - 11)]);
+	      }
+	      //System.out.println("-::_:_:_:_:_:__" + i5 + " _______________");
+	      paramGraphics.fillRect(28 + i3, 21 - i4, 3, 3);
+	    }
+	    i2 += 300;
+	    int i6 = i2 + 151;
+	    if (i6 > 0)
+	    {
+	      paramg.g = (20000 / i6);
+	      paramg.f = (i1 * 151 / i6);
+	      paramg.d = (7 - (i2 >> 9));
+	    }
+	    else
+	    {
+	      paramg.d = 8;
+	    }
+	    paramg.a -= al;
+	    paramg.b -= am;
+	}
+	 
 	public int shift_3(int paramInt1, int paramInt2)
 	{
 	    int i1 = 0;
@@ -143,7 +284,10 @@ public class MainGameHelper {
 	  
 //	TODO refactor long parameters
 //	public void turn_helper2(GameConfig paramg, int paramInt1, int paramInt2)
-	public void turn_helper2(GameConfig paramg, GameSettings gameSetting, int paramInt1, int paramInt2, Random rnd, boolean bool_n, int af, int ah, int ag, int al, int am, int an, int av, int bo, int bp, int bq, int br, int cc, int j, int n, int o, int k, int r, int s, int v, int w, byte[] stt_byte_arr_bs, byte[] stt_byte_arr_bt)
+	public void turn_helper2(GameConfig paramg, GameConfig gameConfig2, GameSettings gameSetting, int paramInt1, int paramInt2, 
+			Random rnd, ArchAngel AA, int af, int ah, int ag, int al, int am, int an, 
+			int av, int bo, int bp, int bq, int br, int cc, int j, int n, int o, int k, 
+			int r, int s, int v, int w, byte[] stt_byte_arr_bs, byte[] stt_byte_arr_bt)
 	{
 	    paramg.m = 0;
 	    int i1;
@@ -178,7 +322,7 @@ public class MainGameHelper {
 	      paramg.l = 2;
 	      v += 1;
 	      paramg.d = 0;
-	      bool_n = true;
+	      AA.bool_n = true;
 	      break;
 	    case 13: 
 	      paramg.m = j;
@@ -193,14 +337,14 @@ public class MainGameHelper {
 	      ag += 1;
 	      break;
 	    case 12: 
-	      paramg.a = paramg.a; // gameConfigArr[paramInt2]
-	      paramg.b = paramg.b;
+	      paramg.a = gameConfig2.a;
+	      paramg.b = gameConfig2.b;
 	      paramg.e = shift_3(paramg.a, paramg.b);
 	      i1 = paramg.j = angle_helper(-paramg.a + al, -paramg.b + am, stt_byte_arr_bt);
 	      paramg.h = (3 * turn_helper(i1, bo, bp, stt_byte_arr_bs) + al);
 	      paramg.i = (3 * turn_helper2(i1, bq, br, stt_byte_arr_bs) + am);
 	      paramg.l = 30;
-	      paramg.m = (paramg.c == 14 ? o : k);
+	      paramg.m = (gameConfig2.c == 14 ? o : k); // If miss use ie. paramg => Boss do not die.
 	      af += 1;
 	      break;
 	    case 11: 
@@ -240,9 +384,441 @@ public class MainGameHelper {
 	    paramg.c = paramInt1;
 	}
 	
+//	public void draw_arr_byte_plasma_boss(Graphics paramGraphics)
+	public void draw_arr_byte_plasma_boss(Graphics paramGraphics, ReadMedia readMedia, ArchAngel AA, int a8, 
+			int a9, int ap, int aw, int ba, int bb, int bc, int bd, int bi, int z, boolean bool_ay, boolean bool_bg)
+	{
+	    byte[][] arrayOfByte1 = { { 5, -8 }, { 2, -18 }, { 6, -22 }, { 3, -25 } };
+	    byte[][] arrayOfByte2 = { new byte[2], { 1, 6 }, { -2, -10 }, { 4, 8 }, { 1, -12 }, { -1, -4 }, { 0, 4 }, { 0, -6 }, { 1, 5 } };
+	    int i1 = ap / 3;
+	    int i2 = ap / 4 % 8;
+	    if (ba < 3)
+	    {
+	      if (bd < 5) {
+	        z = ba;
+	      } else {
+	        z = (ba + 2);
+	      }
+	    }
+	    else if (bd < 5) {
+	      z = (ba + 2);
+	    } else {
+	      z = (ba + 4);
+	    }
+	    switch (bi)
+	    {
+	    case 1: 
+	      readMedia.drawImageInArr(paramGraphics, 24 + z, bb + 30, bc + 11);
+	      if ((bool_ay == true) && (ap % 2 == 0)) {
+	        readMedia.drawImageInArr(paramGraphics, 80, 120, 165);
+	      }
+	      if (AA.z != 3)
+	      {
+	        paramGraphics.setClip(bb + 10 + arrayOfByte2[z][0], bc + 11 + arrayOfByte2[z][1], 12, 11);
+	        readMedia.drawImageAnchor20(paramGraphics, 33, bb + 10 + arrayOfByte2[z][0], bc + 11 + arrayOfByte2[z][1] - 11 * (ap % 2));
+	        paramGraphics.setClip(bb + 38 - arrayOfByte2[z][0], bc + 11 - arrayOfByte2[z][1], 12, 11);
+	        readMedia.drawImageAnchor20(paramGraphics, 34, bb + 38 - arrayOfByte2[z][0], bc + 11 - arrayOfByte2[z][1] - 11 * (ap % 2));
+	        paramGraphics.setClip(0, 0, 240, 300);
+	      }
+	      AA.bool_m = true;
+	      break;
+	    case 2: 
+	      AA.stopSound();
+	      paramGraphics.setClip(0, 0, 240, 300);
+	      if (i1 / 2 % 2 == 0) {
+	        readMedia.drawImageAnchor20(paramGraphics, 112, 66, 103);
+	      }
+	      aw = 10;
+	      a8 = 0;
+	      bool_ay = false;
+	      bool_bg = true;
+	      if (i1 < 5) {
+	        if (i1 == 0) {
+	          readMedia.drawImageAnchor20(paramGraphics, 24, bb, bc);
+	        } else {
+	          readMedia.drawImageAnchor20(paramGraphics, 24 + i1 + 10, bb + arrayOfByte1[(i1 - 1)][0], bc + arrayOfByte1[(i1 - 1)][1]);
+	        }
+	      }
+	      if (i1 == 5)
+	      {
+	        readMedia.destroyImage(112);
+	        for (int i3 = 0; i3 < 11; i3++) {
+	          readMedia.destroyImage(24 + i3);
+	        }
+	        for (int i3 = 0; i3 < 9; i3++)
+	        {
+	          readMedia.destroyImage(53 + i3);
+	          readMedia.destroyImage(44 + i3);
+	        }
+	        for (int i3 = 10; i3 < 13; i3++) {
+	          readMedia.destroyImage(71 + i3);
+	        }
+	        for (int i3 = 18; i3 < 24; i3++) {
+	          readMedia.destroyImage(84 + i3);
+	        }
+	        readMedia.drawImageAnchor20(paramGraphics, 38, bb + arrayOfByte1[3][0], bc + arrayOfByte1[3][1]);
+	        bb = 93;
+	        bc = 144;
+	        System.gc();
+	        readMedia.readMediaStream("boss" + AA.ac);
+	        for (int i3 = 0; i3 < 7; i3++) {
+	          readMedia.reloadImageArr(i3, 62 + i3);
+	        }
+	        readMedia.closeInputStream();
+	        readMedia.readMediaStream("plasma");
+	        for (int i3 = 0; i3 < 18; i3++) {
+	          readMedia.reloadImageArr(i3, 84 + i3);
+	        }
+	        readMedia.closeInputStream();
+	        bi = 3;
+	      }
+	      break;
+	    case 3: 
+	      switch (ba)
+	      {
+	      case 1: 
+	        bb -= 10;
+	        if (bb < 33) {
+	          bb = 33;
+	        }
+	        break;
+	      case 2: 
+	        bb += 10;
+	        if (bb > 153) {
+	          bb = 153;
+	        }
+	        break;
+	      case 3: 
+	      case 4: 
+	        ba = 0;
+	        break;
+	      }
+	      switch (a9)
+	      {
+	      case 1: 
+	        bc -= 10;
+	        if (bc < 104) {
+	          bc = 104;
+	        }
+	        break;
+	      case 2: 
+	        bc += 10;
+	        if (bc > 174) {
+	          bc = 174;
+	        }
+	        break;
+	      }
+	      readMedia.drawImageAnchor20(paramGraphics, 38 + ba, bb, bc);
+	      if (ba == 1)
+	      {
+	        paramGraphics.setClip(bb + 14, bc + 21, 19, 14);
+	        readMedia.drawImageAnchor20(paramGraphics, 42, bb + 14, bc + 7);
+	      }
+	      else if (ba == 2)
+	      {
+	        paramGraphics.setClip(bb + 20, bc + 21, 19, 14);
+	        readMedia.drawImageAnchor20(paramGraphics, 42, bb + 20, bc + 21);
+	      }
+	      else
+	      {
+	        paramGraphics.setClip(bb + 16, bc + 21, 22, 14);
+	        readMedia.drawImageAnchor20(paramGraphics, 41, bb + 16, bc + 21 - 15 * (i1 / 3 % 2));
+	      }
+	      paramGraphics.setClip(0, 0, 240, 300);
+	      break;
+	    }
+	}
+	
+//	public void follow_boss(int paramInt)
+	public void follow_boss(int paramInt, boolean bool_bg, int bd, int bb, int x, int[] int_arr_a5, boolean[] bool_arr_a7 )
+	{
+	    int i1;
+	    if (!bool_bg)
+	    {
+	      if (paramInt == 2)
+	      {
+	        bd += 1;
+	        int_arr_a5[0] -= 4;
+	        if (int_arr_a5[0] < 65296) {
+	          int_arr_a5[0] = 0;
+	        }
+	        if (int_arr_a5[0] < 0) {
+	          bool_arr_a7[0] = false;
+	        }
+	        int_arr_a5[1] -= 6;
+	        if (int_arr_a5[1] < 65196) {
+	          int_arr_a5[1] = 240;
+	        }
+	        for (i1 = 0; i1 < 3; i1++)
+	        {
+	          int_arr_a5[(i1 + 2)] -= 6 - 2 * i1;
+	          if (int_arr_a5[(i1 + 2)] < 65296) {
+	            int_arr_a5[(i1 + 2)] = 0;
+	          }
+	          if (int_arr_a5[(i1 + 2)] < 0) {
+	            bool_arr_a7[(i1 + 1)] = false;
+	          }
+	        }
+	      }
+	      else if (paramInt == 1)
+	      {
+	        bd += 1;
+	        int_arr_a5[0] += 4;
+	        if (int_arr_a5[0] > 240) {
+	          int_arr_a5[0] = 0;
+	        }
+	        if (int_arr_a5[0] > 0) {
+	          bool_arr_a7[0] = true;
+	        }
+	        int_arr_a5[1] += 6;
+	        if (int_arr_a5[1] > 240) {
+	          int_arr_a5[1] = 65196;
+	        }
+	        for (i1 = 0; i1 < 3; i1++)
+	        {
+	          int_arr_a5[(i1 + 2)] += 6 - 2 * i1;
+	          if (int_arr_a5[(i1 + 2)] > 240) {
+	            int_arr_a5[(i1 + 2)] = 0;
+	          }
+	          if (int_arr_a5[(i1 + 2)] > 0) {
+	            bool_arr_a7[(i1 + 1)] = true;
+	          }
+	        }
+	      }
+	      if (paramInt == 4)
+	      {
+	        bd += 1;
+	        int_arr_a5[0] -= 4;
+	        if (int_arr_a5[0] < 65296) {
+	          int_arr_a5[0] = 0;
+	        }
+	        if (int_arr_a5[0] < 0) {
+	          bool_arr_a7[0] = false;
+	        }
+	        int_arr_a5[1] -= 2;
+	        if (int_arr_a5[1] < 65196) {
+	          int_arr_a5[1] = 240;
+	        }
+	        for (i1 = 0; i1 < 3; i1++)
+	        {
+	          int_arr_a5[(i1 + 2)] -= 2 + 2 * i1;
+	          if (int_arr_a5[(i1 + 2)] < 65296) {
+	            int_arr_a5[(i1 + 2)] = 0;
+	          }
+	          if (int_arr_a5[(i1 + 2)] < 0) {
+	            bool_arr_a7[(i1 + 1)] = false;
+	          }
+	        }
+	      }
+	      else if (paramInt == 3)
+	      {
+	        bd += 1;
+	        int_arr_a5[0] += 4;
+	        if (int_arr_a5[0] > 240) {
+	          int_arr_a5[0] = 0;
+	        }
+	        if (int_arr_a5[0] > 0) {
+	          bool_arr_a7[0] = true;
+	        }
+	        int_arr_a5[1] += 2;
+	        if (int_arr_a5[1] > 240) {
+	          int_arr_a5[1] = 65196;
+	        }
+	        for (i1 = 0; i1 < 3; i1++)
+	        {
+	          int_arr_a5[(i1 + 2)] += 2 + 2 * i1;
+	          if (int_arr_a5[(i1 + 2)] > 240) {
+	            int_arr_a5[(i1 + 2)] = 0;
+	          }
+	          if (int_arr_a5[(i1 + 2)] > 0) {
+	            bool_arr_a7[(i1 + 1)] = true;
+	          }
+	        }
+	      }
+	      else if (paramInt > 0)
+	      {
+	        bd += 1;
+	      }
+	    }
+	    else if (paramInt == 2)
+	    {
+	      if (bb >= 133)
+	      {
+	        x -= 2;
+	        if (x < -10) {
+	          x = -10;
+	        }
+	        int_arr_a5[0] -= 2;
+	        if (int_arr_a5[0] < 65296) {
+	          int_arr_a5[0] = 0;
+	        }
+	        if (int_arr_a5[0] < 0) {
+	          bool_arr_a7[0] = false;
+	        }
+	        int_arr_a5[1] -= 1;
+	        if (int_arr_a5[1] < 65196) {
+	          int_arr_a5[1] = 240;
+	        }
+	        for (i1 = 0; i1 < 3; i1++)
+	        {
+	          int_arr_a5[(i1 + 2)] -= 2 + 1 * i1;
+	          if (int_arr_a5[(i1 + 2)] < 65296) {
+	            int_arr_a5[(i1 + 2)] = 0;
+	          }
+	          if (int_arr_a5[(i1 + 2)] < 0) {
+	            bool_arr_a7[(i1 + 1)] = false;
+	          }
+	        }
+	      }
+	    }
+	    else if ((paramInt == 1) && (bb <= 53))
+	    {
+	      x += 2;
+	      if (x > 10) {
+	        x = 10;
+	      }
+	      int_arr_a5[0] += 2;
+	      if (int_arr_a5[0] > 240) {
+	        int_arr_a5[0] = 0;
+	      }
+	      if (int_arr_a5[0] > 0) {
+	        bool_arr_a7[0] = true;
+	      }
+	      int_arr_a5[1] += 1;
+	      if (int_arr_a5[1] > 240) {
+	        int_arr_a5[1] = 65196;
+	      }
+	      for (i1 = 0; i1 < 3; i1++)
+	      {
+	        int_arr_a5[(i1 + 2)] += 2 + 1 * i1;
+	        if (int_arr_a5[(i1 + 2)] > 240) {
+	          int_arr_a5[(i1 + 2)] = 0;
+	        }
+	        if (int_arr_a5[(i1 + 2)] > 0) {
+	          bool_arr_a7[(i1 + 1)] = true;
+	        }
+	      }
+	    }
+	}
+	
+	// FIXME can not change speed of fighter
+	public void simple_helper2(int paramInt, int a8, boolean bool_bg)
+	{
+	    if (!bool_bg) {
+	      if (paramInt == 1)
+	      {
+	        a8 += 1;
+	        if (a8 > 4) {
+	          a8 = 4;
+	        }
+	      }
+	      else if (paramInt == 2)
+	      {
+	        a8 += -1;
+	        if (a8 < 0) {
+	          a8 = 0;
+	        }
+	      }
+	    }
+	}
+	
+	// FIXME
+	public boolean setup_18_item(int paramInt1, int paramInt2)
+	{
+		return true;
+	}
+	 
+//	public void complex_helper()
+	public void complex_helper(GameSettings gameSetting, ArchAngel AA, int a3, int a4, int a8, int a9, int ag, int aj, int ak, int al, int am, int an, 
+			int ao, int ap, int aq, int ar, int as, int at, int av, int aw, int ba, int bb, int bd, int bn, int bo, int bp, int bq, int br, int db, 
+			int x, boolean bool_a0, boolean bool_ay, boolean bool_az, boolean bool_bg, int[] int_arr_a5, boolean[] bool_arr_a7, byte[] stt_byte_arr_bs)
+	{
+	    simple_helper2(a9, a8, bool_bg);
+	    if ((x <= 10) && (x >= -10)) {
+	    	follow_boss(ba, bool_bg, bd, bb, x, int_arr_a5, bool_arr_a7); 
+	    }
+	    as += aq;
+	    if (aq == 0)
+	    {
+	      if (as > 0) {
+	        as += -1;
+	      }
+	      if (as < 0) {
+	        as += 1;
+	      }
+	    }
+	    if (as > 4) {
+	      as = 4;
+	    }
+	    if (as < -4) {
+	      as = -4;
+	    }
+	    av -= as;
+	    if (av < 0) {
+	      av += 360;
+	    }
+	    if (av >= 360) {
+	      av -= 360;
+	    }
+	    al = ((turn_helper(av, bo, bp, stt_byte_arr_bs) * aw >> 6) + an);
+	    am = ((turn_helper2(av, bq, br, stt_byte_arr_bs) * aw >> 6) + ao);
+	    at -= am;
+	    aw += ar;
+	    if (aw > 140) {
+	      aw = 140;
+	    }
+	    if (aw < 20) {
+	      aw = 20;
+	    }
+	    a3 += -1;
+	    a4 += -1;
+	    if ((bool_ay) && (a4 <= 0) && (setup_18_item(6, 0)) && (bn <= 0)) {
+	      bn = 12;
+	    }
+	    int i1;
+	    if ((bool_az) && (AA.x % 5 == 0) && (AA.bool_n == true) && (gameSetting.t > 0))
+	    {
+	      i1 = aj;
+	      if ((aj < 0) || (ak > 0)) {
+	        i1 = -1;
+	      }
+	      if (setup_18_item(11, i1))
+	      {
+	        gameSetting.t += -1;
+	        if (gameSetting.t <= 0)
+	        {
+	          AA.stopSound();
+	          bool_az = false;
+	        }
+	      }
+	    }
+	    if (bool_a0)
+	    {
+	      if (gameSetting.o > 0)
+	      {
+	        i1 = aj;
+	        if ((aj < 0) || (ak > 0)) {
+	          i1 = -1;
+	        }
+	        if (setup_18_item(1, i1))
+	        {
+	          gameSetting.o += -1;
+	          if (gameSetting.o <= 0) {
+	            bool_a0 = false;
+	          }
+	          a3 = 20;
+	        }
+	      }
+	      bool_a0 = false;
+	    }
+	}
+	
 	//public void complex_draw_helper(Graphics paramGraphics, GameConfig paramg)
 	// These int params is original from this (MainGameScreen)
-	public void complex_draw_helper(Graphics paramGraphics, GameConfig paramg, ReadMedia readMedia, int af, int b0, int b1, int b2, int b3, int b4, int b5, int b6, int b7, int bb, int bc, int be, int bf, int bi, int bj, int bk, int by, int bz, boolean aa_bool_n, Random rnd)
+	// Be careful with param pass by reference ie. aa_bool_n here is not change value, only used for condition
+	public void complex_draw_helper(Graphics paramGraphics, GameConfig paramg, ReadMedia readMedia, int af, 
+			int b0, int b1, int b2, int b3, int b4, int b5, int b6, int b7, int bb, int bc, int be, int bf, 
+			int bi, int bj, int bk, int by, int bz, boolean aa_bool_n, Random rnd)
 	{
 	    int i1 = paramg.c;
 	    int i2 = paramg.f;
@@ -367,6 +943,69 @@ public class MainGameHelper {
 	    }
 	}
 	
+	// FIXME outofbound Exception
+	public void draw_anchor_helper2(Graphics paramGraphics, GameConfig gameConfig, ReadMedia readMedia, int ai, int aj, int ak, int as, int bi, int bw, int bx)
+	{
+	    int i6 = 0;
+	    paramGraphics.setColor(65280);
+	    ai = (85 + as * 7);
+	    if ((aj >= 0) && (gameConfig.c == 0)) {
+	      aj = -1;
+	    }
+	    int i1;
+	    int i2;
+	    for (int i7 = 0; i7 < 18; i7++)
+	    {
+	      int i4 = gameConfig.c;
+	      int i5 = gameConfig.d;
+	      if ((i4 >= 13) && (i5 >= 1) && (i5 < 6))
+	      {
+	        i1 = gameConfig.f + 88 + 32;
+	        i2 = 158 - gameConfig.g;
+	        bw = i1;
+	        bx = i2;
+	        if ((i1 > ai) && (i1 < ai + 88) && (i2 > 87) && (i2 < 188)) {
+	          if (aj == -1)
+	          {
+	            i6 = 1;
+	            aj = i7;
+	            ak = 5;
+	          }
+	          else if (aj == i7)
+	          {
+	            i6 = 1;
+	            if (ak > 0) {
+	              ak += -1;
+	            }
+	          }
+	        }
+	      }
+	    }
+	    if (i6 != 0)
+	    {
+	      if (aj >= 0)
+	      {
+	        i1 = gameConfig.f + 88 + 32;
+	        i2 = 155 - gameConfig.g;
+	        int i3 = gameConfig.d * 8 + 4;
+	        if (bi == 1) {
+	          if (gameConfig.d < 4) {
+	            readMedia.drawImageAnchor20(paramGraphics, 82, i1 - 10, i2 - 6);
+	          } else {
+	            readMedia.drawImageAnchor20(paramGraphics, 81, i1 - 17, i2 - 12);
+	          }
+	        }
+	      }
+	    }
+	    else
+	    {
+	      aj = -1;
+	      if (bi == 1) {
+	        readMedia.drawImageAnchor20(paramGraphics, 83, ai, 136);
+	      }
+	    }
+	}
+	  
 	public void draw_img_helper(Graphics paramGraphics, ReadMedia readMedia, int paramInt1, int paramInt2, int paramInt3, int paramInt4)
 	{
 	    int i1 = paramInt1 - (paramInt3 >> 1);
@@ -441,5 +1080,10 @@ public class MainGameHelper {
 	      }
 	    }
 	}
-	  
+	
+	public int return_turn_helper(int paramInt1, int paramInt2, int paramInt3, int bo, int bp, int bq, int br, byte[] stt_byte_arr_bs)
+	{
+	    return turn_helper2(paramInt1, bq, br, stt_byte_arr_bs) * paramInt2 + turn_helper(paramInt1, bo, bp, stt_byte_arr_bs) * paramInt3 >> 6;
+	}
+	
 }

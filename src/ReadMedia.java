@@ -60,6 +60,8 @@ public class ReadMedia
     System.gc();
   }
   
+  // Load image from binary file seem complex, in many case the img_arr (120 items) has many null value.
+  // These null value lead to NullPointer exception
   public void drawImageAnchor36(Graphics paramGraphics, int paramInt1, int paramInt2, int paramInt3)
   {
     paramGraphics.drawImage(this.img_arr_a[paramInt1], paramInt2, paramInt3, 36);

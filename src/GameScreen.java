@@ -2091,7 +2091,7 @@ public class GameScreen
           this.archAngel.mainGameScreen.bool_bh = false;
         }
       }
-      System.out.println(":):):):):) " + this.archAngel.gameSetting.t + " :(:(:(:(:(");
+//      System.out.println(":):):):):) " + this.archAngel.gameSetting.t + " :(:(:(:(:(");
       if (this.archAngel.gameSetting.t <= 0) // may be number of enemies left
       {
     	this.archAngel.gameSetting.t = 3; // Try play flow
