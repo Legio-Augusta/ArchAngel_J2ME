@@ -39,7 +39,7 @@ public class GameScreen
   public int ae;
   public int af;
   public int ag;
-  public boolean bool_ah;
+  public boolean gameOff;
   public final ArchAngel archAngel;
   
   public GameHelper helper = new GameHelper();
@@ -51,7 +51,7 @@ public class GameScreen
     if (this.archAngel.bool_h) {
       return;
     }
-    switch (this.archAngel.b)
+    switch (this.archAngel.screen)
     {
     case 0: 
       if (this.archAngel.z == 1) {
@@ -154,14 +154,14 @@ public class GameScreen
           this.archAngel.bool_e = true;
           break;
         case -6: 
-          this.archAngel.b = 9;
+          this.archAngel.screen = 9;
           break;
         case -7: 
         case -5: 
           if (this.l == 5) {
-            this.archAngel.b = 4;
+            this.archAngel.screen = 4;
           } else {
-            this.archAngel.b = ((byte)(8 + this.l));
+            this.archAngel.screen = ((byte)(8 + this.l));
           }
         }
       }
@@ -281,12 +281,12 @@ public class GameScreen
             break;
           case -7: 
             if (this.archAngel.bool_l) {
-              this.archAngel.b = 13;
+              this.archAngel.screen = 13;
             }
             break;
           case -6: 
             if (this.archAngel.bool_l) {
-              this.archAngel.b = 14;
+              this.archAngel.screen = 14;
             }
             break;
           case -5: 
@@ -436,7 +436,7 @@ public class GameScreen
       break;
     case 4: 
       if ((this.archAngel.z == 1) && (paramInt == -6)) {
-        this.archAngel.b = 5;
+        this.archAngel.screen = 5;
       }
       break;
     case 1: 
@@ -446,7 +446,7 @@ public class GameScreen
       }
       if (paramInt == -6)
       {
-        if (this.archAngel.b == 1)
+        if (this.archAngel.screen == 1)
         {
           this.archAngel.z = 10;
         }
@@ -546,7 +546,7 @@ public class GameScreen
       this.archAngel.a(paramGraphics, "RESUME", false);
       break;
     case 1: 
-      this.archAngel.y = (this.archAngel.b = 25);
+      this.archAngel.y = (this.archAngel.screen = 25);
       this.archAngel.z = 4;
       return;
     }
@@ -554,21 +554,21 @@ public class GameScreen
   
   public void paint(Graphics paramGraphics)
   {
-    if (this.bool_ah) { // like GameOff, true then stop paint
+    if (this.gameOff) { // like GameOff, true then stop paint
 //      System.out.println(">>>>> paint stop <<<<<");
       // Paint done ? can it just remove return to debug
       return;
     }
-    this.bool_ah = true;
+    this.gameOff = true;
     this.archAngel.x += 1;
-    if (this.archAngel.b != this.archAngel.y)
+    if (this.archAngel.screen != this.archAngel.y)
     {
       this.archAngel.x = 0;
       this.archAngel.z = 0;
       this.archAngel.aa = 0;
       this.archAngel.p = -1;
       this.bool_b = true;
-      this.archAngel.y = this.archAngel.b;
+      this.archAngel.y = this.archAngel.screen;
       this.archAngel.bool_i = false;
     }
     else if (this.archAngel.z != this.archAngel.aa)
@@ -576,7 +576,7 @@ public class GameScreen
       this.archAngel.x = 0;
       this.archAngel.aa = this.archAngel.z;
     }
-    switch (this.archAngel.b)
+    switch (this.archAngel.screen)
     {
     case 25: 
       this.secondHelper.draw_game_play_screen(paramGraphics, this.aa, this.ab, this.ac, this.ad, this.ae, this.af, this.ag, this.l, 
@@ -604,7 +604,7 @@ public class GameScreen
       if (this.archAngel.gameSetting.c != this.archAngel.gameSetting.b) {
         this.secondHelper.draw_start_option(paramGraphics, this.o, this.p, this.archAngel);
       } else {
-        this.archAngel.b = 25;
+        this.archAngel.screen = 25;
       }
       break;
     case 8: 
@@ -638,7 +638,7 @@ public class GameScreen
       this.helper.loadBrief1(paramGraphics, this.o, this.p, this.archAngel);
       break;
     }
-    this.bool_ah = false;
+    this.gameOff = false;
   }
   
   public GameScreen(ArchAngel paramArchAngel)
@@ -671,14 +671,14 @@ public class GameScreen
     this.ae = 0;
     this.af = 0;
     this.ag = 0;
-    this.bool_ah = false;
+    this.gameOff = false;
   }
   
   public void void_empty() {}
   
   public void keyReleased(int paramInt)
   {
-    switch (this.archAngel.b)
+    switch (this.archAngel.screen)
     {
     case 25: 
       if (this.archAngel.mainGameScreen.bi == 1)
@@ -709,7 +709,7 @@ public class GameScreen
   {
     this.archAngel.bool_t = true;
     this.archAngel.x = -1;
-    if (this.archAngel.b == 25)
+    if (this.archAngel.screen == 25)
     {
       this.archAngel.mainGameScreen.setup3();
       this.archAngel.mainGameScreen.ba = 0;
@@ -774,7 +774,7 @@ public class GameScreen
       this.archAngel.readText.g = 3;
       break;
     case 999: 
-      this.archAngel.b = 5;
+      this.archAngel.screen = 5;
       this.readText = null;
       return;
     }
@@ -864,7 +864,7 @@ public class GameScreen
       this.bool_v = true;
       return;
     case 999: 
-      this.archAngel.b = 5;
+      this.archAngel.screen = 5;
       this.readText = null;
       return;
     default: 
@@ -929,13 +929,13 @@ public class GameScreen
       try
       {
         repaint();
-        if ((this.archAngel.b == 25) && (this.archAngel.z == 4))
+        if ((this.archAngel.screen == 25) && (this.archAngel.z == 4))
         {
           this.archAngel.mainGameScreen.complex_helper();
           this.archAngel.mainGameScreen.config2();
         }
         serviceRepaints();
-        Thread.sleep((this.archAngel.b == 25) || (this.archAngel.b == 1) ? 30 : 30);
+        Thread.sleep((this.archAngel.screen == 25) || (this.archAngel.screen == 1) ? 30 : 30);
       }
       catch (Exception localException) {
     	  System.out.println(">>>>> run exception <<<<<");
@@ -952,6 +952,6 @@ public class GameScreen
   {
     this.archAngel.gameSetting.initSetting();
     this.archAngel.gameSetting.readArmPlasmaMissile(this.archAngel.readText);
-    this.archAngel.b = 5;
+    this.archAngel.screen = 5;
   }
 }

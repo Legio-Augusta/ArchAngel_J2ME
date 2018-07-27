@@ -10,7 +10,7 @@ public class ArchAngel
   extends MIDlet
 {
   public int a = 1;
-  public int b = 0;
+  public int screen = 0;
   public int c;
   public int d = 0;
   public boolean bool_e = false;

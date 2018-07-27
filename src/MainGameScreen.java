@@ -480,7 +480,7 @@ public class MainGameScreen
       // this.b.b(paramGraphics, 9 + i1 * 3 + i2, this.a5[(i1 + 2)] + (this.a7[(i1 + 1)] != 0 ? 65296 : 240), this.a6[i1] - arrayOfInt[i1][i2]);
       this.readMedia.drawImageAnchor36(paramGraphics, 9 + i1 * 3 + i2, this.int_arr_a5[(i1 + 2)] + (this.bool_arr_a7[(i1 + 1)] != false ? 65296 : 240), this.int_arr_a6[i1] - arrayOfInt[i1][i2]);
     }
-    if ((this.AA.ad == 2) || (this.AA.b == 0)) {
+    if ((this.AA.ad == 2) || (this.AA.screen == 0)) {
       this.readMedia.drawImageAnchor20(paramGraphics, 18 + i2, 0, 166);
     }
   }

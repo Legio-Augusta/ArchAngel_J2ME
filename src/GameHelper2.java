@@ -18,7 +18,7 @@ public class GameHelper2 {
 		if ((paramInt1 >= 49) && (paramInt1 <= 57))
 		{
 			i1 = paramInt1 - 49 + 1;
-			if (archAngel.b == 13) {
+			if (archAngel.screen == 13) {
 				archAngel.readText.a = i1;
 			}
 		}
@@ -104,7 +104,7 @@ public class GameHelper2 {
 				archAngel.readMedia.reloadImageArr(8, 22);
 				archAngel.readMedia.closeInputStream();
 				archAngel.drawImage(paramGraphics);
-				if (archAngel.b == 9) {
+				if (archAngel.screen == 9) {
 					archAngel.a(paramGraphics, "SKIP", true);
 				}
 				archAngel.a(paramGraphics, "NEXT", false);
@@ -119,10 +119,10 @@ public class GameHelper2 {
 			paramGraphics.setColor(65280);
 			break;
 		case 999: 
-			if (archAngel.b == 9) {
-				archAngel.b = 25;
+			if (archAngel.screen == 9) {
+				archAngel.screen = 25;
 			} else {
-				archAngel.b = 5;
+				archAngel.screen = 5;
 			}
 			archAngel.gameSetting.c = archAngel.gameSetting.b;
 			for (i1 = 0; i1 < 6; i1++) {
@@ -135,7 +135,7 @@ public class GameHelper2 {
 		}
 		if (!archAngel.readText.processTxt(archAngel.z + 1))
 		{
-			if (archAngel.b == 9)
+			if (archAngel.screen == 9)
 			{
 				archAngel.drawImage(paramGraphics);
 				archAngel.a(paramGraphics, "START", false);
@@ -379,7 +379,7 @@ public class GameHelper2 {
 		case 6: 
 			archAngel.readMedia.destroyImage7_53();
 			archAngel.readMedia.destroyImage53_115();
-			archAngel.b = archAngel.ab;
+			archAngel.screen = archAngel.ab;
 			break;
 		}
 	}
@@ -611,7 +611,7 @@ public class GameHelper2 {
 			archAngel.ab = 5;
 		case 10: 
 			archAngel.addScore12();
-			archAngel.y = (archAngel.b = 25);
+			archAngel.y = (archAngel.screen = 25);
 			archAngel.z = 4;
 			return;
 		case 20: 
@@ -676,7 +676,7 @@ public class GameHelper2 {
 			archAngel.z = 2;
 			break;
 		case 10: 
-			archAngel.b = 2;
+			archAngel.screen = 2;
 			return;
 		}
 		helper.draw_system_setin(paramGraphics, l, o, p, q, t, x, y, str_arr_w, archAngel, readText);
@@ -830,7 +830,7 @@ public class GameHelper2 {
 			{
 				paramGraphics.setColor(0);
 				paramGraphics.fillRect(0, 0, 240, 300);
-				archAngel.b = 27;
+				archAngel.screen = 27;
 			}
 			else
 			{
@@ -857,7 +857,7 @@ public class GameHelper2 {
 				System.gc();
 				archAngel.gameSetting.b += 1;
 				archAngel.addScore();
-				archAngel.b = 5;
+				archAngel.screen = 5;
 			}
 			break;
 		}
@@ -995,7 +995,7 @@ public class GameHelper2 {
 			if (archAngel.x == 20)
 			{
 				archAngel.readMedia.destroyImage(30);
-				archAngel.b = 3;
+				archAngel.screen = 3;
 			}
 			break;
 		}

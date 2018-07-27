@@ -9,7 +9,7 @@ public class KeyPressHelper {
 		if (archAngel.bool_h) {
 			return;
 		}
-		switch (archAngel.b)
+		switch (archAngel.screen)
 		{
 		case 0: 
 			if (archAngel.z == 1) {
@@ -112,14 +112,14 @@ public class KeyPressHelper {
 					archAngel.bool_e = true;
 					break;
 				case -6: 
-					archAngel.b = 9;
+					archAngel.screen = 9;
 					break;
 				case -7: 
 				case -5: 
 					if (l == 5) {
-						archAngel.b = 4;
+						archAngel.screen = 4;
 					} else {
-						archAngel.b = ((byte)(8 + l));
+						archAngel.screen = ((byte)(8 + l));
 					}
 				}
 			}
@@ -239,12 +239,12 @@ public class KeyPressHelper {
 						break;
 					case -7: 
 						if (archAngel.bool_l) {
-							archAngel.b = 13;
+							archAngel.screen = 13;
 						}
 						break;
 					case -6: 
 						if (archAngel.bool_l) {
-							archAngel.b = 14;
+							archAngel.screen = 14;
 						}
 						break;
 					case -5: 
@@ -394,7 +394,7 @@ public class KeyPressHelper {
 			break;
 		case 4: 
 			if ((archAngel.z == 1) && (paramInt == -6)) {
-				archAngel.b = 5;
+				archAngel.screen = 5;
 			}
 			break;
 		case 1: 
@@ -404,7 +404,7 @@ public class KeyPressHelper {
 			}
 			if (paramInt == -6)
 			{
-				if (archAngel.b == 1)
+				if (archAngel.screen == 1)
 				{
 					archAngel.z = 10;
 				}
@@ -481,7 +481,7 @@ public class KeyPressHelper {
 	
 	public void keyReleased(int paramInt, ArchAngel archAngel)
 	{
-		switch (archAngel.b)
+		switch (archAngel.screen)
 		{
 		case 25: 
 			if (archAngel.mainGameScreen.bi == 1)
@@ -514,7 +514,7 @@ public class KeyPressHelper {
 		if ((paramInt1 >= 49) && (paramInt1 <= 57))
 		{
 			i1 = paramInt1 - 49 + 1;
-			if (archAngel.b == 13) {
+			if (archAngel.screen == 13) {
 				archAngel.readText.a = i1;
 			}
 		}
