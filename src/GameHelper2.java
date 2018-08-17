@@ -486,7 +486,6 @@ public class GameHelper2 {
 					archAngel.mainGameScreen.bool_bh = false;
 				}
 			}
-//	      System.out.println(":):):):):) " + archAngel.gameSetting.t + " :(:(:(:(:(");
 			if (archAngel.gameSetting.t <= 0) // may be number of enemies left
 			{
 			archAngel.gameSetting.t = 3; // Try play flow
@@ -504,7 +503,6 @@ public class GameHelper2 {
 		}
 		else if (archAngel.mainGameScreen.bi == 1)
 		{
-			//System.out.println(">>>>> "+ai.aj.m + " <<<<<");
 			if(archAngel.gameSetting.m != 0) {
 				i1 = archAngel.gameSetting.o * 40 / archAngel.gameSetting.m;
 			} else {
@@ -515,9 +513,8 @@ public class GameHelper2 {
 		{
 			i1 = 40;
 		}
-		//System.out.println(":(:(:(:(:(:(:( "+i1 + " "+ ai.aj.o + " <<<<<");
 		paramGraphics.setColor(16711680);
-		paramGraphics.fillRect(192, 17, i1, 4);
+		paramGraphics.fillRect(192, 17, i1, 4); // Draw red bar (missile)
 	}
 	
 	public void draw_weapon_shop(Graphics paramGraphics, int paramInt1, boolean paramBoolean, int paramInt2, int t, int u, String[][] str_arr_w, ArchAngel archAngel, ReadText readText)

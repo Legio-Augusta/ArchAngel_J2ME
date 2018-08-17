@@ -355,7 +355,7 @@ public class MainGameScreen
     this.bool_bl = false;
     this.bm = -1;
     this.bn = 0;
-    System.out.println("aeaoeaeeaeaee " + gameConfigArr.length + " aeaeoeoaoe");
+
     for (int i1 = 0; i1 < 18; i1++) {
       gameConfigArr[i1].c = 0;
     }
@@ -528,7 +528,7 @@ public class MainGameScreen
         this.readMedia.drawImageAnchor20(paramGraphics, 34, this.bb + 38 - arrayOfByte2[this.z][0], this.bc + 11 - arrayOfByte2[this.z][1] - 11 * (this.ap % 2));
         paramGraphics.setClip(0, 0, 240, 300);
       }
-      this.AA.bool_m = true;
+      this.AA.bool_m = true; // game state PAUSE/PLAY ?
       break;
     case 2: 
       this.AA.stopSound();
@@ -781,7 +781,7 @@ public class MainGameScreen
     this.bool_ay = false;
     this.bool_az = false;
     this.bool_a0 = false;
-    this.AA.ab = 7;
+    this.AA.ab = 7; // archAngel.screen will be assigned to archAngel.ab
     setup3();
     this.ar = -20;
   }
@@ -791,7 +791,7 @@ public class MainGameScreen
     this.readMedia.drawImageAnchor20(paramGraphics, 21, 0, 0);
     for (int i1 = 0; i1 < 18; i1++) {
       if (gameConfigArr[i1].c != 0) {
-        this.gameHelper.set_color_arr(paramGraphics, gameConfigArr[i1], this.al, this.am, this.av, this.bo, this.bq, this.bq, this.br, stt_byte_arr_bs);
+        this.gameHelper.draw_radar_dot(paramGraphics, gameConfigArr[i1], this.al, this.am, this.av, this.bo, this.bq, this.bq, this.br, stt_byte_arr_bs);
       }
     }
     paramGraphics.setClip(0, 50, 240, 250);
@@ -1047,7 +1047,7 @@ public class MainGameScreen
       paramg.l = 2;
       this.v += 1;
       paramg.d = 0;
-      this.AA.bool_n = true;
+      this.AA.bool_n = true; // This seem to be game state PAUSE/PLAYING
       break;
     case 13: 
       paramg.m = this.j;

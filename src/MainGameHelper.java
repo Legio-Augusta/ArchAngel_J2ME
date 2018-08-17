@@ -165,9 +165,9 @@ public class MainGameHelper {
 	    return turn_helper(paramInt1, bo, bp, stt_byte_arr_bs) * paramInt2 - turn_helper2(paramInt1, bq, br, stt_byte_arr_bs) * paramInt3 >> 6;
 	}
 	  
-	public void set_color_arr(Graphics paramGraphics, GameConfig paramg, int al, int am, int av, int bo, int bp, int bq, int br, byte[] stt_byte_arr_bs)
+	public void draw_radar_dot(Graphics paramGraphics, GameConfig paramg, int al, int am, int av, int bo, int bp, int bq, int br, byte[] stt_byte_arr_bs)
 	{
-	    int[] arrayOfInt = { 255, 16711680, 16776960, 16776960 };
+	    int[] arrayOfInt = { 255, 16711680, 16776960, 16776960 }; // 255 ~ blue; 16711680 ~ red; 16776960 ~ yellow
 	    int i5 = paramg.c;
 	    int i3 = paramg.a;
 	    int i4 = paramg.b;
@@ -180,7 +180,7 @@ public class MainGameHelper {
 	      if( (i5 - 11) < arrayOfInt.length) {
 	    	  paramGraphics.setColor(arrayOfInt[(i5 - 11)]);
 	      }
-	      //System.out.println("-::_:_:_:_:_:__" + i5 + " _______________");
+	      // Draw enermy dot on radar, red for missile
 	      paramGraphics.fillRect(28 + i3, 21 - i4, 3, 3);
 	    }
 	    i2 += 300;

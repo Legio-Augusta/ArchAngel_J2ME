@@ -7,6 +7,8 @@ import javax.microedition.lcdui.Image;
  * @author Nick Farrow
  * Read .msr (media binary combined file). .msr is optional extension. It can be 
  * extracted using some binary extract tool like photo_spliter.py by Greg Lavino.
+ * 
+ * Understand this progam can lead to write or understand how Texture-packer work.
  */
 public class ReadMedia
 {
@@ -123,6 +125,9 @@ public class ReadMedia
   {
     this.img_arr_a[paramInt2] = null;
     this.img_arr_a[paramInt2] = loadImage(paramInt1);
+    if(this.msr_media.equals("shot")) {
+    	System.out.println(" load Img : " +  this.msr_media + " int " + paramInt1 + " " +paramInt2);
+    }
   }
   
   public Image loadImage(int paramInt)
@@ -152,6 +157,10 @@ public class ReadMedia
     paramGraphics.drawImage(this.img_arr_a[paramInt1], paramInt2, paramInt3, 3);
   }
   
+  /*
+   * It seem this func return number of image inside a packed binary file.
+   * These byte calculate operation is blackbox magic.
+   */
   public int readBinaryData()
     throws Exception
   {
@@ -190,6 +199,8 @@ public class ReadMedia
   
   public void readMediaStream(String paramString)
   {
+//	System.out.println(" load Media ::::::: " + paramString);
+
     paramString = "/msr/" + paramString + ".msr";
     this.msr_media = paramString;
     try

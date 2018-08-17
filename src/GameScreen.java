@@ -48,6 +48,7 @@ public class GameScreen
   public void keyPressed(int paramInt)
   {
     int i1 = getGameAction(paramInt);
+    System.out.println(" key pressed : " +  paramInt + " action code " + i1 + " ._._.__._.__");
     if (this.archAngel.bool_h) {
       return;
     }
