@@ -48,7 +48,7 @@ public class ReadText
     }
     while (bool_ascii_helper('+')) { // boolean a (String str)
     	// Exception on i1 = 8 or 9
-    	System.out.println(" bool e.a i1= " + i1 + " k= " + this.k);
+    	// System.out.println(" bool e.a i1= " + i1 + " k= " + this.k);
     	if (i1 <= 8) {
     		this.o = (this.int_arr_m[(i1++)] = calcIntCharFromASCII(this.k));
     	} else {    		

@@ -9,7 +9,7 @@ public class GameSettings
   public int g;
   public int h;
   public int i;
-  public int j;
+  public int j; // This related to Hero HP MainGameSeting.f
   public String str_k;
   public int l;
   public int m;

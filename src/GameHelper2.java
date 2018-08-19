@@ -472,7 +472,12 @@ public class GameHelper2 {
 			paramGraphics.fillRect(103, 18, archAngel.ae, 5);
 			break;
 		}
+		// Hero lose hp with 50 value each time colidate obstacle (EASY mode).
+		// Start with 1000, 40 * 1000 >> 9 = 78 then 74, 70, 66 ...
 		int i1 = 40 * archAngel.gameSetting.j >> 9;
+		if(archAngel.mainGameScreen.j < 100) {
+			System.out.println("Fighter HP: " + archAngel.gameSetting.j + " >> 9 i1= " + i1);
+		}
 		paramGraphics.setColor(255);
 		paramGraphics.fillRect(192, 5, i1 / 2, 4);
 		if (archAngel.mainGameScreen.bi == 3)

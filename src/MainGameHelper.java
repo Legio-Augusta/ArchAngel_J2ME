@@ -14,7 +14,8 @@ public class MainGameHelper {
 	      int_arr_bu[i1][1] = (600 * (i1 * 2 + 1));
 	    }
 	}
-	  
+	
+	// This seem to Fighter HP calculate, but why use 180 and 360 value, these value seem to be angle turn.
 	public int turn_calc(int paramInt1, int paramInt2)
 	{
 	    int i1 = paramInt2 - paramInt1;

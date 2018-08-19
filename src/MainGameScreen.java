@@ -8,7 +8,7 @@ public class MainGameScreen
   public GameSettings gameSetting;
   public Random rnd = new Random();
   public String str_e;
-  public int f;
+  public int f; // This seem Hero HP
   public int g;
   public int h;
   public int i;
@@ -137,8 +137,12 @@ public class MainGameScreen
           paramGameCnf.i = 0;
           this.bool_a1 = false;
         }
-//        this.f = turn_calc(angle_helper(paramGameCnf.a, paramGameCnf.b), this.av);
+        // this.f = turn_calc(angle_helper(paramGameCnf.a, paramGameCnf.b), this.av);
+        // This is dam important. Fighter HP here
         this.f = this.gameHelper.turn_calc(this.gameHelper.angle_helper(paramGameCnf.a, paramGameCnf.b, stt_byte_arr_bt), this.av);
+        if(this.f < 50) {
+        	System.out.println("Fighter HP init_game: " + this.f);
+        }
         this.ca = (Math.abs(paramGameCnf.a) + Math.abs(paramGameCnf.b) - 200);
       }
       if ((this.ca <= 0) && (this.aa == 1))
@@ -165,12 +169,13 @@ public class MainGameScreen
         this.ah += -1;
         return;
       }
+      // Hit by cliff
       if ((paramGameCnf.d >= 7) && (paramGameCnf.f > -20) && (paramGameCnf.f < 20))
       {
         this.au += 2;
         paramGameCnf.c = 0;
         this.ah += -1;
-        this.gameSetting.j -= 50;
+        this.gameSetting.j -= 50; // lose HP
         play_s_gun(false);
         if (this.gameSetting.j <= 0) {
           setup2();
@@ -333,6 +338,7 @@ public class MainGameScreen
     this.bc = 169;
     this.int_arr_a5[1] = -82;
     this.AA.ae = 40;
+    // this.f seem to be Hero HP, why init = 0 ? (It seem not a problem since game play would re-initialize it).
     this.f = (this.ax = this.al = this.am = this.as = this.aq = this.ar = this.an = this.ao = 0);
     this.aw = 20;
     this.av = 90;
@@ -791,7 +797,8 @@ public class MainGameScreen
     this.readMedia.drawImageAnchor20(paramGraphics, 21, 0, 0);
     for (int i1 = 0; i1 < 18; i1++) {
       if (gameConfigArr[i1].c != 0) {
-        this.gameHelper.draw_radar_dot(paramGraphics, gameConfigArr[i1], this.al, this.am, this.av, this.bo, this.bq, this.bq, this.br, stt_byte_arr_bs);
+    	  // Main Game scrn has gameConfig properties. This may be contain Fighter HP
+    	  this.gameHelper.draw_radar_dot(paramGraphics, gameConfigArr[i1], this.al, this.am, this.av, this.bo, this.bq, this.bq, this.br, stt_byte_arr_bs);
       }
     }
     paramGraphics.setClip(0, 50, 240, 250);
