@@ -22,7 +22,7 @@ public class MainGameHelper {
 	    if (i1 > 180) {
 	      i1 -= 360;
 	    }
-	    if (i1 < 65356) {
+	    if (i1 < -180) {
 	      i1 = 360 + i1;
 	    }
 	    return i1;
@@ -82,7 +82,7 @@ public class MainGameHelper {
 	
 	public boolean config_helper(GameConfig paramgcnf1, GameConfig paramgcnf2)
 	{
-	    if (Math.abs(paramgcnf1.a - paramgcnf2.a) + Math.abs(paramgcnf1.b - paramgcnf2.b) < 200)
+	    if (Math.abs(paramgcnf1.boss_distance_1 - paramgcnf2.boss_distance_1) + Math.abs(paramgcnf1.boss_distance_2 - paramgcnf2.boss_distance_2) < 200)
 	    {
 	      paramgcnf2.m -= paramgcnf1.m;
 	      paramgcnf2.l += 5;
@@ -112,7 +112,7 @@ public class MainGameHelper {
 	    if (paramg.e > 4000)
 	    {
 //	      i4 = angle_helper(-paramg.a, -paramg.b);
-	      i4 = angle_helper(-paramg.a, -paramg.b, stt_byte_arr_bt);
+	      i4 = angle_helper(-paramg.boss_distance_1, -paramg.boss_distance_2, stt_byte_arr_bt);
 	      i1 = 20;
 	    }
 	    else
@@ -170,8 +170,8 @@ public class MainGameHelper {
 	{
 	    int[] arrayOfInt = { 255, 16711680, 16776960, 16776960 }; // 255 ~ blue; 16711680 ~ red; 16776960 ~ yellow
 	    int i5 = paramg.c;
-	    int i3 = paramg.a;
-	    int i4 = paramg.b;
+	    int i3 = paramg.boss_distance_1;
+	    int i4 = paramg.boss_distance_2;
 	    int i1 = shift_byte_6(450 - av, i3, i4, bo, bp, bq, br, stt_byte_arr_bs);
 	    int i2 = return_turn_helper(450 - av, i3, i4, bo, bp, bq, br, stt_byte_arr_bs);
 	    if ((i5 >= 11) && ((paramg.e = shift_3(i3, i4)) < 4284))
@@ -196,8 +196,8 @@ public class MainGameHelper {
 	    {
 	      paramg.d = 8;
 	    }
-	    paramg.a -= al;
-	    paramg.b -= am;
+	    paramg.boss_distance_1 -= al;
+	    paramg.boss_distance_2 -= am;
 	}
 	 
 	public int shift_3(int paramInt1, int paramInt2)
@@ -295,8 +295,8 @@ public class MainGameHelper {
 	    switch (paramInt1)
 	    {
 	    case 9: 
-	      paramg.a = r;
-	      paramg.b = s;
+	      paramg.boss_distance_1 = r;
+	      paramg.boss_distance_2 = s;
 	      paramg.e = 99999;
 	      paramg.h = 0;
 	      paramg.i = 0;
@@ -305,8 +305,8 @@ public class MainGameHelper {
 	      paramg.m = 50;
 	      i1 = (rnd.nextInt() & 0x1F) - 15;
 	      int i2 = (rnd.nextInt() & 0x7) + 63;
-	      paramg.a = (i2 * turn_helper(i1 + av, bo, bp, stt_byte_arr_bs));
-	      paramg.b = (i2 * turn_helper2(i1 + av, bq, br, stt_byte_arr_bs));
+	      paramg.boss_distance_1 = (i2 * turn_helper(i1 + av, bo, bp, stt_byte_arr_bs));
+	      paramg.boss_distance_2 = (i2 * turn_helper2(i1 + av, bq, br, stt_byte_arr_bs));
 	      paramg.h = (paramg.i = 0);
 	      paramg.e = i1;
 	      ah += 1;
@@ -315,8 +315,8 @@ public class MainGameHelper {
 	      paramg.m = n;
 	      av = 90;
 	      i1 = 0;
-	      paramg.a = (60 * turn_helper(i1 + av, bo, bp, stt_byte_arr_bs));
-	      paramg.b = (60 * turn_helper2(i1 + av, bq, br, stt_byte_arr_bs));
+	      paramg.boss_distance_1 = (60 * turn_helper(i1 + av, bo, bp, stt_byte_arr_bs));
+	      paramg.boss_distance_2 = (60 * turn_helper2(i1 + av, bq, br, stt_byte_arr_bs));
 	      paramg.e = i1;
 	      paramg.h = (paramg.i = 0);
 	      paramg.j = av;
@@ -328,8 +328,8 @@ public class MainGameHelper {
 	    case 13: 
 	      paramg.m = j;
 	      i1 = (rnd.nextInt() & 0x7F) - 63;
-	      paramg.a = (60 * turn_helper(i1 + av, bo, bp, stt_byte_arr_bs));
-	      paramg.b = (60 * turn_helper2(i1 + av, bq, br, stt_byte_arr_bs));
+	      paramg.boss_distance_1 = (60 * turn_helper(i1 + av, bo, bp, stt_byte_arr_bs));
+	      paramg.boss_distance_2 = (60 * turn_helper2(i1 + av, bq, br, stt_byte_arr_bs));
 	      paramg.e = i1;
 	      paramg.h = (paramg.i = 0);
 	      paramg.j = ((av + 180) % 360);
@@ -338,10 +338,10 @@ public class MainGameHelper {
 	      ag += 1;
 	      break;
 	    case 12: 
-	      paramg.a = gameConfig2.a;
-	      paramg.b = gameConfig2.b;
-	      paramg.e = shift_3(paramg.a, paramg.b);
-	      i1 = paramg.j = angle_helper(-paramg.a + al, -paramg.b + am, stt_byte_arr_bt);
+	      paramg.boss_distance_1 = gameConfig2.boss_distance_1;
+	      paramg.boss_distance_2 = gameConfig2.boss_distance_2;
+	      paramg.e = shift_3(paramg.boss_distance_1, paramg.boss_distance_2);
+	      i1 = paramg.j = angle_helper(-paramg.boss_distance_1 + al, -paramg.boss_distance_2 + am, stt_byte_arr_bt);
 	      paramg.h = (3 * turn_helper(i1, bo, bp, stt_byte_arr_bs) + al);
 	      paramg.i = (3 * turn_helper2(i1, bq, br, stt_byte_arr_bs) + am);
 	      paramg.l = 30;
@@ -352,8 +352,8 @@ public class MainGameHelper {
 	      i1 = paramg.j = av;
 	      paramg.h = (6 * turn_helper(i1, bq, br, stt_byte_arr_bs));
 	      paramg.i = (6 * turn_helper2(i1, bq, br, stt_byte_arr_bs));
-	      paramg.a = (turn_helper(av - 90, bo, bp, stt_byte_arr_bs) + paramg.h);
-	      paramg.b = (turn_helper2(av - 90, bq, br, stt_byte_arr_bs) + paramg.i);
+	      paramg.boss_distance_1 = (turn_helper(av - 90, bo, bp, stt_byte_arr_bs) + paramg.h);
+	      paramg.boss_distance_2 = (turn_helper2(av - 90, bq, br, stt_byte_arr_bs) + paramg.i);
 	      paramg.e = 64;
 	      paramg.k = paramInt2;
 	      paramg.l = 30;
@@ -363,8 +363,8 @@ public class MainGameHelper {
 	      i1 = paramg.j = av;
 	      paramg.h = (6 * turn_helper(i1, bo, bp, stt_byte_arr_bs));
 	      paramg.i = (6 * turn_helper2(i1, bq, br, stt_byte_arr_bs));
-	      paramg.a = (turn_helper(av - 90, bo, bp, stt_byte_arr_bs) + paramg.h);
-	      paramg.b = (turn_helper2(av - 90, bq, br, stt_byte_arr_bs) + paramg.i);
+	      paramg.boss_distance_1 = (turn_helper(av - 90, bo, bp, stt_byte_arr_bs) + paramg.h);
+	      paramg.boss_distance_2 = (turn_helper2(av - 90, bq, br, stt_byte_arr_bs) + paramg.i);
 	      paramg.e = 64;
 	      paramg.k = paramInt2;
 	      paramg.l = 30;
@@ -374,8 +374,8 @@ public class MainGameHelper {
 	      i1 = paramg.j = av;
 	      paramg.h = (6 * turn_helper(i1, bo, bp, stt_byte_arr_bs));
 	      paramg.i = (6 * turn_helper2(i1, bq, br, stt_byte_arr_bs));
-	      paramg.a = (turn_helper(av + 90, bo, bp, stt_byte_arr_bs) + paramg.h);
-	      paramg.b = (turn_helper2(av + 90, bq, br, stt_byte_arr_bs) + paramg.i);
+	      paramg.boss_distance_1 = (turn_helper(av + 90, bo, bp, stt_byte_arr_bs) + paramg.h);
+	      paramg.boss_distance_2 = (turn_helper2(av + 90, bq, br, stt_byte_arr_bs) + paramg.i);
 	      paramg.e = 64;
 	      paramg.l = (10 + cc);
 	      cc = (1 - cc);
@@ -540,20 +540,20 @@ public class MainGameHelper {
 	      {
 	        bd += 1;
 	        int_arr_a5[0] -= 4;
-	        if (int_arr_a5[0] < 65296) {
+	        if (int_arr_a5[0] < -240) {
 	          int_arr_a5[0] = 0;
 	        }
 	        if (int_arr_a5[0] < 0) {
 	          bool_arr_a7[0] = false;
 	        }
 	        int_arr_a5[1] -= 6;
-	        if (int_arr_a5[1] < 65196) {
+	        if (int_arr_a5[1] < -340) {
 	          int_arr_a5[1] = 240;
 	        }
 	        for (i1 = 0; i1 < 3; i1++)
 	        {
 	          int_arr_a5[(i1 + 2)] -= 6 - 2 * i1;
-	          if (int_arr_a5[(i1 + 2)] < 65296) {
+	          if (int_arr_a5[(i1 + 2)] < -240) {
 	            int_arr_a5[(i1 + 2)] = 0;
 	          }
 	          if (int_arr_a5[(i1 + 2)] < 0) {
@@ -573,7 +573,7 @@ public class MainGameHelper {
 	        }
 	        int_arr_a5[1] += 6;
 	        if (int_arr_a5[1] > 240) {
-	          int_arr_a5[1] = 65196;
+	          int_arr_a5[1] = -340;
 	        }
 	        for (i1 = 0; i1 < 3; i1++)
 	        {
@@ -590,20 +590,20 @@ public class MainGameHelper {
 	      {
 	        bd += 1;
 	        int_arr_a5[0] -= 4;
-	        if (int_arr_a5[0] < 65296) {
+	        if (int_arr_a5[0] < -240) {
 	          int_arr_a5[0] = 0;
 	        }
 	        if (int_arr_a5[0] < 0) {
 	          bool_arr_a7[0] = false;
 	        }
 	        int_arr_a5[1] -= 2;
-	        if (int_arr_a5[1] < 65196) {
+	        if (int_arr_a5[1] < -340) {
 	          int_arr_a5[1] = 240;
 	        }
 	        for (i1 = 0; i1 < 3; i1++)
 	        {
 	          int_arr_a5[(i1 + 2)] -= 2 + 2 * i1;
-	          if (int_arr_a5[(i1 + 2)] < 65296) {
+	          if (int_arr_a5[(i1 + 2)] < -240) {
 	            int_arr_a5[(i1 + 2)] = 0;
 	          }
 	          if (int_arr_a5[(i1 + 2)] < 0) {
@@ -623,7 +623,7 @@ public class MainGameHelper {
 	        }
 	        int_arr_a5[1] += 2;
 	        if (int_arr_a5[1] > 240) {
-	          int_arr_a5[1] = 65196;
+	          int_arr_a5[1] = -340;
 	        }
 	        for (i1 = 0; i1 < 3; i1++)
 	        {
@@ -650,20 +650,20 @@ public class MainGameHelper {
 	          x = -10;
 	        }
 	        int_arr_a5[0] -= 2;
-	        if (int_arr_a5[0] < 65296) {
+	        if (int_arr_a5[0] < -240) {
 	          int_arr_a5[0] = 0;
 	        }
 	        if (int_arr_a5[0] < 0) {
 	          bool_arr_a7[0] = false;
 	        }
 	        int_arr_a5[1] -= 1;
-	        if (int_arr_a5[1] < 65196) {
+	        if (int_arr_a5[1] < -340) {
 	          int_arr_a5[1] = 240;
 	        }
 	        for (i1 = 0; i1 < 3; i1++)
 	        {
 	          int_arr_a5[(i1 + 2)] -= 2 + 1 * i1;
-	          if (int_arr_a5[(i1 + 2)] < 65296) {
+	          if (int_arr_a5[(i1 + 2)] < -240) {
 	            int_arr_a5[(i1 + 2)] = 0;
 	          }
 	          if (int_arr_a5[(i1 + 2)] < 0) {
@@ -687,7 +687,7 @@ public class MainGameHelper {
 	      }
 	      int_arr_a5[1] += 1;
 	      if (int_arr_a5[1] > 240) {
-	        int_arr_a5[1] = 65196;
+	        int_arr_a5[1] = -340;
 	      }
 	      for (i1 = 0; i1 < 3; i1++)
 	      {

@@ -20,8 +20,8 @@ public class MainGameScreen
   public int o;
   public int p = 0;
   public String str_q;
-  public int r;
-  public int s;
+  public int boss_distance_r;
+  public int boss_distance_s;
   public int t;
   public int u;
   public int v;
@@ -101,7 +101,7 @@ public class MainGameScreen
   public int b7;
   public int b8;
   public int b9;
-  public int ca;
+  public int boss_distance;
   public int cb = 0;
   public int cc = 0;
   
@@ -119,8 +119,8 @@ public class MainGameScreen
       paramGameCnf.c = 0;
       return;
     }
-    paramGameCnf.a += paramGameCnf.h;
-    paramGameCnf.b += paramGameCnf.i;
+    paramGameCnf.boss_distance_1 += paramGameCnf.h;
+    paramGameCnf.boss_distance_2 += paramGameCnf.i;
     int i3;
     int i1;
     switch (i2)
@@ -130,8 +130,8 @@ public class MainGameScreen
       {
         if (this.bool_a1 == true)
         {
-          paramGameCnf.a = this.r;
-          paramGameCnf.b = this.s;
+          paramGameCnf.boss_distance_1 = this.boss_distance_r;
+          paramGameCnf.boss_distance_2 = this.boss_distance_s;
           paramGameCnf.e = 99999;
           paramGameCnf.h = 0;
           paramGameCnf.i = 0;
@@ -139,15 +139,15 @@ public class MainGameScreen
         }
         // this.f = turn_calc(angle_helper(paramGameCnf.a, paramGameCnf.b), this.av);
         // This is dam important. Fighter HP here
-        this.f = this.gameHelper.turn_calc(this.gameHelper.angle_helper(paramGameCnf.a, paramGameCnf.b, stt_byte_arr_bt), this.av);
+        this.f = this.gameHelper.turn_calc(this.gameHelper.angle_helper(paramGameCnf.boss_distance_1, paramGameCnf.boss_distance_2, stt_byte_arr_bt), this.av);
         if(this.f < 50) {
         	System.out.println("Fighter HP init_game: " + this.f);
         }
-        this.ca = (Math.abs(paramGameCnf.a) + Math.abs(paramGameCnf.b) - 200);
+        this.boss_distance = (Math.abs(paramGameCnf.boss_distance_1) + Math.abs(paramGameCnf.boss_distance_2) - 200);
       }
-      if ((this.ca <= 0) && (this.aa == 1))
+      if ((this.boss_distance <= 0) && (this.aa == 1))
       {
-        this.ca = 0;
+        this.boss_distance = 0;
         paramGameCnf.c = 0;
         this.readMedia.readMediaStream("etc");
         this.readMedia.reloadImageArr(1, 112);
@@ -252,7 +252,7 @@ public class MainGameScreen
         paramGameCnf.c = 0;
         return;
       }
-      if (((paramGameCnf.l & 0x1) == 0) && (Math.abs(paramGameCnf.a - gameConfigArr[i1].a) + Math.abs(paramGameCnf.b - gameConfigArr[i1].b) < 300))
+      if (((paramGameCnf.l & 0x1) == 0) && (Math.abs(paramGameCnf.boss_distance_1 - gameConfigArr[i1].boss_distance_1) + Math.abs(paramGameCnf.boss_distance_2 - gameConfigArr[i1].boss_distance_2) < 300))
       {
         paramGameCnf.c = 4;
         paramGameCnf.l = 2;
@@ -280,9 +280,9 @@ public class MainGameScreen
         return;
       }
       if (this.gameSetting.o > 0) {
-        config2(paramGameCnf, gameConfigArr[i1].a, gameConfigArr[i1].b);
+        config2(paramGameCnf, gameConfigArr[i1].boss_distance_1, gameConfigArr[i1].boss_distance_2);
       }
-      if (Math.abs(paramGameCnf.a - gameConfigArr[i1].a) + Math.abs(paramGameCnf.b - gameConfigArr[i1].b) < 300)
+      if (Math.abs(paramGameCnf.boss_distance_1 - gameConfigArr[i1].boss_distance_1) + Math.abs(paramGameCnf.boss_distance_2 - gameConfigArr[i1].boss_distance_2) < 300)
       {
         paramGameCnf.c = 4;
         paramGameCnf.l = 2;
@@ -764,8 +764,8 @@ public class MainGameScreen
   
   public void config2(GameConfig paramg, int paramInt1, int paramInt2)
   {
-    int i1 = paramg.a;
-    int i2 = paramg.b;
+    int i1 = paramg.boss_distance_1;
+    int i2 = paramg.boss_distance_2;
     int i3 = paramg.h;
     int i4 = paramg.i;
     int i5 = paramg.j;
@@ -970,7 +970,7 @@ public class MainGameScreen
     if (paramg.e > 4000)
     {
 //      i4 = angle_helper(-paramg.a, -paramg.b);
-      i4 = this.gameHelper.angle_helper(-paramg.a, -paramg.b, stt_byte_arr_bt);
+      i4 = this.gameHelper.angle_helper(-paramg.boss_distance_1, -paramg.boss_distance_2, stt_byte_arr_bt);
       i1 = 20;
     }
     else
@@ -1026,8 +1026,8 @@ public class MainGameScreen
     switch (paramInt1)
     {
     case 9: 
-      paramg.a = this.r;
-      paramg.b = this.s;
+      paramg.boss_distance_1 = this.boss_distance_r;
+      paramg.boss_distance_2 = this.boss_distance_s;
       paramg.e = 99999;
       paramg.h = 0;
       paramg.i = 0;
@@ -1036,8 +1036,8 @@ public class MainGameScreen
       paramg.m = 50;
       i1 = (this.rnd.nextInt() & 0x1F) - 15;
       int i2 = (this.rnd.nextInt() & 0x7) + 63;
-      paramg.a = (i2 * turn_helper(i1 + this.av));
-      paramg.b = (i2 * turn_helper2(i1 + this.av));
+      paramg.boss_distance_1 = (i2 * turn_helper(i1 + this.av));
+      paramg.boss_distance_2 = (i2 * turn_helper2(i1 + this.av));
       paramg.h = (paramg.i = 0);
       paramg.e = i1;
       this.ah += 1;
@@ -1046,8 +1046,8 @@ public class MainGameScreen
       paramg.m = this.n;
       this.av = 90;
       i1 = 0;
-      paramg.a = (60 * turn_helper(i1 + this.av));
-      paramg.b = (60 * turn_helper2(i1 + this.av));
+      paramg.boss_distance_1 = (60 * turn_helper(i1 + this.av));
+      paramg.boss_distance_2 = (60 * turn_helper2(i1 + this.av));
       paramg.e = i1;
       paramg.h = (paramg.i = 0);
       paramg.j = this.av;
@@ -1059,8 +1059,8 @@ public class MainGameScreen
     case 13: 
       paramg.m = this.j;
       i1 = (this.rnd.nextInt() & 0x7F) - 63;
-      paramg.a = (60 * turn_helper(i1 + this.av));
-      paramg.b = (60 * turn_helper2(i1 + this.av));
+      paramg.boss_distance_1 = (60 * turn_helper(i1 + this.av));
+      paramg.boss_distance_2 = (60 * turn_helper2(i1 + this.av));
       paramg.e = i1;
       paramg.h = (paramg.i = 0);
       paramg.j = ((this.av + 180) % 360);
@@ -1069,11 +1069,11 @@ public class MainGameScreen
       this.ag += 1;
       break;
     case 12: 
-      paramg.a = gameConfigArr[paramInt2].a;
-      paramg.b = gameConfigArr[paramInt2].b;
-      paramg.e = this.gameHelper.shift_3(paramg.a, paramg.b);
+      paramg.boss_distance_1 = gameConfigArr[paramInt2].boss_distance_1;
+      paramg.boss_distance_2 = gameConfigArr[paramInt2].boss_distance_2;
+      paramg.e = this.gameHelper.shift_3(paramg.boss_distance_1, paramg.boss_distance_2);
 //      i1 = paramg.j = angle_helper(-paramg.a + this.al, -paramg.b + this.am);
-      i1 = paramg.j = this.gameHelper.angle_helper(-paramg.a + this.al, -paramg.b + this.am, stt_byte_arr_bt);
+      i1 = paramg.j = this.gameHelper.angle_helper(-paramg.boss_distance_1 + this.al, -paramg.boss_distance_2 + this.am, stt_byte_arr_bt);
       paramg.h = (3 * turn_helper(i1) + this.al);
       paramg.i = (3 * turn_helper2(i1) + this.am);
       paramg.l = 30;
@@ -1084,8 +1084,8 @@ public class MainGameScreen
       i1 = paramg.j = this.av;
       paramg.h = (6 * turn_helper(i1));
       paramg.i = (6 * turn_helper2(i1));
-      paramg.a = (turn_helper(this.av - 90) + paramg.h);
-      paramg.b = (turn_helper2(this.av - 90) + paramg.i);
+      paramg.boss_distance_1 = (turn_helper(this.av - 90) + paramg.h);
+      paramg.boss_distance_2 = (turn_helper2(this.av - 90) + paramg.i);
       paramg.e = 64;
       paramg.k = paramInt2;
       paramg.l = 30;
@@ -1095,8 +1095,8 @@ public class MainGameScreen
       i1 = paramg.j = this.av;
       paramg.h = (6 * turn_helper(i1));
       paramg.i = (6 * turn_helper2(i1));
-      paramg.a = (turn_helper(this.av - 90) + paramg.h);
-      paramg.b = (turn_helper2(this.av - 90) + paramg.i);
+      paramg.boss_distance_1 = (turn_helper(this.av - 90) + paramg.h);
+      paramg.boss_distance_2 = (turn_helper2(this.av - 90) + paramg.i);
       paramg.e = 64;
       paramg.k = paramInt2;
       paramg.l = 30;
@@ -1106,8 +1106,8 @@ public class MainGameScreen
       i1 = paramg.j = this.av;
       paramg.h = (6 * turn_helper(i1));
       paramg.i = (6 * turn_helper2(i1));
-      paramg.a = (turn_helper(this.av + 90) + paramg.h);
-      paramg.b = (turn_helper2(this.av + 90) + paramg.i);
+      paramg.boss_distance_1 = (turn_helper(this.av + 90) + paramg.h);
+      paramg.boss_distance_2 = (turn_helper2(this.av + 90) + paramg.i);
       paramg.e = 64;
       paramg.l = (10 + this.cc);
       this.cc = (1 - this.cc);

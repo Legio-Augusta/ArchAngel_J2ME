@@ -149,8 +149,8 @@ public class ArchAngel
     this.readText.readTextFromStream("ms" + paramInt); // e.a()
     this.readText.processTxt(1);
     System.out.println(" AA.a(int) al.a(1) ");
-    this.mainGameScreen.r = this.readText.int_arr_m[0]; // f.r = 
-    this.mainGameScreen.s = this.readText.int_arr_m[1];
+    this.mainGameScreen.boss_distance_r = this.readText.int_arr_m[0]; // f.r = 
+    this.mainGameScreen.boss_distance_s = this.readText.int_arr_m[1];
     this.mainGameScreen.y = this.readText.int_arr_m[2];
     this.readText.processTxt(2);
     System.out.println(" AA.a(int) al.a(2) ");

@@ -432,7 +432,7 @@ public class GameHelper2 {
 			break;
 		case 1: 
 			paramGraphics.setColor(14408703);
-			paramGraphics.drawString(archAngel.mainGameScreen.ca + " m", 120, 3, 17);
+			paramGraphics.drawString(archAngel.mainGameScreen.boss_distance + " m", 120, 3, 17);
 			int i1 = archAngel.mainGameScreen.f;
 			int i2 = Math.abs(i1) / 60 + 1;
 			if ((i1 <= 5) && (i1 >= -5))
@@ -476,7 +476,7 @@ public class GameHelper2 {
 		// Start with 1000, 40 * 1000 >> 9 = 78 then 74, 70, 66 ...
 		int i1 = 40 * archAngel.gameSetting.j >> 9;
 		if(archAngel.mainGameScreen.j < 100) {
-			System.out.println("Fighter HP: " + archAngel.gameSetting.j + " >> 9 i1= " + i1);
+			//System.out.println("Fighter HP: " + archAngel.gameSetting.j + " >> 9 i1= " + i1);
 		}
 		paramGraphics.setColor(255);
 		paramGraphics.fillRect(192, 5, i1 / 2, 4);

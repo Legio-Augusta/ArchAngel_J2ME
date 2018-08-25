@@ -94,6 +94,7 @@ public class ReadText
       if(this.j < this.byte_arr_l.length){
     	  this.byte_arr_l[this.j] = 0;
       }
+      System.out.println("Text " + paramString + " j= "+ j);
       localInputStream.close();
     }
     catch (Exception localException) {}
